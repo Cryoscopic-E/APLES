@@ -1,64 +1,52 @@
 from unified_planning.shortcuts import *
-from unified_planning.model.types import BOOL
+from activity_class import ActivityClass
 
-Activity = UserType('Activity')
-Difficulty = UserType('Difficulty')
-Physical = UserType('Physical', Activity)
+import custom_types as types
+import fluents
 
-difficulty_lvl = Fluent('difficulty_lvl', IntType(), d=Difficulty)
-can_do_activity = Fluent('CanDoActivity', BOOL, activity=Activity)
+get_environment().credits_stream = None
 
-tutorial_action = InstantaneousAction('tutorial_video', activity=Activity, d=Difficulty)
-# parameters
-activity = tutorial_action.parameter('activity')
-difficulty = tutorial_action.parameter('d')
-# preconditions
-tutorial_action.add_precondition(Not(can_do_activity(activity)))
-# effects
-tutorial_action.add_effect(can_do_activity(activity), True)
-tutorial_action.add_increase_effect(difficulty_lvl(difficulty), 1)
+def problem():
+    tutorial_action = InstantaneousAction('tutorial_video', activity=types.Activity, d=types.Difficulty)
+    # parameters
+    activity = tutorial_action.parameter('activity')
+    difficulty = tutorial_action.parameter('d')
+    # preconditions
+    tutorial_action.add_precondition(Not(fluents.can_do_activity(activity)))
+    # effects
+    tutorial_action.add_effect(fluents.can_do_activity(activity), True)
+    tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
+
+    activities = [{'name': 'running', 'score': 3}, {'name': 'walking', 'score': 1}]
+    actions = []
+    for a in activities:
+        actions.append(ActivityClass(a['name'], a['score']))
+    p = Problem('health')
+
+    p.add_fluent(fluents.can_do_activity, default_initial_value=False)
+    p.add_fluent(fluents.difficulty_lvl, default_initial_value=0)
+
+    running_activity = Object('running_act', types.Physical)
+    diff = Object('counter', types.Difficulty)
+
+    p.add_action(tutorial_action)
+    p.add_actions(actions)
+
+    p.add_object(running_activity)
+    p.add_object(diff)
+    p.add_goal(GE(fluents.difficulty_lvl(diff), 3))
+    return p
 
 
-class ActivityClass(InstantaneousAction):
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-        super().__init__(self.name, activity=Activity, d=Difficulty)
-        # parameters
-        act = self.parameter('activity')
-        d = self.parameter('d')
-        # preconditions
-        self.add_precondition(can_do_activity(act))
-        # effects
-        self.add_increase_effect(difficulty_lvl(d), self.score)
+def main():
+    with OneshotPlanner(name='enhsp') as planner:
+        result = planner.solve(problem())
+        plan = result.plan
+        if plan is not None:
+            print(plan)
+        else:
+            print("No plan found.")
 
 
-activities = [{'name': 'running', 'score': 3}, {'name': 'walking', 'score': 1}]
-actions = []
-for a in activities:
-    actions.append(ActivityClass(a['name'], a['score']))
-
-problem = Problem('health')
-
-problem.add_fluent(can_do_activity, default_initial_value=False)
-problem.add_fluent(difficulty_lvl, default_initial_value=0)
-
-running_activity = Object('running_act', Physical)
-diff = Object('counter', Difficulty)
-
-problem.add_action(tutorial_action)
-problem.add_actions(actions)
-
-problem.add_object(running_activity)
-problem.add_object(diff)
-problem.add_goal(GE(difficulty_lvl(diff), 3))
-print(problem)
-
-with OneshotPlanner(name='enhsp') as planner:
-    result = planner.solve(problem)
-    plan = result.plan
-    if plan is not None:
-        print("%s returned:" % planner.name)
-        print(plan)
-    else:
-        print("No plan found.")
+if __name__ == '__main__':
+    main()
