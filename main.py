@@ -1,6 +1,6 @@
 from unified_planning.shortcuts import *
 from activity_class import ActivityClass
-
+from activity_class import gen_activity_from_data
 import custom_types as types
 import fluents
 
@@ -30,17 +30,19 @@ def problem():
     diff = Object('counter', types.Difficulty)
 
     p.add_action(tutorial_action)
-    p.add_actions(actions)
+    p.add_actions(gen_activity_from_data('./data/exampleactivities.csv'))
 
     p.add_object(running_activity)
     p.add_object(diff)
-    p.add_goal(GE(fluents.difficulty_lvl(diff), 3))
+    p.add_goal(Equals(fluents.difficulty_lvl(diff), 3))
+    print(p)
     return p
 
 
 def main():
     with OneshotPlanner(name='enhsp') as planner:
-        result = planner.solve(problem())
+        p = problem()
+        result = planner.solve(p)
         plan = result.plan
         if plan is not None:
             print(plan)
