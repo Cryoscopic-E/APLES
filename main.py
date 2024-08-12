@@ -7,21 +7,9 @@ import fluents
 get_environment().credits_stream = None
 
 def problem():
-    tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
-    # parameters
-    activity_type = tutorial_action.parameter('activity_type')
-    difficulty = tutorial_action.parameter('d')
-    # preconditions
-    tutorial_action.add_precondition(Not(fluents.can_do_activity_type(activity_type)))
-    # effects
-    tutorial_action.add_effect(fluents.can_do_activity_type(activity_type), True)
-    tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
+    tutorial_action = create_tutorial_action()
+    actions = load_actions()
 
-
-    activities = [{'name': 'running', 'score': 1, 'activity_type': 'physical'}, {'name': 'call friend', 'score': 1, 'activity_type':'social'}]
-    actions = []
-    for a in activities:
-        actions.append(ActivityClass(a['name'], a['score'], a['activity_type']))
     p = Problem('health')
 
     p.add_fluent(fluents.can_do_activity_type, default_initial_value=False)
@@ -47,6 +35,24 @@ def problem():
     print(p)
     return p
 
+def load_actions():
+    activities = [{'name': 'running', 'score': 1, 'activity_type': 'physical'}, {'name': 'call friend', 'score': 1, 'activity_type':'social'}]
+    actions = []
+    for a in activities:
+        actions.append(ActivityClass(a['name'], a['score'], a['activity_type']))
+    return actions
+
+def create_tutorial_action():
+    tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
+    # parameters
+    activity_type = tutorial_action.parameter('activity_type')
+    difficulty = tutorial_action.parameter('d')
+    # preconditions
+    tutorial_action.add_precondition(Not(fluents.can_do_activity_type(activity_type)))
+    # effects
+    tutorial_action.add_effect(fluents.can_do_activity_type(activity_type), True)
+    tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
+    return tutorial_action
 
 def main():
     with OneshotPlanner(name='lpg') as planner:
