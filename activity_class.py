@@ -10,6 +10,7 @@ class ActivityClass(InstantaneousAction):
         self.name = name
         self.score = score
         self.activity_type = activity_type
+        self.cost = 0
 
         if self.activity_type == 'physical':
             super().__init__(self.name, d=types.Difficulty, atype=types.Physical)

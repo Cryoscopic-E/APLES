@@ -8,7 +8,6 @@ get_environment().credits_stream = None
 
 def problem():
     tutorial_action = create_tutorial_action()
-    actions = load_actions()
 
     p = Problem('health')
 
@@ -21,9 +20,9 @@ def problem():
     social_act_type = Object('social', types.Social)
 
     diff = Object('counter', types.Difficulty)
-
+    all_actions = gen_activity_from_data('./data/exampleactivities.csv')
     p.add_action(tutorial_action)
-    p.add_actions(gen_activity_from_data('./data/exampleactivities.csv'))
+    p.add_actions(all_actions)
 
     p.add_object(diff)
     p.add_object(physical_act_type)
@@ -35,12 +34,11 @@ def problem():
     print(p)
     return p
 
-def load_actions():
-    activities = [{'name': 'running', 'score': 1, 'activity_type': 'physical'}, {'name': 'call friend', 'score': 1, 'activity_type':'social'}]
-    actions = []
-    for a in activities:
-        actions.append(ActivityClass(a['name'], a['score'], a['activity_type']))
-    return actions
+def update_costs(all_actions):
+    cost_dictionary = {}
+    for a in all_actions:
+        cost_dictionary.update({a: (a.cost + 1)})
+    up.model.metrics.MinimizeActionCosts(cost_dictionary)
 
 def create_tutorial_action():
     tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
@@ -54,12 +52,23 @@ def create_tutorial_action():
     tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
     return tutorial_action
 
+def get_executed_actions(plan):
+    executed_actions = []
+    lines = str(plan).splitlines()
+    for line in lines:
+        line = line.strip()
+        if line and not line.endswith(':'):
+            action_name = line.split('(')[0] 
+            executed_actions.append(action_name)
+    return executed_actions
+
 def main():
     with OneshotPlanner(name='lpg') as planner:
         result = planner.solve(problem())
         plan = result.plan
         if plan is not None:
             print(plan)
+            print(get_executed_actions(plan))
         else:
             print("No plan found.")
 
