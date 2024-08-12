@@ -17,14 +17,16 @@ def problem():
     tutorial_action.add_effect(fluents.can_do_activity(activity), True)
     tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
 
-    activities = [{'name': 'running', 'score': 3}, {'name': 'walking', 'score': 1}]
+    activities = [{'name': 'running', 'score': 1, 'activity_type': 'physical'}, {'name': 'call friend', 'score': 1, 'activity_type':'social'}]
     actions = []
     for a in activities:
-        actions.append(ActivityClass(a['name'], a['score']))
+        actions.append(ActivityClass(a['name'], a['score'], a['activity_type']))
     p = Problem('health')
 
     p.add_fluent(fluents.can_do_activity, default_initial_value=False)
     p.add_fluent(fluents.difficulty_lvl, default_initial_value=0)
+    p.add_fluent(fluents.difficulty_lvl_physical, default_initial_value=0)
+    p.add_fluent(fluents.difficulty_lvl_social, default_initial_value=0)
 
     running_activity = Object('running_act', types.Physical)
     diff = Object('counter', types.Difficulty)
@@ -34,12 +36,16 @@ def problem():
 
     p.add_object(running_activity)
     p.add_object(diff)
-    p.add_goal(GE(fluents.difficulty_lvl(diff), 3))
+    
+    p.add_goal(Equals(fluents.difficulty_lvl_physical(diff), 3))
+    p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
+
+    print(p)
     return p
 
 
 def main():
-    with OneshotPlanner(name='enhsp') as planner:
+    with OneshotPlanner(name='lpg') as planner:
         result = planner.solve(problem())
         plan = result.plan
         if plan is not None:

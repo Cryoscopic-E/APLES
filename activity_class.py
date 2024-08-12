@@ -4,9 +4,10 @@ import fluents
 
 
 class ActivityClass(InstantaneousAction):
-    def __init__(self, name, score):
+    def __init__(self, name, score, activity_type):
         self.name = name
         self.score = score
+        self.activity_type = activity_type
         super().__init__(self.name, activity=types.Activity, d=types.Difficulty)
         # parameters
         act = self.parameter('activity')
@@ -14,4 +15,8 @@ class ActivityClass(InstantaneousAction):
         # preconditions
         self.add_precondition(fluents.can_do_activity(act))
         # effects
-        self.add_increase_effect(fluents.difficulty_lvl(d), self.score)
+        if(self.activity_type == 'physical'):
+            self.add_increase_effect(fluents.difficulty_lvl_physical(d), self.score)
+        else:
+            self.add_increase_effect(fluents.difficulty_lvl_social(d), self.score)
+
