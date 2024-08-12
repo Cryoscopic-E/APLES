@@ -8,12 +8,19 @@ class ActivityClass(InstantaneousAction):
         self.name = name
         self.score = score
         self.activity_type = activity_type
-        super().__init__(self.name, activity=types.Activity, d=types.Difficulty)
+
+        if self.activity_type == 'physical':
+            super().__init__(self.name, d=types.Difficulty, atype=types.Physical)
+        elif self.activity_type == 'social':
+            super().__init__(self.name, d=types.Difficulty, atype=types.Social)
+        else:
+            super().__init__(self.name, d=types.Difficulty, atype=types.General)
+
         # parameters
-        act = self.parameter('activity')
         d = self.parameter('d')
+        atype = self.parameter('atype')
         # preconditions
-        self.add_precondition(fluents.can_do_activity(act))
+        self.add_precondition(fluents.can_do_activity_type(atype))
         # effects
         if(self.activity_type == 'physical'):
             self.add_increase_effect(fluents.difficulty_lvl_physical(d), self.score)
