@@ -3,10 +3,10 @@ from activity_class import ActivityClass
 from activity_class import gen_activity_from_data
 import custom_types as types
 import fluents
-
+import pandas as pd
 get_environment().credits_stream = None
 
-def problem():
+def problem(all_actions):
     tutorial_action = create_tutorial_action()
 
     p = Problem('health')
@@ -20,10 +20,9 @@ def problem():
     social_act_type = Object('social', types.Social)
 
     diff = Object('counter', types.Difficulty)
-    all_actions = gen_activity_from_data('./data/exampleactivities.csv')
     p.add_action(tutorial_action)
     p.add_actions(all_actions)
-
+    
     p.add_object(diff)
     p.add_object(physical_act_type)
     p.add_object(social_act_type)
@@ -31,13 +30,24 @@ def problem():
     p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 3))
     p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
 
-    print(p)
+    # print(p)
     return p
 
-def update_costs(all_actions):
+def update_costs(executed_actions):
+    all_actions = gen_activity_from_data('./data/exampleactivities.csv')
     cost_dictionary = {}
+    if len(executed_actions) > 0:
+        df = pd.read_csv('data/exampleactivities.csv')
+        for a in all_actions:
+            for ea in executed_actions:
+                if a.name == ea:
+                    cost_dictionary.update({a: (a.cost + 1)})
+                    df.loc[df['Activities'] == a.name, 'CurrentCost'] = df.loc[df['Activities'] == a.name, 'CurrentCost'] + df.loc[df['Activities'] == a.name, 'CostIncrease']
+        df.to_csv('data/exampleactivities.csv', index=False)
+
+    df = pd.read_csv('data/exampleactivities.csv')
     for a in all_actions:
-        cost_dictionary.update({a: (a.cost + 1)})
+        cost_dictionary.update({ a: a.cost})
     up.model.metrics.MinimizeActionCosts(cost_dictionary)
 
 def create_tutorial_action():
@@ -64,11 +74,13 @@ def get_executed_actions(plan):
 
 def main():
     with OneshotPlanner(name='lpg') as planner:
-        result = planner.solve(problem())
+        update_costs([])
+        all_actions = gen_activity_from_data('./data/exampleactivities.csv')
+        result = planner.solve(problem(all_actions))
         plan = result.plan
         if plan is not None:
             print(plan)
-            print(get_executed_actions(plan))
+            update_costs(get_executed_actions(plan))
         else:
             print("No plan found.")
 

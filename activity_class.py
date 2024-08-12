@@ -39,13 +39,14 @@ def gen_activity_from_data(data_path):
         reader = csv.reader(f)
         reader.__next__()
         for row in reader:
-            # replace spaces with underscores
-            row[0] = row[0].replace(' ', '_')
-            # remove all non-alphanumeric characters
-            row[0] = ''.join(e for e in row[0] if e.isalnum())
+            # # replace spaces with underscores
+            # row[0] = row[0].replace(' ', '_')
+            # # remove all non-alphanumeric characters
+            # row[0] = ''.join(e for e in row[0] if e.isalnum() or e =='_' or e=='-' or '/')
             # don't allow duplicate activities
             if row[0] in [a.name for a in activities]:
                 continue
 
             activities.append(ActivityClass(row[0], int(row[1]), row[2]))
+
     return activities
