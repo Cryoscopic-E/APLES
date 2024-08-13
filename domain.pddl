@@ -13,13 +13,13 @@
  (:action put_on_your_walking_shoes_and_take_a_picture_of_them_
   :parameters ( ?d - difficulty ?atype - physical_0)
   :precondition (and (candoactivitytype ?atype))
-  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 4)))
+  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 46)))
  (:action take_a_15_minute_walk_without_stopping_
   :parameters ( ?d - difficulty ?atype - physical_0)
   :precondition (and (candoactivitytype ?atype))
-  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 1)))
+  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 14)))
  (:action run_500_km_
   :parameters ( ?d - difficulty ?atype - physical_0)
   :precondition (and (candoactivitytype ?atype))
-  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 2)))
+  :effect (and (increase (difficulty_lvl_physical ?d) 2) (increase (total-cost) 44)))
 )

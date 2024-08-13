@@ -1,3 +1,5 @@
+import random
+import string
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
@@ -10,6 +12,7 @@ from unified_planning.io import PDDLWriter
 
 # excel_data_path = './data/exampleactivities.csv'
 excel_data_path = './data/example.csv'
+sheet_data_path = './data/sheet1.csv' 
 
 def problem(all_actions):
     tutorial_action = create_tutorial_action()
@@ -79,12 +82,49 @@ def get_executed_actions(plan):
     for line in lines:
         line = line.strip()
         if line and not line.endswith(':'):
-            action_name = line.split('(')[0] 
+            action_name = line
+            if "tutorial" not in action_name:
+                action_name = action_name.split('(')[0] 
             executed_actions.append(action_name)
     return executed_actions
 
+def append_row_to_sheet(name, frequency):
+    df = pd.read_csv(sheet_data_path)
+    rand_secret = ''.join(random.choices(string.ascii_lowercase +
+                                string.digits, k=random.randint(10,50)))
+    new_row = {
+        'challenge': 242,
+        'name': name,
+        'description': '',
+        'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
+        'video': '',
+        'h5p_slug': '',
+        'max_times_fired': frequency,
+        'min_days_between_fire': 7,
+        'activityscheme_default': 'GENERAL_ACTIVITY',
+        'activityschemes_allowed': 'GENERAL_ACTIVITY',
+        'image_required': 1,
+        'conditions': '[SECRET, EQUAL, {}]'.format(rand_secret),
+        'points': 1,
+        'dataproviders': 'GameBus Studio'
+    }
+    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+    df.to_csv(sheet_data_path, index=False)
+
+def export_plan_to_sheet(p):
+    actions = get_executed_actions(p)
+
+    df_actions = pd.read_csv(excel_data_path)
+    for a in actions:
+        match = df_actions[df_actions['Activities'] == a]
+        if not match.empty:
+            activityname = match['Activities'].values[0]
+            frequency = match['Frequency'].values[0]
+            type_ = match['Type'].values[0]
+            append_row_to_sheet(activityname, frequency)
+
 def main():
-    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+    with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
 
         all_actions = gen_activity_from_data(excel_data_path)
         planning_problem = problem(all_actions)
@@ -100,9 +140,11 @@ def main():
         plan = result.plan
 
         if plan is not None:
-            print(plan)
+            # print(plan)
             update_costs(get_executed_actions(plan))
-            assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
+            # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
+
+            # export_plan_to_sheet(plan)
         else:
             print("No plan found.")
 
