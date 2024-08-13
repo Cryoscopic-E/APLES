@@ -41,8 +41,8 @@ def gen_activity_from_data(data_path):
         for row in reader:
             # replace spaces with underscores
             row[0] = row[0].replace(' ', '_')
-            # remove all non-alphanumeric characters
-            row[0] = ''.join(e for e in row[0] if e.isalnum())
+            # remove all non-alphanumeric characters except underscores
+            row[0] = ''.join(e for e in row[0] if e.isalnum() or e == '_')
             # don't allow duplicate activities
             if row[0] in [a.name for a in activities]:
                 continue

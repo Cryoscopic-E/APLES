@@ -3,8 +3,10 @@ from activity_class import ActivityClass
 from activity_class import gen_activity_from_data
 import custom_types as types
 import fluents
+from plan_manager import PlanManager
 
 get_environment().credits_stream = None
+
 
 def problem():
     tutorial_action = create_tutorial_action()
@@ -31,14 +33,16 @@ def problem():
     p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 3))
     p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
 
-    print(p)
+    pm = PlanManager(p)
     return p
+
 
 def update_costs(all_actions):
     cost_dictionary = {}
     for a in all_actions:
         cost_dictionary.update({a: (a.cost + 1)})
     up.model.metrics.MinimizeActionCosts(cost_dictionary)
+
 
 def create_tutorial_action():
     tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
@@ -52,18 +56,20 @@ def create_tutorial_action():
     tutorial_action.add_increase_effect(fluents.difficulty_lvl(difficulty), 1)
     return tutorial_action
 
+
 def get_executed_actions(plan):
     executed_actions = []
     lines = str(plan).splitlines()
     for line in lines:
         line = line.strip()
         if line and not line.endswith(':'):
-            action_name = line.split('(')[0] 
+            action_name = line.split('(')[0]
             executed_actions.append(action_name)
     return executed_actions
 
+
 def main():
-    with OneshotPlanner(name='lpg') as planner:
+    with OneshotPlanner(name='enhsp') as planner:
         result = planner.solve(problem())
         plan = result.plan
         if plan is not None:
