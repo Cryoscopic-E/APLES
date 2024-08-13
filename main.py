@@ -13,6 +13,7 @@ from unified_planning.io import PDDLWriter
 # excel_data_path = './data/exampleactivities.csv'
 excel_data_path = './data/example.csv'
 sheet_data_path = './data/sheet1.csv' 
+level_structure_path = './data/level_structure.csv'
 
 def fluents_actions_cost(all_actions):
     fluents = []
@@ -23,7 +24,7 @@ def fluents_actions_cost(all_actions):
     return fluents
 
 
-def problem(all_actions):
+def problem(all_actions, physical = 0, social =0, cognitive =0):
     tutorial_action = create_tutorial_action()
 
     p = Problem('health')
@@ -55,9 +56,9 @@ def problem(all_actions):
     p.add_object(social_act_type)
     p.add_object(cognitive_act_type)
 
-    p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 4))
-    p.add_goal(GE(fluents.difficulty_lvl_social(diff), 5))
-    p.add_goal(GE(fluents.difficulty_lvl_cognitive(diff), 5))
+    p.add_goal(GE(fluents.difficulty_lvl_physical(diff), physical))
+    p.add_goal(GE(fluents.difficulty_lvl_social(diff), social))
+    p.add_goal(GE(fluents.difficulty_lvl_cognitive(diff), cognitive))
 
     # print(p)
     return p
@@ -144,12 +145,12 @@ def export_plan_to_sheet(p):
             type_ = match['Type'].values[0]
             append_row_to_sheet(activityname, frequency)
 
-def main():
+def execute_planner(physical, social, cognitive):
     with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
-
         all_actions = gen_activity_from_data(excel_data_path)
-        planning_problem = problem(all_actions)
+        planning_problem = problem(all_actions, physical, social, cognitive)
         planning_problem = update_costs([], planning_problem)
+
         # writer = PDDLWriter(planning_problem)
         # writer.write_domain('./domain.pddl')
         # writer.write_problem('./problem.pddl')
@@ -166,6 +167,10 @@ def main():
         else:
             print("No plan found.")
 
+def main():
+    levels = pd.read_csv(level_structure_path)
+    for index, level in levels.iterrows():
+        execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
 
 if __name__ == '__main__':
     main()
