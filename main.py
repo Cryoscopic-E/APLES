@@ -11,6 +11,15 @@ from unified_planning.io import PDDLWriter
 # excel_data_path = './data/exampleactivities.csv'
 excel_data_path = './data/example.csv'
 
+def fluents_actions_cost(all_actions):
+    fluents = []
+    for a in all_actions:
+        # replace spaces with underscores
+        a = a.replace(' ', '_')
+        fluents.append(Fluent('cost_' + a, IntType()))
+    return fluents
+
+
 def problem(all_actions):
     tutorial_action = create_tutorial_action()
 
@@ -20,6 +29,14 @@ def problem(all_actions):
     p.add_fluent(fluents.difficulty_lvl, default_initial_value=0)
     p.add_fluent(fluents.difficulty_lvl_physical, default_initial_value=0)
     p.add_fluent(fluents.difficulty_lvl_social, default_initial_value=0)
+
+    # get list of all actions names
+    all_actions_names = [a.name for a in all_actions]
+
+    f = fluents_actions_cost(all_actions_names)
+    for fl in f:
+        p.add_fluent(fl, default_initial_value=0)
+
 
     physical_act_type = Object('physical', types.Physical)
     social_act_type = Object('social', types.Social)
@@ -84,21 +101,18 @@ def get_executed_actions(plan):
     return executed_actions
 
 def main():
-    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+    with OneshotPlanner(name='enhsp-opt', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
 
         all_actions = gen_activity_from_data(excel_data_path)
         planning_problem = problem(all_actions)
         planning_problem = update_costs([], planning_problem)
-        print(planning_problem)
-        writer = PDDLWriter(planning_problem)
-        writer.write_domain('./domain.pddl')
-        writer.write_problem('./problem.pddl')
-
-
+        # writer = PDDLWriter(planning_problem)
+        # writer.write_domain('./domain.pddl')
+        # writer.write_problem('./problem.pddl')
 
         result = planner.solve(planning_problem)
         plan = result.plan
-
+        print(planning_problem)
         if plan is not None:
             print(plan)
             update_costs(get_executed_actions(plan))
