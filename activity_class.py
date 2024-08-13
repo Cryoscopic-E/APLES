@@ -16,6 +16,8 @@ class ActivityClass(InstantaneousAction):
             super().__init__(self.name, d=types.Difficulty, atype=types.Physical)
         elif self.activity_type == 'social':
             super().__init__(self.name, d=types.Difficulty, atype=types.Social)
+        elif self.activity_type == 'cognitive':
+            super().__init__(self.name, d=types.Difficulty, atype=types.Cognitive)
         else:
             super().__init__(self.name, d=types.Difficulty, atype=types.General)
 
@@ -27,8 +29,12 @@ class ActivityClass(InstantaneousAction):
         # effects
         if(self.activity_type == 'physical'):
             self.add_increase_effect(fluents.difficulty_lvl_physical(d), self.score)
-        else:
+        elif (self.activity_type == 'social'):
             self.add_increase_effect(fluents.difficulty_lvl_social(d), self.score)
+        elif (self.activity_type == 'cognitive'):
+            self.add_increase_effect(fluents.difficulty_lvl_cognitive(d), self.score)
+        else:
+            self.add_increase_effect(fluents.difficulty_lvl(d), self.score)
 
 
 

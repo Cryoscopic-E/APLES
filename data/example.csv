@@ -1,4 +1,9 @@
 Activities,METScore,Type,Frequency,CurrentCost,CostIncrease
-Put on your walking shoes and take a picture of them.,2,physical,1,17,2
-Take a 15-minute walk without stopping.,2,physical,5,15,1
-Run 500 km.,2,physical,5,13,3
+Put on your walking shoes and take a picture of them.,2,physical,1,21,2
+Take a 15-minute walk without stopping.,2,physical,5,20,1
+Run 500 km.,2,physical,5,22,3
+Call a friend,1,social,2,24,1
+Go to a social event,2,social,1,15,1
+Engage with others,4,social,1,4,1
+Do a 5 min yoga session,2,cognitive,1,4,1
+Play a boardgame,4,cognitive,1,4,1

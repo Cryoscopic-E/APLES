@@ -32,6 +32,7 @@ def problem(all_actions):
     p.add_fluent(fluents.difficulty_lvl, default_initial_value=0)
     p.add_fluent(fluents.difficulty_lvl_physical, default_initial_value=0)
     p.add_fluent(fluents.difficulty_lvl_social, default_initial_value=0)
+    p.add_fluent(fluents.difficulty_lvl_cognitive, default_initial_value=0)
 
     # get list of all actions names
     all_actions_names = [a.name for a in all_actions]
@@ -43,6 +44,7 @@ def problem(all_actions):
 
     physical_act_type = Object('physical', types.Physical)
     social_act_type = Object('social', types.Social)
+    cognitive_act_type = Object('cognitive', types.Cognitive)
 
     diff = Object('counter', types.Difficulty)
     p.add_action(tutorial_action)
@@ -51,9 +53,11 @@ def problem(all_actions):
     p.add_object(diff)
     p.add_object(physical_act_type)
     p.add_object(social_act_type)
+    p.add_object(cognitive_act_type)
 
-    p.add_goal(Equals(fluents.difficulty_lvl_physical(diff), 4))
-    # p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
+    p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 4))
+    p.add_goal(GE(fluents.difficulty_lvl_social(diff), 5))
+    p.add_goal(GE(fluents.difficulty_lvl_cognitive(diff), 5))
 
     # print(p)
     return p
@@ -141,7 +145,7 @@ def export_plan_to_sheet(p):
             append_row_to_sheet(activityname, frequency)
 
 def main():
-    with OneshotPlanner(name='enhsp-opt', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+    with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
 
         all_actions = gen_activity_from_data(excel_data_path)
         planning_problem = problem(all_actions)
@@ -152,9 +156,9 @@ def main():
 
         result = planner.solve(planning_problem)
         plan = result.plan
-        print(planning_problem)
+        # print(planning_problem)
         if plan is not None:
-            # print(plan)
+            print(plan)
             update_costs(get_executed_actions(plan))
             # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
 
