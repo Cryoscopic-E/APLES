@@ -6,6 +6,9 @@ import fluents
 import pandas as pd
 get_environment().credits_stream = None
 
+# excel_data_path = './data/exampleactivities.csv'
+excel_data_path = './data/example.csv'
+
 def problem(all_actions):
     tutorial_action = create_tutorial_action()
 
@@ -28,26 +31,28 @@ def problem(all_actions):
     p.add_object(social_act_type)
 
     p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 3))
-    p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
+    # p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
 
     # print(p)
     return p
 
 def update_costs(executed_actions):
-    all_actions = gen_activity_from_data('./data/exampleactivities.csv')
+    all_actions = gen_activity_from_data(excel_data_path)
     cost_dictionary = {}
     if len(executed_actions) > 0:
-        df = pd.read_csv('data/exampleactivities.csv')
+        df = pd.read_csv(excel_data_path)
         for a in all_actions:
             for ea in executed_actions:
                 if a.name == ea:
-                    cost_dictionary.update({a: (a.cost + 1)})
+                    cost_dictionary.update({a: df.loc[df['Activities'] == a.name, 'CurrentCost']})
                     df.loc[df['Activities'] == a.name, 'CurrentCost'] = df.loc[df['Activities'] == a.name, 'CurrentCost'] + df.loc[df['Activities'] == a.name, 'CostIncrease']
-        df.to_csv('data/exampleactivities.csv', index=False)
+        df.to_csv(excel_data_path, index=False)
 
-    df = pd.read_csv('data/exampleactivities.csv')
+    df = pd.read_csv(excel_data_path)
     for a in all_actions:
-        cost_dictionary.update({ a: a.cost})
+        cost_dictionary.update({a: df.loc[df['Activities'] == a.name, 'CurrentCost']})
+
+
     up.model.metrics.MinimizeActionCosts(cost_dictionary)
 
 def create_tutorial_action():
@@ -75,7 +80,7 @@ def get_executed_actions(plan):
 def main():
     with OneshotPlanner(name='lpg') as planner:
         update_costs([])
-        all_actions = gen_activity_from_data('./data/exampleactivities.csv')
+        all_actions = gen_activity_from_data(excel_data_path)
         result = planner.solve(problem(all_actions))
         plan = result.plan
         if plan is not None:
