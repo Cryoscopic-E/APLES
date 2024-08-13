@@ -7,3 +7,5 @@ difficulty_lvl_social = Fluent('difficulty_lvl_social', IntType(), d=types.Diffi
 difficulty_lvl_physical = Fluent('difficulty_lvl_physical', IntType(), d=types.Difficulty)
 
 can_do_activity_type = Fluent('CanDoActivityType', BOOL, activityType=types.Activity)
+
+
