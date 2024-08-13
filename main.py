@@ -1,10 +1,12 @@
 from unified_planning.shortcuts import *
-from activity_class import ActivityClass
+from unified_planning.model.metrics import MinimizeActionCosts
+from unified_planning.engines import PlanGenerationResultStatus
 from activity_class import gen_activity_from_data
 import custom_types as types
 import fluents
 import pandas as pd
 get_environment().credits_stream = None
+from unified_planning.io import PDDLWriter
 
 # excel_data_path = './data/exampleactivities.csv'
 excel_data_path = './data/example.csv'
@@ -30,30 +32,34 @@ def problem(all_actions):
     p.add_object(physical_act_type)
     p.add_object(social_act_type)
 
-    p.add_goal(GE(fluents.difficulty_lvl_physical(diff), 3))
+    p.add_goal(Equals(fluents.difficulty_lvl_physical(diff), 4))
     # p.add_goal(Equals(fluents.difficulty_lvl_social(diff), 5))
 
     # print(p)
     return p
 
-def update_costs(executed_actions):
+def update_costs(executed_actions, problem=None):
     all_actions = gen_activity_from_data(excel_data_path)
+    tutorial_action = create_tutorial_action()
     cost_dictionary = {}
+    cost_dictionary.update({tutorial_action: 0})
     if len(executed_actions) > 0:
         df = pd.read_csv(excel_data_path)
         for a in all_actions:
             for ea in executed_actions:
                 if a.name == ea:
-                    cost_dictionary.update({a: df.loc[df['Activities'] == a.name, 'CurrentCost']})
                     df.loc[df['Activities'] == a.name, 'CurrentCost'] = df.loc[df['Activities'] == a.name, 'CurrentCost'] + df.loc[df['Activities'] == a.name, 'CostIncrease']
+                    cost_dictionary.update({a: int(df.loc[df['Activities'] == a.name, 'CurrentCost'].iloc[0])})
         df.to_csv(excel_data_path, index=False)
 
     df = pd.read_csv(excel_data_path)
     for a in all_actions:
-        cost_dictionary.update({a: df.loc[df['Activities'] == a.name, 'CurrentCost']})
 
+        cost_dictionary.update({a: int(df.loc[df['Activities'] == a.name, 'CurrentCost'].iloc[0])})
 
-    up.model.metrics.MinimizeActionCosts(cost_dictionary)
+    if problem:
+        problem.add_quality_metric(MinimizeActionCosts(cost_dictionary))
+        return problem
 
 def create_tutorial_action():
     tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
@@ -78,14 +84,25 @@ def get_executed_actions(plan):
     return executed_actions
 
 def main():
-    with OneshotPlanner(name='lpg') as planner:
-        update_costs([])
+    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+
         all_actions = gen_activity_from_data(excel_data_path)
-        result = planner.solve(problem(all_actions))
+        planning_problem = problem(all_actions)
+        planning_problem = update_costs([], planning_problem)
+        print(planning_problem)
+        writer = PDDLWriter(planning_problem)
+        writer.write_domain('./domain.pddl')
+        writer.write_problem('./problem.pddl')
+
+
+
+        result = planner.solve(planning_problem)
         plan = result.plan
+
         if plan is not None:
             print(plan)
             update_costs(get_executed_actions(plan))
+            assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
         else:
             print("No plan found.")
 
