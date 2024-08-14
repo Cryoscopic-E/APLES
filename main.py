@@ -14,7 +14,7 @@ from unified_planning.io import PDDLWriter
 excel_data_path = './data/example.csv'
 sheet_data_path = './data/sheet1.csv' 
 level_structure_path = './data/level_structure.csv'
-
+current_level_ = 0
 def fluents_actions_cost(all_actions):
     fluents = []
     for a in all_actions:
@@ -111,11 +111,13 @@ def get_executed_actions(plan):
     return executed_actions
 
 def append_row_to_sheet(name, frequency):
+    global current_level_
+
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
     new_row = {
-        'challenge': 242,
+        'challenge': current_level_,
         'name': name,
         'description': '',
         'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
@@ -134,16 +136,24 @@ def append_row_to_sheet(name, frequency):
     df.to_csv(sheet_data_path, index=False)
 
 def export_plan_to_sheet(p):
+    global current_level_
     actions = get_executed_actions(p)
 
     df_actions = pd.read_csv(excel_data_path)
+
     for a in actions:
         match = df_actions[df_actions['Activities'] == a]
-        if not match.empty:
+
+        if "tutorial" in a:
+            append_row_to_sheet(a, 1)
+            current_level_ = current_level_ + 1
+
+        elif not match.empty:
             activityname = match['Activities'].values[0]
             frequency = match['Frequency'].values[0]
-            type_ = match['Type'].values[0]
             append_row_to_sheet(activityname, frequency)
+    current_level_ = current_level_ + 1
+
 
 def execute_planner(physical, social, cognitive):
     with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
@@ -163,14 +173,16 @@ def execute_planner(physical, social, cognitive):
             update_costs(get_executed_actions(plan))
             # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
 
-            # export_plan_to_sheet(plan)
+            return plan
         else:
             print("No plan found.")
 
 def main():
+    global current_level_
     levels = pd.read_csv(level_structure_path)
     for index, level in levels.iterrows():
-        execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
+        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
+        export_plan_to_sheet(executed_plan)
 
 if __name__ == '__main__':
     main()
