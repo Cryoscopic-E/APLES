@@ -3,7 +3,6 @@ import string
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
-from activity_class import gen_activity_from_data
 import custom_types as types
 import fluents
 import pandas as pd
@@ -182,7 +181,7 @@ def main():
     levels = pd.read_csv(level_structure_path)
     for index, level in levels.iterrows():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
-        export_plan_to_sheet(executed_plan)
+        #export_plan_to_sheet(executed_plan)
 
 if __name__ == '__main__':
     main()
