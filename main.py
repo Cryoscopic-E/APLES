@@ -3,7 +3,7 @@ from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
 from activity_class import gen_activity_from_data
 import custom_types as types
-from exporter import empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, push_to_gamebus
+from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, push_to_gamebus
 import fluents
 import pandas as pd
 get_environment().credits_stream = None
@@ -122,12 +122,14 @@ def main():
     levels = pd.read_csv(level_structure_path)
     empty_sheets()
 
+    current_level_ = 0
     for index, level in levels.iterrows():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
-        export_plan_to_sheet(executed_plan)
+        current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
-    export_to_excel()
-    push_to_gamebus()
+    create_levels()
+    # export_to_excel()
+    # push_to_gamebus()
 
 
 

@@ -1,5 +1,6 @@
 import copy
 import datetime
+import math
 import random
 import string
 from openpyxl import load_workbook
@@ -12,7 +13,6 @@ excel_data_path = './data/example.csv'
 
 sheet_data_path = './data/sheet1.csv' 
 sheet2_data_path = './data/sheet2.csv' 
-current_level_ = 0
 
 def export_to_excel():
     df = pd.read_csv(sheet_data_path)
@@ -70,14 +70,12 @@ def empty_sheets():
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
 
-def append_row_to_sheet(name, frequency):
-    global current_level_
-
+def append_row_to_sheet(index, name, frequency):
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
     new_row = {
-        'challenge': current_level_,
+        'challenge': index,
         'name': '{}'.format(name),
         'description': '',
         'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
@@ -96,13 +94,14 @@ def append_row_to_sheet(name, frequency):
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_csv(sheet_data_path, index=False)
 
-def append_level_to_sheet():
-    global current_level_
+def append_level_to_sheet(index, success_next = -1, failure_next = -1):
+    current_level_ = index
     df = pd.read_csv(sheet2_data_path)
     if current_level_ == 1:
         is_initial_level = 1
     else:
         is_initial_level = 0
+
     new_row = {
         'campaign': 17,
         'id': current_level_,
@@ -116,11 +115,11 @@ def append_level_to_sheet():
         'contender': '',
         'is_initial_level': is_initial_level,
         'target': '10',
-        'success_next': '',
+        'success_next': success_next,
         'evaluate_fail_every_x_minutes': '10080',
-        'failure_next': ''
+        'failure_next': failure_next,
     }
-    # df = pd.DataFrame([new_row])
+
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_csv(sheet2_data_path, index=False)
 
@@ -136,30 +135,62 @@ def get_executed_actions(plan):
             executed_actions.append(action_name)
     return executed_actions
 
-def export_plan_to_sheet(p):
-    global current_level_
+def export_plan_to_sheet(index, p):
     actions = get_executed_actions(p)
     df_actions = pd.read_csv(excel_data_path)
-    add_new_level()
+    local_level = index
+    tut = False
     for a in actions:
         match = df_actions[df_actions['Activities'] == a]
 
         if "tutorial" in a:
-            append_row_to_sheet(a, 1)
-            add_new_level()
-            # current_level_ = current_level_ + 1
+            if tut == False:
+                local_level = local_level + 1
+            append_row_to_sheet(local_level, a, 1)
+            local_level = local_level + 1
+            tut = True
 
         elif not match.empty:
             activityname = match['Activities'].values[0]
             frequency = match['Frequency'].values[0]
-            append_row_to_sheet(activityname, frequency)
-    # current_level_ = current_level_ + 1
-    append_level_to_sheet()
+            append_row_to_sheet(local_level, activityname, frequency)
+            tut = False
 
-def add_new_level():
-    global current_level_
-    current_level_ = current_level_ + 1
-    append_level_to_sheet()
+    return local_level
+
+def create_levels():
+    actions = pd.read_csv(sheet_data_path)
+    levels_list = []
+
+    for a in actions['challenge']:
+        levels_list.append(a)
+    levels_list = list(dict.fromkeys(levels_list))
+
+    for index, l in enumerate(levels_list):
+        if (l + 1) in levels_list:
+            success_next = levels_list[index + 1]
+        else:
+            success_next = -1
+
+        if (l - 1) in levels_list:
+            failure_next = levels_list[index - 1]
+        else:
+            failure_next = -1
+        
+        append_level_to_sheet(l, success_next, failure_next)
+    
+    df = pd.read_csv(sheet2_data_path)
+    if df.iloc[0]["failure_next"] == -1:
+        df.at[0, "failure_next"] = ''
+    if df.iloc[0]["success_next"] == -1:
+        df.at[0, "success_next"] = ''
+
+    if df.iloc[-1]["failure_next"] == -1:
+        df.at[df.index[-1], "failure_next"] = ''
+    if df.iloc[-1]["success_next"] == -1:
+        df.at[df.index[-1], "success_next"] = ''
+
+    df.to_csv(sheet2_data_path, index=False)
 
 def push_to_gamebus():
     writer = pd.ExcelWriter(exported, engine='openpyxl', mode='a', if_sheet_exists='replace')
