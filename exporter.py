@@ -5,6 +5,7 @@ import string
 from openpyxl import load_workbook
 import pandas as pd
 from openpyxl.styles import numbers, Alignment
+import requests
 
 exported = './data/exported1.xlsx'
 excel_data_path = './data/example.csv'
@@ -59,7 +60,6 @@ def export_to_excel():
                 cell.number_format = 'yyyy-mm-dd hh:mm'
             first_s = False
 
-        
 def empty_sheets():
     df = pd.read_csv(sheet_data_path)
     df = pd.DataFrame(df.head(0))
@@ -69,7 +69,6 @@ def empty_sheets():
     df = pd.DataFrame(df.head(0))
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
-
 
 def append_row_to_sheet(name, frequency):
     global current_level_
@@ -161,3 +160,36 @@ def add_new_level():
     global current_level_
     current_level_ = current_level_ + 1
     append_level_to_sheet()
+
+def push_to_gamebus():
+    writer = pd.ExcelWriter(exported, engine='openpyxl', mode='a', if_sheet_exists='replace')
+    writer.close()
+
+    url = "https://campaigns.healthyw8.gamebus.eu/api/campaigns/upload"
+
+    payload = {}
+    files=[
+    ('file',('exported1.xlsx',open('./data/exported1.xlsx','rb'),'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'))
+    ]
+    headers = {
+    'accept': '*/*',
+    'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
+    'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
+    'dnt': '1',
+    'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    'priority': 'u=1, i',
+    'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/campaigns',
+    'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36'
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+    print(response.status_code)
+    print(response.text)
+

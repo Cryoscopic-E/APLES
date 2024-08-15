@@ -3,7 +3,7 @@ from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
 from activity_class import gen_activity_from_data
 import custom_types as types
-from exporter import empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions
+from exporter import empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, push_to_gamebus
 import fluents
 import pandas as pd
 get_environment().credits_stream = None
@@ -127,6 +127,7 @@ def main():
         export_plan_to_sheet(executed_plan)
     
     export_to_excel()
+    push_to_gamebus()
 
 
 
