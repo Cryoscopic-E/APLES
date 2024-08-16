@@ -1,16 +1,17 @@
+import os
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
-from activity_class import gen_activity_from_data
 import custom_types as types
 from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, push_to_gamebus, push_videos_to_gamebus
 import fluents
 import pandas as pd
+
+from planning_problem import PlanningProblem
 get_environment().credits_stream = None
 from unified_planning.io import PDDLWriter
 
-# excel_data_path = './data/exampleactivities.csv'
-excel_data_path = './data/example.csv'
+excel_data_path = './data/exampleactivities.csv'
 
 level_structure_path = './data/level_structure.csv'
 def fluents_actions_cost(all_actions):
@@ -61,29 +62,6 @@ def problem(all_actions, physical = 0, social =0, cognitive =0):
     # print(p)
     return p
 
-def update_costs(executed_actions, problem=None):
-    all_actions = gen_activity_from_data(excel_data_path)
-    tutorial_action = create_tutorial_action()
-    cost_dictionary = {}
-    cost_dictionary.update({tutorial_action: 0})
-    if len(executed_actions) > 0:
-        df = pd.read_csv(excel_data_path)
-        for a in all_actions:
-            for ea in executed_actions:
-                if a.name == ea:
-                    df.loc[df['Activities'] == a.name, 'CurrentCost'] = df.loc[df['Activities'] == a.name, 'CurrentCost'] + df.loc[df['Activities'] == a.name, 'CostIncrease']
-                    cost_dictionary.update({a: int(df.loc[df['Activities'] == a.name, 'CurrentCost'].iloc[0])})
-        df.to_csv(excel_data_path, index=False)
-
-    df = pd.read_csv(excel_data_path)
-    for a in all_actions:
-
-        cost_dictionary.update({a: int(df.loc[df['Activities'] == a.name, 'CurrentCost'].iloc[0])})
-
-    if problem:
-        problem.add_quality_metric(MinimizeActionCosts(cost_dictionary))
-        return problem
-
 def create_tutorial_action():
     tutorial_action = InstantaneousAction('tutorial_video', activity_type=types.Activity, d=types.Difficulty)
     # parameters
@@ -97,23 +75,19 @@ def create_tutorial_action():
     return tutorial_action
 
 def execute_planner(physical, social, cognitive):
+    csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
+
+    # Create the planning problem
+    p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive)
+
+    # print(p)
     with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
-        all_actions = gen_activity_from_data(excel_data_path)
-        planning_problem = problem(all_actions, physical, social, cognitive)
-        planning_problem = update_costs([], planning_problem)
-
-        # writer = PDDLWriter(planning_problem)
-        # writer.write_domain('./domain.pddl')
-        # writer.write_problem('./problem.pddl')
-
-        result = planner.solve(planning_problem)
+        result = planner.solve(p.problem) # type: ignore
         plan = result.plan
-        # print(planning_problem)
+
         if plan is not None:
             print(plan)
-            update_costs(get_executed_actions(plan))
             # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
-
             return plan
         else:
             print("No plan found.")
@@ -128,9 +102,8 @@ def main():
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
     create_levels()
-    export_to_excel()
-    push_to_gamebus()
-
+    # export_to_excel()
+    # push_to_gamebus()
 
 
 if __name__ == '__main__':

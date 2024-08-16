@@ -10,7 +10,7 @@ from openpyxl.styles import numbers, Alignment
 import requests
 
 exported = './data/exported1.xlsx'
-excel_data_path = './data/example.csv'
+excel_data_path = './data/exampleactivities.csv'
 
 sheet_data_path = './data/sheet1.csv' 
 sheet2_data_path = './data/sheet2.csv' 
