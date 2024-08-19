@@ -102,8 +102,8 @@ def main():
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
     create_levels()
-    # export_to_excel()
-    # push_to_gamebus()
+    export_to_excel()
+    push_to_gamebus()
 
 
 if __name__ == '__main__':

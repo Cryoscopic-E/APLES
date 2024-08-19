@@ -1,3 +1,4 @@
+from collections import defaultdict
 import copy
 import datetime
 import json
@@ -71,10 +72,22 @@ def empty_sheets():
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
 
-def append_row_to_sheet(index, name, frequency):
+
+def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''):
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
+    
+    if type(steps) == int:
+        activity_scheme = 'WALK'
+        conditions = '[STEPS, STRICTLY_GREATER, {}]'.format(steps)
+    elif type(steps_aggregate) == int:
+        activity_scheme = 'DAY_AGGREGATE'
+        conditions = '[STEPS_SUM, STRICTLY_GREATER, {}]'.format(steps_aggregate)
+    else:
+        activity_scheme = 'GENERAL_ACTIVITY'
+        conditions = '[SECRET, EQUAL, {}]'.format(rand_secret)
+    
     new_row = {
         'challenge': index,
         'name': '{}'.format(name),
@@ -84,14 +97,13 @@ def append_row_to_sheet(index, name, frequency):
         'h5p_slug': '',
         'max_times_fired': frequency,
         'min_days_between_fire': '7',
-        'activityscheme_default': 'GENERAL_ACTIVITY',
-        'activityschemes_allowed': 'GENERAL_ACTIVITY',
+        'activityscheme_default': '{}'.format(activity_scheme),
+        'activityschemes_allowed': '{}'.format(activity_scheme),
         'image_required': '0',
-        'conditions': '[SECRET, EQUAL, {}]'.format(rand_secret),
+        'conditions': '{}'.format(conditions),
         'points': '1',
         'dataproviders': 'GameBus Studio'
     }
-    # df = pd.DataFrame([new_row])
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_csv(sheet_data_path, index=False)
 
@@ -138,6 +150,7 @@ def get_executed_actions(plan):
 
 def export_plan_to_sheet(index, p):
     actions = get_executed_actions(p)
+    # df_types = defaultdict({'Activities':str, 'METScore':int, 'Type':str, 'Frequency':int, 'CurrentCost':int, 'CostIncrease':int, 'Steps' :int, 'StepsAggregate':int})
     df_actions = pd.read_csv(excel_data_path)
     local_level = index
     tut = False
@@ -152,9 +165,18 @@ def export_plan_to_sheet(index, p):
             tut = True
 
         elif not match.empty:
+            steps = ''
+            steps_aggregate = ''
             activityname = match['Activities'].values[0]
-            frequency = match['Frequency'].values[0]
-            append_row_to_sheet(local_level, activityname, frequency)
+            if not math.isnan(match['Steps'].values[0]):
+                steps = int(match['Steps'].values[0])
+
+            if not math.isnan(match['StepsAggregate'].values[0]):
+                steps_aggregate = int(match['StepsAggregate'].values[0])
+
+            print(steps)
+            print(steps_aggregate)
+            append_row_to_sheet(local_level, activityname, 1, steps, steps_aggregate)
             tut = False
 
     return local_level
