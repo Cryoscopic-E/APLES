@@ -9,12 +9,14 @@ from openpyxl import load_workbook
 import pandas as pd
 from openpyxl.styles import numbers, Alignment
 import requests
+import re
 
 exported = './data/exported1.xlsx'
 excel_data_path = './data/exampleactivities.csv'
 
 sheet_data_path = './data/sheet1.csv' 
 sheet2_data_path = './data/sheet2.csv' 
+video_urls = {}
 
 def export_to_excel():
     df = pd.read_csv(sheet_data_path)
@@ -77,7 +79,9 @@ def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
-    
+    h5p_slug = ''
+    conditions = ''
+
     if type(steps) == int:
         activity_scheme = 'WALK'
         conditions = '[STEPS, STRICTLY_GREATER, {}]'.format(steps)
@@ -86,15 +90,21 @@ def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''
         conditions = '[STEPS_SUM, STRICTLY_GREATER, {}]'.format(steps_aggregate)
     else:
         activity_scheme = 'GENERAL_ACTIVITY'
-        conditions = '[SECRET, EQUAL, {}]'.format(rand_secret)
+        # conditions = '[SECRET, EQUAL, {}]'.format(rand_secret)
     
+    if "tutorial" in name:
+        activity_scheme = 'H5P_GENERAL'
+        h5p_slug = video_urls.get(name)
+        
+    conditions += ', [SECRET, EQUAL, {}]'.format(rand_secret)
+
     new_row = {
         'challenge': index,
         'name': '{}'.format(name),
         'description': '',
         'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
         'video': '',
-        'h5p_slug': '',
+        'h5p_slug': '{}'.format(h5p_slug),
         'max_times_fired': frequency,
         'min_days_between_fire': '7',
         'activityscheme_default': '{}'.format(activity_scheme),
@@ -150,7 +160,7 @@ def get_executed_actions(plan):
 
 def export_plan_to_sheet(index, p):
     actions = get_executed_actions(p)
-    # df_types = defaultdict({'Activities':str, 'METScore':int, 'Type':str, 'Frequency':int, 'CurrentCost':int, 'CostIncrease':int, 'Steps' :int, 'StepsAggregate':int})
+
     df_actions = pd.read_csv(excel_data_path)
     local_level = index
     tut = False
@@ -251,8 +261,6 @@ def push_to_gamebus():
     data = json.loads(response.text)
     campaign_id = data[0]["id"]
     activate_campaign(campaign_id)
-    push_videos_to_gamebus(campaign_id)
-
 
 def push_videos_to_gamebus(campaign_id):
 
@@ -289,31 +297,50 @@ def activate_campaign(campaign_id):
 
     print(response.text)
 
+def parse_video_url(url):
+    parsed_list = json.loads(url)
+    url = None
+    url_pattern = re.compile(r'http[s]?://[^\s\\]+')
+
+    for item in parsed_list:
+        if isinstance(item, str):
+            match = url_pattern.search(item)
+            if match:
+                url = match.group(0)
+                break
+    print(url)
+    return url
+
+
+
+
 def upload_video(campaign_id, video_name, video_path):
-    url = "https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new".format(campaign_id)
-    payload = {'description': '',
-    '__superform_id': 'kmpoz'}
-    files=[
-    ('file',('{}'.format(video_name),open('{}'.format(video_path),'rb'),'application/octet-stream'))
-    ]
-    headers = {
-    'accept': 'application/json',
-    'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
-    'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
-    'dnt': '1',
-    'origin': 'https://campaigns.healthyw8.gamebus.eu',
-    'priority': 'u=1, i',
-    'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new'.format(campaign_id),
-    'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-    'sec-ch-ua-mobile': '?1',
-    'sec-ch-ua-platform': '"Android"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36',
-    'x-sveltekit-action': 'true'
-    }
+    # url = "https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new".format(campaign_id)
+    # payload = {'description': '',
+    # '__superform_id': 'kmpoz'}
+    # files=[
+    # ('file',('{}'.format(video_name),open('{}'.format(video_path),'rb'),'application/octet-stream'))
+    # ]
+    # headers = {
+    # 'accept': 'application/json',
+    # 'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
+    # 'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
+    # 'dnt': '1',
+    # 'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    # 'priority': 'u=1, i',
+    # 'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new'.format(campaign_id),
+    # 'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+    # 'sec-ch-ua-mobile': '?1',
+    # 'sec-ch-ua-platform': '"Android"',
+    # 'sec-fetch-dest': 'empty',
+    # 'sec-fetch-mode': 'cors',
+    # 'sec-fetch-site': 'same-origin',
+    # 'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36',
+    # 'x-sveltekit-action': 'true'
+    # }
 
-    response = requests.request("POST", url, headers=headers, data=payload, files=files)
-
-    print(response.text)
+    # response = requests.request("POST", url, headers=headers, data=payload, files=files)
+    # print(response.text)
+    #TODO: UPDATE THIS
+    temp_video_url = "[{\"form\":1},{\"id\":2,\"valid\":3,\"posted\":3,\"errors\":4,\"data\":5,\"message\":7},\"kmpoz\",true,{},{\"description\":6},\"fdsadf\",\"{ \\\"status\\\": \\\"[UPSERTED]\\\", \\\"url\\\" :\\\"http://localhost:5173/api/media/hello2/a9da6a92-07fb-473f-ac75-0e2579c1c00f.h5p\\\"\"]"
+    video_urls.update({video_name : parse_video_url(temp_video_url)})

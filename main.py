@@ -3,7 +3,7 @@ from unified_planning.shortcuts import *
 from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
 import custom_types as types
-from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, push_to_gamebus, push_videos_to_gamebus
+from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, parse_video_url, push_to_gamebus, push_videos_to_gamebus
 import fluents
 import pandas as pd
 
@@ -101,9 +101,10 @@ def main():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
+    # push_videos_to_gamebus()
     create_levels()
-    export_to_excel()
-    push_to_gamebus()
+    # export_to_excel()
+    # push_to_gamebus()
 
 
 if __name__ == '__main__':
