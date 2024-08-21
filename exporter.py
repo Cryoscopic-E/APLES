@@ -75,7 +75,7 @@ def empty_sheets():
     df.to_csv(sheet2_data_path, index=False)
 
 
-def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''):
+def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_aggregate = ''):
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
@@ -84,19 +84,19 @@ def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''
 
     if type(steps) == int:
         activity_scheme = 'WALK'
-        conditions = '[STEPS, STRICTLY_GREATER, {}]'.format(steps)
+        conditions = '[STEPS, STRICTLY_GREATER, {}],'.format(steps)
     elif type(steps_aggregate) == int:
         activity_scheme = 'DAY_AGGREGATE'
-        conditions = '[STEPS_SUM, STRICTLY_GREATER, {}]'.format(steps_aggregate)
+        conditions = '[STEPS_SUM, STRICTLY_GREATER, {}],'.format(steps_aggregate)
     else:
         activity_scheme = 'GENERAL_ACTIVITY'
-        # conditions = '[SECRET, EQUAL, {}]'.format(rand_secret)
+        # conditions = '[SECRET, EQUAL, {}],'.format(rand_secret)
     
     if "tutorial" in name:
         activity_scheme = 'H5P_GENERAL'
         h5p_slug = video_urls.get(name)
         
-    conditions += ', [SECRET, EQUAL, {}]'.format(rand_secret)
+    conditions += ' [SECRET, EQUAL, {}]'.format(rand_secret)
 
     new_row = {
         'challenge': index,
@@ -111,13 +111,13 @@ def append_row_to_sheet(index, name, frequency, steps = '', steps_aggregate = ''
         'activityschemes_allowed': '{}'.format(activity_scheme),
         'image_required': '0',
         'conditions': '{}'.format(conditions),
-        'points': '1',
+        'points': met_score,
         'dataproviders': 'GameBus Studio'
     }
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_csv(sheet_data_path, index=False)
 
-def append_level_to_sheet(index, success_next = -1, failure_next = -1):
+def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
     current_level_ = index
     df = pd.read_csv(sheet2_data_path)
     if current_level_ == 1:
@@ -137,7 +137,7 @@ def append_level_to_sheet(index, success_next = -1, failure_next = -1):
         'end': datetime.datetime.strptime('2024-10-01 6:00', '%Y-%m-%d %H:%M'),
         'contender': '',
         'is_initial_level': is_initial_level,
-        'target': '10',
+        'target': target,
         'success_next': success_next,
         'evaluate_fail_every_x_minutes': '10080',
         'failure_next': failure_next
@@ -170,7 +170,7 @@ def export_plan_to_sheet(index, p):
         if "tutorial" in a:
             if tut == False:
                 local_level = local_level + 1
-            append_row_to_sheet(local_level, a, 1)
+            append_row_to_sheet(local_level, a, 1, 1)
             local_level = local_level + 1
             tut = True
 
@@ -184,9 +184,9 @@ def export_plan_to_sheet(index, p):
             if not math.isnan(match['StepsAggregate'].values[0]):
                 steps_aggregate = int(match['StepsAggregate'].values[0])
 
-            print(steps)
-            print(steps_aggregate)
-            append_row_to_sheet(local_level, activityname, 1, steps, steps_aggregate)
+            # print(steps)
+            # print(steps_aggregate)
+            append_row_to_sheet(local_level, activityname, match['METScore'].values[0], 1, steps, steps_aggregate)
             tut = False
 
     return local_level
@@ -199,7 +199,14 @@ def create_levels():
         levels_list.append(a)
     levels_list = list(dict.fromkeys(levels_list))
 
+
     for index, l in enumerate(levels_list):
+        current_target = 0
+        #Determine the target points of the level
+        for i, a in actions.iterrows():
+            if a['challenge'] == l :
+                current_target += a['points']
+
         if (l + 1) in levels_list:
             success_next = levels_list[index + 1]
         else:
@@ -210,7 +217,7 @@ def create_levels():
         else:
             failure_next = -1
         
-        append_level_to_sheet(l, success_next, failure_next)
+        append_level_to_sheet(l, current_target, success_next, failure_next)
     
     df = pd.read_csv(sheet2_data_path)
     if df.iloc[0]["failure_next"] == -1:
