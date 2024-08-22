@@ -16,7 +16,11 @@ excel_data_path = './data/exampleactivities.csv'
 
 sheet_data_path = './data/sheet1.csv' 
 sheet2_data_path = './data/sheet2.csv' 
-video_urls = {}
+video_urls = {
+    'tutorial_video(cognitive_activity)' : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/66972617-5cd5-40e1-8432-ecd99b7dcf10.h5p',
+    'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
+    'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p'
+    }
 
 def export_to_excel():
     df = pd.read_csv(sheet_data_path)
@@ -90,7 +94,6 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
         conditions = '[STEPS_SUM, STRICTLY_GREATER, {}],'.format(steps_aggregate)
     else:
         activity_scheme = 'GENERAL_ACTIVITY'
-        # conditions = '[SECRET, EQUAL, {}],'.format(rand_secret)
     
     if "tutorial" in name:
         activity_scheme = 'H5P_GENERAL'
@@ -269,6 +272,7 @@ def push_to_gamebus():
     campaign_id = data[0]["id"]
     activate_campaign(campaign_id)
 
+#Depricated 
 def push_videos_to_gamebus(campaign_id):
 
     video_name = ['tutorial_video_physical_counter.h5p']
