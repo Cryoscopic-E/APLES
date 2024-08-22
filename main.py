@@ -1,9 +1,10 @@
 import os
+import time
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import MinimizeActionCosts
 from unified_planning.engines import PlanGenerationResultStatus
 import custom_types as types
-from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, parse_video_url, push_to_gamebus, push_videos_to_gamebus
+from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, parse_video_url, push_to_gamebus, push_videos_to_gamebus, reset_fluents_csv
 from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
 import pandas as pd
 
@@ -53,6 +54,7 @@ def main():
     # create_levels()
     # export_to_excel()
     # push_to_gamebus()
+    reset_fluents_csv()
 
 
 if __name__ == '__main__':

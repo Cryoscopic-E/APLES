@@ -13,7 +13,7 @@ import re
 
 exported = './data/exported1.xlsx'
 excel_data_path = './data/exampleactivities.csv'
-
+csv_fluents_path = './data/fluents.csv'
 sheet_data_path = './data/sheet1.csv' 
 sheet2_data_path = './data/sheet2.csv' 
 video_urls = {
@@ -161,9 +161,41 @@ def get_executed_actions(plan):
             executed_actions.append(action_name)
     return executed_actions
 
+def reset_fluents_csv():
+    df = pd.read_csv(csv_fluents_path)
+    for index, row in df.iterrows():
+        df.at[index, 'status'] = False
+    df.to_csv(csv_fluents_path)
+
+def update_fluents_csv(plan):
+    # Load the CSV file into a DataFrame
+    df = pd.read_csv(csv_fluents_path)
+    
+    # Convert the plan to a list of actions
+    plan_string = str(plan).splitlines()
+    
+    # Iterate over each row in the DataFrame
+    for index, row in df.iterrows():
+        object_type_name = row['name']
+        object_type_status = row['status']
+        
+        # Iterate over each action in the plan
+        for action in plan_string:
+            match = re.search(r'\(([^)]+)\)', action)
+            if match:
+                action_type = match.group(1)
+                # Update the DataFrame directly
+                if object_type_name == action_type and object_type_status == False:
+                    df.at[index, 'status'] = True
+
+    # Save the updated DataFrame back to the CSV file
+    df.to_csv(csv_fluents_path, index=False)
+        
+
+
 def export_plan_to_sheet(index, p):
     actions = get_executed_actions(p)
-
+    update_fluents_csv(p)
     df_actions = pd.read_csv(excel_data_path)
     local_level = index
     tut = False
