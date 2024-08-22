@@ -51,9 +51,9 @@ def main():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
-    # create_levels()
-    # export_to_excel()
-    # push_to_gamebus()
+    create_levels()
+    export_to_excel()
+    push_to_gamebus()
     reset_fluents_csv()
 
 
