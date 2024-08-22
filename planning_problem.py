@@ -47,6 +47,7 @@ class PlanningProblem:
         self._init_activity_actions()
         self._set_metrics()
 
+        self.all_objects = []
         self._init_objects()
 
         self._init_goal(p=physical_score, s=social_score,  c=cognitive_score) 
@@ -185,7 +186,10 @@ class PlanningProblem:
         social_act_type = Object('social_activity', self.all_types['social'])
         cognitive_act_type = Object('cognitive_activity', self.all_types['cognitive'])
 
-        
+        self.all_objects.append(physical_act_type)
+        self.all_objects.append(social_act_type)
+        self.all_objects.append(cognitive_act_type)
+
         self.problem.add_object(physical_act_type)
         self.problem.add_object(social_act_type)
         self.problem.add_object(cognitive_act_type)
@@ -198,29 +202,13 @@ class PlanningProblem:
     def __repr__(self) -> str:
         return str(self.problem)
             
-
-
-
-# def main():
-#     csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
-
-    
-#     # Create the planning problem
-#     p = PlanningProblem(csv=csv_data_path, social_score=10, physical_score=10, cognitive_score=2)
-
-#     print(p)
-#     with OneshotPlanner(name='enhsp-opt', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
-#         result = planner.solve(p.problem) # type: ignore
-
-#         plan = result.plan
-
-#         if plan is not None:
-#             print(plan)
-#             assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
-#             return plan
-#         else:
-#             print("No plan found.")
-    
-
-# if __name__ == '__main__':
-#     main()
+    def update_fluents_init(self, csv_fluents_path):
+        df = pd.read_csv(csv_fluents_path)
+        for index, row in df.iterrows():
+            object_type_name = row['name']
+            object_type_status = row['status']
+            for f in self.problem.fluents:
+                if f.name == 'can_do_activity_type':
+                    for o in self.all_objects:
+                        if o.name == object_type_name:
+                            self.problem.set_initial_value(f(o), object_type_status)
