@@ -140,6 +140,10 @@ def cvsfromwebsite(activities):
 
     return jsonify({'status': 'success', 'message': 'CSV files saved successfully'})
 
+@app.route('/test_planning_server', methods=['GET'])
+def test_planning_server():
+    return "it is running"
+
 @app.route('/create_level', methods=['POST'])
 def create_level():
     print("create level")
