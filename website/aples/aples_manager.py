@@ -15,9 +15,11 @@ csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactiviti
 csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
 level_structure_path = os.path.join(os.path.dirname(__file__), 'data', 'level_structure.csv')
 
-def create_level_structure(lvl_path, csv_path):
+def create_level_structure(_lvl_path, csv_path):
+    global csv_data_path
+    global level_structure_path
     csv_data_path = csv_path
-    level_structure_path = lvl_path
+    level_structure_path = _lvl_path
     levels = pd.read_csv(level_structure_path)
     empty_sheets()
 

@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    
     <div class="container mt-5">
         <h1 class="mb-4">External Activity Manager</h1>
 
@@ -25,9 +26,9 @@
                 <div class="col-md-2 mb-3">
                     <label for="Type" class="form-label">Type</label>
                     <select class="form-select" id="Type" name="Type" required>
-                        <option value="Physical">Physical</option>
-                        <option value="Cognitive">Cognitive</option>
-                        <option value="Social">Social</option>
+                        <option value="physical">physical</option>
+                        <option value="cognitive">cognitive</option>
+                        <option value="social">social</option>
                     </select>
                 </div>
                 <div class="col-md-2 mb-3">
@@ -90,9 +91,9 @@
                 </div>
                 <div class="col-md-4">
                     <select id="difficultyType" class="form-select" required>
-                        <option value="Physical">Physical</option>
-                        <option value="Cognitive">Cognitive</option>
-                        <option value="Social">Social</option>
+                        <option value="physical">physical</option>
+                        <option value="cognitive">cognitive</option>
+                        <option value="social">social</option>
                     </select>
                 </div>
             </div>
@@ -132,9 +133,9 @@
                         <div class="mb-3">
                             <label for="updateType" class="form-label">Type</label>
                             <select class="form-select" id="updateType" name="Type" required>
-                                <option value="Physical">Physical</option>
-                                <option value="Cognitive">Cognitive</option>
-                                <option value="Social">Social</option>
+                                <option value="physical">physical</option>
+                                <option value="cognitive">cognitive</option>
+                                <option value="social">social</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -319,11 +320,11 @@
 
             if (!isNaN(level) && !isNaN(difficulty)) {
                 let dataset;
-                if (type === 'Physical') {
+                if (type === 'physical') {
                     dataset = combinedChart.data.datasets[0];
-                } else if (type === 'Cognitive') {
+                } else if (type === 'cognitive') {
                     dataset = combinedChart.data.datasets[1];
-                } else if (type === 'Social') {
+                } else if (type === 'social') {
                     dataset = combinedChart.data.datasets[2];
                 }
 
@@ -384,21 +385,21 @@
                 labels: [], // Levels (x-axis)
                 datasets: [
                     {
-                        label: 'Physical Difficulty',
+                        label: 'physical Difficulty',
                         data: [],
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
                         fill: false
                     },
                     {
-                        label: 'Cognitive Difficulty',
+                        label: 'cognitive Difficulty',
                         data: [],
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
                         fill: false
                     },
                     {
-                        label: 'Social Difficulty',
+                        label: 'social Difficulty',
                         data: [],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         borderWidth: 2,

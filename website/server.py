@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask_cors import CORS
 import csv
 import os
-import requests
-
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 app.secret_key = 'supersecretkey'  # Needed for flashing messages
 
 # Define the path to the data folder and the CSV file
@@ -55,63 +55,7 @@ def validate_activity(data):
             return False
     return True
 
-@app.route('/')
-def index():
-    activities = read_csv()
-    return render_template('index.html', activities=activities)
-
-@app.route('/add', methods=['POST'])
-def add_activity():
-    new_activity = {
-        'Activities': request.form['Activities'],
-        'METScore': request.form['METScore'],
-        'Type': request.form['Type'],
-        'Frequency': request.form['Frequency'],
-        'CurrentCost': request.form['CurrentCost'],
-        'CostIncrease': request.form['CostIncrease'],
-        'Steps': request.form['Steps'],
-        'StepsAggregate': request.form['StepsAggregate']
-    }
-
-    if validate_activity(new_activity):
-        activities = read_csv()
-        activities.append(new_activity)
-        write_csv(activities)
-        flash('Activity added successfully!', 'success')
-    return redirect(url_for('index'))
-
-@app.route('/update/<int:index>', methods=['POST'])
-def update_activity(index):
-    activities = read_csv()
-    if index < len(activities):
-        updated_activity = {
-            'Activities': request.form['Activities'],
-            'METScore': request.form['METScore'],
-            'Type': request.form['Type'],
-            'Frequency': request.form['Frequency'],
-            'CurrentCost': request.form['CurrentCost'],
-            'CostIncrease': request.form['CostIncrease'],
-            'Steps': request.form['Steps'] if request.form['Type'] == 'Physical' else '',
-            'StepsAggregate': request.form['StepsAggregate'] if request.form['Type'] == 'Physical' else ''
-        }
-
-        if validate_activity(updated_activity):
-            activities[index] = updated_activity
-            write_csv(activities)
-            flash('Activity updated successfully!', 'success')
-    return redirect(url_for('index'))
-
-@app.route('/delete/<int:index>', methods=['POST'])
-def delete_activity(index):
-    activities = read_csv()
-    if index < len(activities):
-        activities.pop(index)
-        write_csv(activities)
-        flash('Activity deleted successfully!', 'success')
-    return redirect(url_for('index'))
-
-
-def cvsfromwebsite(activities):
+def csvfromwebsite(activities):
     print("here")
     with open(CSV_FILE, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -140,21 +84,82 @@ def cvsfromwebsite(activities):
 
     return jsonify({'status': 'success', 'message': 'CSV files saved successfully'})
 
-@app.route('/test_planning_server', methods=['GET'])
-def test_planning_server():
-    return "it is running"
+# New API endpoint to serve activities data as JSON
+@app.route('/api/activities', methods=['GET'])
+def get_activities():
+    activities = read_csv()
+    return jsonify(activities)
+
+@app.route('/')
+def index():
+    # The activities are no longer passed directly to the template
+    return render_template('index.html')
+
+@app.route('/add', methods=['POST'])
+def add_activity():
+    new_activity = {
+        'Activities': request.form.get('Activities', ''),
+        'METScore': request.form.get('METScore', 0),
+        'Type': request.form.get('Type', ''),
+        'Frequency': request.form.get('Frequency', ''),
+        'CurrentCost': request.form.get('CurrentCost', 0.0),
+        'CostIncrease': request.form.get('CostIncrease', 0.0),
+        'Steps': request.form.get('Steps', '') if request.form.get('Type') == 'Physical' else '',
+        'StepsAggregate': request.form.get('StepsAggregate', '') if request.form.get('Type') == 'Physical' else ''
+    }
+
+    if validate_activity(new_activity):
+        activities = read_csv()
+        activities.append(new_activity)
+        write_csv(activities)
+        message = 'Activity added successfully!'
+        return jsonify({'status': 'success', 'message': message})
+    
+    message = 'Validation failed!'
+    return jsonify({'status': 'error', 'message': message}), 400
+
+@app.route('/update/<int:index>', methods=['POST'])
+def update_activity(index):
+    activities = read_csv()
+    if index < len(activities):
+        updated_activity = {
+            'Activities': request.form.get('Activities', ''),
+            'METScore': request.form.get('METScore', 0),
+            'Type': request.form.get('Type', ''),
+            'Frequency': request.form.get('Frequency', ''),
+            'CurrentCost': request.form.get('CurrentCost', 0.0),
+            'CostIncrease': request.form.get('CostIncrease', 0.0),
+            'Steps': request.form.get('Steps', '') if request.form.get('Type') == 'Physical' else '',
+            'StepsAggregate': request.form.get('StepsAggregate', '') if request.form.get('Type') == 'Physical' else ''
+        }
+
+        if validate_activity(updated_activity):
+            activities[index] = updated_activity
+            write_csv(activities)
+            message = 'Activity updated successfully!'
+            return jsonify({'status': 'success', 'message': message})
+    
+    message = 'Failed to update activity!'
+    return jsonify({'status': 'error', 'message': message}), 400
+
+@app.route('/delete/<int:index>', methods=['POST'])
+def delete_activity(index):
+    activities = read_csv()
+    if index < len(activities):
+        activities.pop(index)
+        write_csv(activities)
+        message = 'Activity deleted successfully!'
+        return jsonify({'status': 'success', 'message': message})
+    
+    message = 'Failed to delete activity!'
+    return jsonify({'status': 'error', 'message': message}), 400
+
 
 @app.route('/create_level', methods=['POST'])
 def create_level():
     print("create level")
-    # Save the activities data
     activities = request.json.get('activities', [])
-    return cvsfromwebsite(activities)
-    # Here you'd normally prepare the data and make a request to the external API.
-    print(activities)
-    # Handle the response as needed
-    flash('Level created successfully!', 'success')
-    return redirect(url_for('index'))
+    return csvfromwebsite(activities)
 
 if __name__ == '__main__':
     initialize_csv()
