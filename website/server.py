@@ -85,7 +85,7 @@ def csvfromwebsite(activities):
     return jsonify({'status': 'success', 'message': 'CSV files saved successfully'})
 
 # New API endpoint to serve activities data as JSON
-@app.route('/api/activities', methods=['GET'])
+@app.route('/activities', methods=['GET'])
 def get_activities():
     activities = read_csv()
     return jsonify(activities)
