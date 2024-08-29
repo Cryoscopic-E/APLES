@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import custom_types as types
 
 from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
 from unified_planning.shortcuts import GE, Not, Equals, Plus
@@ -8,7 +7,7 @@ from unified_planning.shortcuts import GE, Not, Equals, Plus
 from unified_planning.engines import PlanGenerationResultStatus
 
 from unified_planning.model.types import BOOL
-from activity_action import ActivityAction, ActivityType
+from .activity_action import ActivityAction, ActivityType
 
 
 activity_type_mapping = {
