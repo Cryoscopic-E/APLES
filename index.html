@@ -202,7 +202,7 @@
         });
 
         function fetchActivities() {
-            fetch(`${API_URL}/api/activities`)
+            fetch(`${API_URL}/activities`)
                 .then(response => response.json())
                 .then(activities => {
                     const tableBody = document.getElementById('activitiesTableBody');

@@ -4,7 +4,7 @@ import csv
 import os
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+# CORS(app)  # Enable CORS for all routes
 app.secret_key = 'supersecretkey'  # Needed for flashing messages
 
 # Define the path to the data folder and the CSV file
