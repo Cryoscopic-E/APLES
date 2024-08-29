@@ -12,23 +12,29 @@ from planning_problem import PlanningProblem
 get_environment().credits_stream = None
 from unified_planning.io import PDDLWriter
 
-excel_data_path = './data/exampleactivities.csv'
-level_structure_path = './data/level_structure.csv'
-def fluents_actions_cost(all_actions):
-    fluents = []
-    for a in all_actions:
-        # replace spaces with underscores
-        a = a.replace(' ', '_')
-        fluents.append(Fluent('cost_' + a, IntType()))
-    return fluents
+csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
+csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
+level_structure_path = os.path.join(os.path.dirname(__file__), 'data', 'level_structure.csv')
 
+def create_level_structure():
+    levels = pd.read_csv(level_structure_path)
+    empty_sheets()
+
+    current_level_ = 0
+    for index, level in levels.iterrows():
+        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
+        time.sleep(1)
+        # current_level_ = export_plan_to_sheet(current_level_, executed_plan)
+    
+    
+    # create_levels()
+    # export_to_excel()
+    # push_to_gamebus()
 
 def execute_planner(physical, social, cognitive):
-    csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
-    csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
-
     # Create the planning problem
     p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive)
+    print(p.problem)
     p.update_fluents_init(csv_fluents_path)
 
     with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
@@ -43,17 +49,7 @@ def execute_planner(physical, social, cognitive):
             print("No plan found.")
 
 def main():
-    levels = pd.read_csv(level_structure_path)
-    empty_sheets()
-
-    current_level_ = 0
-    for index, level in levels.iterrows():
-        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
-        current_level_ = export_plan_to_sheet(current_level_, executed_plan)
-    
-    create_levels()
-    export_to_excel()
-    push_to_gamebus()
+    create_level_structure()
     reset_fluents_csv()
 
 

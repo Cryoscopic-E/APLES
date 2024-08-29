@@ -1,4 +1,4 @@
-,Unnamed: 0,name,status
-0,0,social_activity,False
-1,1,physical_activity,False
-2,2,cognitive_activity,False
+name,status
+social_activity,False
+physical_activity,False
+cognitive_activity,False

@@ -3,6 +3,7 @@ import copy
 import datetime
 import json
 import math
+import os
 import random
 import string
 from openpyxl import load_workbook
@@ -11,11 +12,13 @@ from openpyxl.styles import numbers, Alignment
 import requests
 import re
 
-exported = './data/exported1.xlsx'
-excel_data_path = './data/exampleactivities.csv'
-csv_fluents_path = './data/fluents.csv'
-sheet_data_path = './data/sheet1.csv' 
-sheet2_data_path = './data/sheet2.csv' 
+exported         = os.path.join(os.path.dirname(__file__), 'data', 'exported1.xlsx')
+excel_data_path  = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
+csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
+sheet_data_path  = os.path.join(os.path.dirname(__file__), 'data', 'sheet1.csv')
+sheet2_data_path = os.path.join(os.path.dirname(__file__), 'data', 'sheet2.csv')
+
+# HARDCODED VIDEO URLS - VIDEOS ARE FOUND IN THE "media-for-ai" CAMPAIGN
 video_urls = {
     'tutorial_video(cognitive_activity)' : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/66972617-5cd5-40e1-8432-ecd99b7dcf10.h5p',
     'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
@@ -77,7 +80,6 @@ def empty_sheets():
     df = pd.DataFrame(df.head(0))
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
-
 
 def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_aggregate = ''):
     df = pd.read_csv(sheet_data_path)
@@ -163,9 +165,9 @@ def get_executed_actions(plan):
 
 def reset_fluents_csv():
     df = pd.read_csv(csv_fluents_path)
-    for index, row in df.iterrows():
-        df.at[index, 'status'] = False
-    df.to_csv(csv_fluents_path)
+    df['status'] = False
+    df.to_csv(csv_fluents_path, index=False)
+
 
 def update_fluents_csv(plan):
     # Load the CSV file into a DataFrame
@@ -190,8 +192,6 @@ def update_fluents_csv(plan):
 
     # Save the updated DataFrame back to the CSV file
     df.to_csv(csv_fluents_path, index=False)
-        
-
 
 def export_plan_to_sheet(index, p):
     actions = get_executed_actions(p)
@@ -304,15 +304,6 @@ def push_to_gamebus():
     campaign_id = data[0]["id"]
     activate_campaign(campaign_id)
 
-#Depricated 
-def push_videos_to_gamebus(campaign_id):
-
-    video_name = ['tutorial_video_physical_counter.h5p']
-    video_path = ['./data/videos/tutorial_video_physical_counter.h5p']
-
-    for index, v in enumerate(video_name):
-        upload_video(campaign_id, video_name[index], video_path[index])
-
 def activate_campaign(campaign_id):
     url = "https://campaigns.healthyw8.gamebus.eu/editor/campaigns/{}".format(campaign_id)
 
@@ -340,6 +331,18 @@ def activate_campaign(campaign_id):
 
     print(response.text)
 
+
+# THIS SECTION IS FOR UPLOADING VIDEOS TO GAMEBUS CAMPAIGNS - HOWEVER THIS FUNCTIONALITY IS TURNED OFF FOR NOW
+#Deprecated 
+def push_videos_to_gamebus(campaign_id):
+
+    video_name = ['tutorial_video_physical_counter.h5p']
+    video_path = ['./data/videos/tutorial_video_physical_counter.h5p']
+
+    for index, v in enumerate(video_name):
+        upload_video(campaign_id, video_name[index], video_path[index])
+
+#Deprecated
 def parse_video_url(url):
     parsed_list = json.loads(url)
     url = None
@@ -354,9 +357,7 @@ def parse_video_url(url):
     print(url)
     return url
 
-
-
-
+#Deprecated
 def upload_video(campaign_id, video_name, video_path):
     # url = "https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new".format(campaign_id)
     # payload = {'description': '',
