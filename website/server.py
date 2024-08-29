@@ -154,4 +154,4 @@ def create_level():
 
 if __name__ == '__main__':
     initialize_csv()
-    app.run(debug=True)
+    app.run(debug=True, port=3002)
