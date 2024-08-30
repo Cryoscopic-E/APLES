@@ -3,6 +3,8 @@ from flask_cors import CORS
 import csv
 import os
 
+from aples.exporter import update_paths_exporter
+
 app = Flask(__name__)
 # CORS(app)  # Enable CORS for all routes
 app.secret_key = 'supersecretkey'  # Needed for flashing messages
@@ -14,6 +16,8 @@ APLES_FOLDER = os.path.join(app.root_path, 'aples')
 from aples.aples_manager import create_level_structure
 
 CSV_FILE = os.path.join(DATA_FOLDER, 'activities.csv')
+EXPORTED_FILE = os.path.join(DATA_FOLDER, 'exported1.xlsx')
+
 GRAPH_CSV_FILE_PATH = os.path.join(DATA_FOLDER, 'levels.csv')
 CSV_HEADERS = ['Activities', 'METScore', 'Type', 'Frequency', 'CurrentCost', 'CostIncrease', 'Steps', 'StepsAggregate']
 
@@ -56,7 +60,6 @@ def validate_activity(data):
     return True
 
 def csvfromwebsite(activities):
-    print("here")
     with open(CSV_FILE, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Activities', 'METScore', 'Type', 'Frequency', 'CurrentCost', 'CostIncrease', 'Steps', 'StepsAggregate'])
@@ -78,7 +81,8 @@ def csvfromwebsite(activities):
             cognitive = next((point['y'] for point in datasets[2] if point['x'] == level), 0)
             writer.writerow([physical, social, cognitive])
     
-    # planning shit
+    # planning 
+    update_paths_exporter(EXPORTED_FILE,CSV_FILE)
     create_level_structure(GRAPH_CSV_FILE_PATH, CSV_FILE)
 
 

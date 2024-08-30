@@ -24,6 +24,12 @@ video_urls = {
     'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
     'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p'
     }
+def update_paths_exporter(exported_file, activities):
+    global exported        
+    global excel_data_path
+    exported = exported_file
+    excel_data_path = activities    
+
 
 def export_to_excel():
     df = pd.read_csv(sheet_data_path)
@@ -219,12 +225,10 @@ def export_plan_to_sheet(index, p):
             if not math.isnan(match['StepsAggregate'].values[0]):
                 steps_aggregate = int(match['StepsAggregate'].values[0])
 
-            # print(steps)
-            # print(steps_aggregate)
             append_row_to_sheet(local_level, activityname, match['METScore'].values[0], 1, steps, steps_aggregate)
             tut = False
 
-    return local_level
+    return local_level + 1
 
 def create_levels():
     actions = pd.read_csv(sheet_data_path)
@@ -275,7 +279,7 @@ def push_to_gamebus():
 
     payload = {}
     files=[
-    ('file',('exported1.xlsx',open('./data/exported1.xlsx','rb'),'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'))
+    ('file',('exported1.xlsx',open(exported,'rb'),'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'))
     ]
     headers = {
     'accept': '*/*',
