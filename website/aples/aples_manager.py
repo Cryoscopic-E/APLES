@@ -39,7 +39,7 @@ def execute_planner(physical, social, cognitive):
     p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive)
     p.update_fluents_init(csv_fluents_path)
     # print(p.problem)
-    with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+    with OneshotPlanner(name='enhsp-opt', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
         result = planner.solve(p.problem) # type: ignore
         plan = result.plan
 
