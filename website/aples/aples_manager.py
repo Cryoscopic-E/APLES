@@ -26,13 +26,13 @@ def create_level_structure(_lvl_path, csv_path):
     current_level_ = 0
     for index, level in levels.iterrows():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
-        time.sleep(1)
+        # time.sleep(1)
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
     
     
     create_levels()
-    # export_to_excel()
-    # push_to_gamebus()
+    export_to_excel()
+    push_to_gamebus()
     reset_fluents_csv()
 
 def execute_planner(physical, social, cognitive):
