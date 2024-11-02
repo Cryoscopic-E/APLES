@@ -1,0 +1,5 @@
+Activities,METScore,Type,Frequency,CurrentCost,CostIncrease,Steps,StepsAggregate
+Take_100_steps,1,physical,1,0,1,100.0,
+Watch_Video_on_physical_activity,1,general,2,0,1,,
+Call_a_friend,1,social,2,0,1,,
+Do_a_5_min_yoga_session,5,cognitive,1,0,1,,
