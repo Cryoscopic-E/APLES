@@ -1,9 +1,17 @@
+import webbrowser
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_cors import CORS
 import csv
 import os
+import sys
 
-from aples.exporter import update_paths_exporter
+
+folder_path = os.path.join(os.path.dirname(__file__), 'aples')
+index_file_path = os.path.abspath('index.html')
+sys.path.append(folder_path)
+
+from aples_manager import create_level_structure
+from exporter import update_paths_exporter
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -12,8 +20,6 @@ app.secret_key = 'supersecretkey'  # Needed for flashing messages
 # Define the path to the data folder and the CSV file
 DATA_FOLDER = os.path.join(app.root_path, 'data')
 APLES_FOLDER = os.path.join(app.root_path, 'aples')
-
-from aples.aples_manager import create_level_structure
 
 CSV_FILE = os.path.join(DATA_FOLDER, 'activities.csv')
 EXPORTED_FILE = os.path.join(DATA_FOLDER, 'exported1.xlsx')
@@ -167,4 +173,5 @@ def create_level():
 
 if __name__ == '__main__':
     initialize_csv()
+    webbrowser.open(f'index.html')
     app.run(debug=True, port=3002)

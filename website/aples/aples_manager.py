@@ -1,10 +1,9 @@
 import os
-import time
 from unified_planning.shortcuts import *
-from unified_planning.model.metrics import MinimizeActionCosts
+from unified_planning.model.metrics import *
 from unified_planning.engines import PlanGenerationResultStatus
-from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, get_executed_actions, parse_video_url, push_to_gamebus, reset_fluents_csv
-from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
+from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, push_to_gamebus, reset_fluents_csv
+from unified_planning.shortcuts import OneshotPlanner
 import pandas as pd
 
 from planning_problem import PlanningProblem
@@ -34,7 +33,7 @@ def create_level_structure(_lvl_path, csv_path):
     create_levels()
     reset_fluents_csv()
     export_to_excel()
-    # push_to_gamebus()
+    push_to_gamebus()
 
 def execute_planner(physical, social, cognitive):
     # Create the planning problem
@@ -53,10 +52,10 @@ def execute_planner(physical, social, cognitive):
             print("No plan found.")
             exit()
 
-def main():
-    create_level_structure(levels_csv, activities_csv)
+# def main():
+#     create_level_structure(levels_csv, activities_csv)
     
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
