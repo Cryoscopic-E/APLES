@@ -275,7 +275,11 @@ def push_to_gamebus():
     writer = pd.ExcelWriter(exported, engine='openpyxl', mode='a', if_sheet_exists='replace')
     writer.close()
 
-    url = "https://campaigns.healthyw8.gamebus.eu/api/campaigns/upload"
+    #production
+    # url = "https://campaigns.healthyw8.gamebus.eu/api/campaigns/upload"
+    
+    #local version
+    url = "http://localhost:5173/api/campaigns/upload"
 
     payload = {}
     files=[
@@ -286,9 +290,11 @@ def push_to_gamebus():
     'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
     'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
     'dnt': '1',
-    'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    # 'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    'origin': 'http://localhost:5173',
     'priority': 'u=1, i',
-    'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/campaigns',
+    # 'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/campaigns',
+    'referer': 'http://localhost:5173',
     'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
@@ -309,7 +315,10 @@ def push_to_gamebus():
     activate_campaign(campaign_id)
 
 def activate_campaign(campaign_id):
-    url = "https://campaigns.healthyw8.gamebus.eu/editor/campaigns/{}".format(campaign_id)
+    #production version
+    # url = "https://campaigns.healthyw8.gamebus.eu/editor/campaigns/{}".format(campaign_id)
+    #local version 
+    url = "http://localhost:5173/editor/campaigns/{}".format(campaign_id)
 
     payload = '__superform_json=%5B%7B%22abbreviation%22%3A1%2C%22name%22%3A2%2C%22description%22%3A3%2C%22logo%22%3A4%2C%22start%22%3A5%2C%22end%22%3A6%2C%22contact_person%22%3A7%2C%22contact_email%22%3A8%2C%22organizers%22%3A9%2C%22viewers%22%3A11%7D%2C%22generated-3ca73483%22%2C%22Upload%20of%20An%20AI-Planning%20Generated%20campaign%22%2C%22This%20campaign%20is%20the%20testing%20ground%20of%20an%20AI%20system%22%2C%22https%3A%2F%2Fcampaigns.healthyw8.gamebus.eu%2Fapi%2Fmedia%2FHW8-immutable%2Ffebe6f8e-5025-4887-a934-9dbec31cf4d8.svg%22%2C%5B%22Date%22%2C%222024-07-01T18%3A15%3A00.000Z%22%5D%2C%5B%22Date%22%2C%222024-10-01T18%3A16%3A00.000Z%22%5D%2C%22Lorenzo%20James%22%2C%22l.j.james%40tue.nl%22%2C%5B10%5D%2C14%2C%5B%5D%5D&__superform_id=1jic8px'
     headers = {
@@ -318,9 +327,11 @@ def activate_campaign(campaign_id):
     'content-type': 'application/x-www-form-urlencoded',
     'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
     'dnt': '1',
-    'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    # 'origin': 'https://campaigns.healthyw8.gamebus.eu',
+    'origin': 'http://localhost:5173',
     'priority': 'u=1, i',
-    'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/campaigns/{}'.format(campaign_id),
+    # 'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/campaigns/{}'.format(campaign_id),
+    'referer': 'http://localhost:5173/editor/campaigns/{}'.format(campaign_id),
     'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
@@ -336,17 +347,6 @@ def activate_campaign(campaign_id):
     print(response.text)
 
 
-# THIS SECTION IS FOR UPLOADING VIDEOS TO GAMEBUS CAMPAIGNS - HOWEVER THIS FUNCTIONALITY IS TURNED OFF FOR NOW
-#Deprecated 
-def push_videos_to_gamebus(campaign_id):
-
-    video_name = ['tutorial_video_physical_counter.h5p']
-    video_path = ['./data/videos/tutorial_video_physical_counter.h5p']
-
-    for index, v in enumerate(video_name):
-        upload_video(campaign_id, video_name[index], video_path[index])
-
-#Deprecated
 def parse_video_url(url):
     parsed_list = json.loads(url)
     url = None
@@ -361,34 +361,3 @@ def parse_video_url(url):
     print(url)
     return url
 
-#Deprecated
-def upload_video(campaign_id, video_name, video_path):
-    # url = "https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new".format(campaign_id)
-    # payload = {'description': '',
-    # '__superform_id': 'kmpoz'}
-    # files=[
-    # ('file',('{}'.format(video_name),open('{}'.format(video_path),'rb'),'application/octet-stream'))
-    # ]
-    # headers = {
-    # 'accept': 'application/json',
-    # 'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
-    # 'cookie': '__session=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImVtYWlsIjoibC5qLmphbWVzQHR1ZS5ubCIsImlhdCI6MTcyMjMyNjg5NiwiZXhwIjoxNzMwMTAyODk2fQ.uWOPSz8UNnehYFV92NRbj61p4PYY-X2VZmBHsaoT5-g',
-    # 'dnt': '1',
-    # 'origin': 'https://campaigns.healthyw8.gamebus.eu',
-    # 'priority': 'u=1, i',
-    # 'referer': 'https://campaigns.healthyw8.gamebus.eu/editor/for/{}/media/new'.format(campaign_id),
-    # 'sec-ch-ua': '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-    # 'sec-ch-ua-mobile': '?1',
-    # 'sec-ch-ua-platform': '"Android"',
-    # 'sec-fetch-dest': 'empty',
-    # 'sec-fetch-mode': 'cors',
-    # 'sec-fetch-site': 'same-origin',
-    # 'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36',
-    # 'x-sveltekit-action': 'true'
-    # }
-
-    # response = requests.request("POST", url, headers=headers, data=payload, files=files)
-    # print(response.text)
-    #TODO: UPDATE THIS
-    temp_video_url = "[{\"form\":1},{\"id\":2,\"valid\":3,\"posted\":3,\"errors\":4,\"data\":5,\"message\":7},\"kmpoz\",true,{},{\"description\":6},\"fdsadf\",\"{ \\\"status\\\": \\\"[UPSERTED]\\\", \\\"url\\\" :\\\"http://localhost:5173/api/media/hello2/a9da6a92-07fb-473f-ac75-0e2579c1c00f.h5p\\\"\"]"
-    video_urls.update({video_name : parse_video_url(temp_video_url)})

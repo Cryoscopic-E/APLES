@@ -1,0 +1,13 @@
+aples_manager is the main file. 
+there is a main function there.
+
+
+How to run the system locally
+
+- Create a Python virtual environmnent use Python 10
+- install packages
+`pip install unified_planning==1.2 pandas openpyxl requests flask unified-planning[enshp] unified-planning[Fast-Downward] unified-planning[lpg]`
+
+- CD to the 'Website' folder
+- Run the server
+`python .\server.py`
