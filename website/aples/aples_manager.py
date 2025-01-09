@@ -52,10 +52,10 @@ def execute_planner(physical, social, cognitive):
             print("No plan found.")
             exit()
 
-# def main():
-#     create_level_structure(levels_csv, activities_csv)
+def main():
+    create_level_structure(levels_csv, activities_csv)
     
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
