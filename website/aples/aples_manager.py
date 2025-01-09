@@ -26,7 +26,7 @@ def create_level_structure(_lvl_path, csv_path):
 
     current_level_ = 0
     for index, level in levels.iterrows():
-        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']))
+        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']), int(level['minigame']))
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
 
     
@@ -35,9 +35,9 @@ def create_level_structure(_lvl_path, csv_path):
     export_to_excel()
     push_to_gamebus()
 
-def execute_planner(physical, social, cognitive):
+def execute_planner(physical, social, cognitive, minigame):
     # Create the planning problem
-    p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive)
+    p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive, minigame_score=minigame)
     p.update_fluents_init(csv_fluents_path)
     # print(p.problem)
     with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
