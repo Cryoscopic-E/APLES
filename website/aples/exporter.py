@@ -60,7 +60,7 @@ def export_to_excel():
         first_h = True
         for cell in s["H"]:
             if first_h == False:
-                cell.value = datetime.datetime.strptime('2024-07-01 6:00', '%Y-%m-%d %H:%M')
+                cell.value = datetime.datetime.strptime('2025-01-01 6:00', '%Y-%m-%d %H:%M')
                 cell.number_format = 'yyyy-mm-dd hh:mm'
             first_h = False
         
@@ -74,7 +74,7 @@ def export_to_excel():
         first_s = True
         for cell in s["I"]:
             if first_s == False:
-                cell.value = datetime.datetime.strptime('2024-10-01 6:00', '%Y-%m-%d %H:%M')
+                cell.value = datetime.datetime.strptime('2025-07-01 6:00', '%Y-%m-%d %H:%M')
                 cell.number_format = 'yyyy-mm-dd hh:mm'
             first_s = False
 
@@ -88,10 +88,11 @@ def empty_sheets():
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
 
+def random_secret():
+    return ''.join(random.choices(string.ascii_lowercase + string.digits, k=random.randint(10,50)))
+
 def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_aggregate = '', activity_type =''):
     df = pd.read_csv(sheet_data_path)
-    rand_secret = ''.join(random.choices(string.ascii_lowercase +
-                                string.digits, k=random.randint(10,50)))
     h5p_slug = ''
     conditions = ''
 
@@ -103,37 +104,94 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
         conditions = '[STEPS_SUM, STRICTLY_GREATER, {}],'.format(steps_aggregate)
     else:
         activity_scheme = 'GENERAL_ACTIVITY'
-    
+
     if "tutorial" in name:
         activity_scheme = 'H5P_GENERAL'
         h5p_slug = video_urls.get(name)
 
-    print("-------------------")
-    print(name + '   ' + activity_type)
-    print("-------------------")
     if activity_type == "minigame":
-        print("DO SOME EXTERNAL LOGIC")
-        
-    conditions += ' [SECRET, EQUAL, {}]'.format(rand_secret)
+        print("MINIGAME")
+        minigame_rules = add_minigame_rules(name, index)
+        df = pd.concat([df, pd.DataFrame(minigame_rules)], ignore_index=True)
+        df.to_csv(sheet_data_path, index=False)
+    else:
+        conditions += ' [SECRET, EQUAL, {}]'.format(random_secret())
 
-    new_row = {
-        'challenge': index,
-        'name': '{}'.format(name),
-        'description': '',
-        'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
-        'video': '',
-        'h5p_slug': '{}'.format(h5p_slug),
-        'max_times_fired': frequency,
-        'min_days_between_fire': '7',
-        'activityscheme_default': '{}'.format(activity_scheme),
-        'activityschemes_allowed': '{}'.format(activity_scheme),
-        'image_required': '0',
-        'conditions': '{}'.format(conditions),
-        'points': met_score,
-        'dataproviders': 'GameBus Studio'
-    }
-    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-    df.to_csv(sheet_data_path, index=False)
+        new_row = {
+            'challenge': index,
+            'name': '{}'.format(name),
+            'description': '',
+            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
+            'video': '',
+            'h5p_slug': '{}'.format(h5p_slug),
+            'max_times_fired': frequency,
+            'min_days_between_fire': '7',
+            'activityscheme_default': '{}'.format(activity_scheme),
+            'activityschemes_allowed': '{}'.format(activity_scheme),
+            'image_required': '0',
+            'conditions': '{}'.format(conditions),
+            'points': met_score,
+            'dataproviders': 'GameBus Studio'
+        }
+        df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+        df.to_csv(sheet_data_path, index=False)
+
+def add_minigame_rules(name, challenge):
+    if name == "Confusing_arrows":
+        rules = []
+        rule1 = {
+            'challenge': challenge,
+            'name': 'Buy half heart',
+            'description': '',
+            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
+            'video': '',
+            'h5p_slug': '',
+            'max_times_fired': '',
+            'min_days_between_fire': '7',
+            'activityscheme_default': 'ConfusingArrowsData',
+            'activityschemes_allowed': 'ConfusingArrowsData',
+            'image_required': '0',
+            'conditions': '[MINIGAME_BUY_HALF_HEART, STRICTLY_GREATER, 0],[MINIGAMESTATE_ID, EQUAL, 1], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'points': -5,
+            'dataproviders': 'GameBus Studio'
+        } 
+        rule2 = {
+            'challenge': challenge,
+            'name': 'Score 5 points',
+            'description': '',
+            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
+            'video': '',
+            'h5p_slug': '',
+            'max_times_fired': '',
+            'min_days_between_fire': '7',
+            'activityscheme_default': 'ConfusingArrowsData',
+            'activityschemes_allowed': 'ConfusingArrowsData',
+            'image_required': '0',
+            'conditions': '[MINIGAME_SCORE, STRICTLY_GREATER, 5],[MINIGAMESTATE_ID, EQUAL, 1], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'points': 10,
+            'dataproviders': 'GameBus Studio'
+        }   
+        rule3 = {
+            'challenge': challenge,
+            'name': 'Walk 500 meters',
+            'description': '',
+            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
+            'video': '',
+            'h5p_slug': '',
+            'max_times_fired': '',
+            'min_days_between_fire': '7',
+            'activityscheme_default': 'WALK',
+            'activityschemes_allowed': 'WALK',
+            'image_required': '0',
+            'conditions': '[DISTANCE, STRICTLY_GREATER, 499], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'points': 20,
+            'dataproviders': 'GameBus Studio'
+        }   
+        rules.append(rule1)
+        rules.append(rule2)
+        rules.append(rule3)
+        return rules
+
 
 def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
     current_level_ = index
@@ -151,8 +209,8 @@ def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
         'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/3ad4d1db-b854-45cb-bcef-59dbaee47f6e.jpeg',
         'description': 'Generated by AI',
         'visualizations': '122',
-        'start': datetime.datetime.strptime('2024-07-01 6:00', '%Y-%m-%d %H:%M'),
-        'end': datetime.datetime.strptime('2024-10-01 6:00', '%Y-%m-%d %H:%M'),
+        'start': datetime.datetime.strptime('2025-01-01 6:00', '%Y-%m-%d %H:%M'),
+        'end': datetime.datetime.strptime('2025-07-01 6:00', '%Y-%m-%d %H:%M'),
         'contender': '',
         'is_initial_level': is_initial_level,
         'target': target,
@@ -327,7 +385,7 @@ def activate_campaign(campaign_id):
     #local version 
     url = "http://localhost:5173/editor/campaigns/{}".format(campaign_id)
 
-    payload = '__superform_json=%5B%7B%22abbreviation%22%3A1%2C%22name%22%3A2%2C%22description%22%3A3%2C%22logo%22%3A4%2C%22start%22%3A5%2C%22end%22%3A6%2C%22contact_person%22%3A7%2C%22contact_email%22%3A8%2C%22organizers%22%3A9%2C%22viewers%22%3A11%7D%2C%22generated-3ca73483%22%2C%22Upload%20of%20An%20AI-Planning%20Generated%20campaign%22%2C%22This%20campaign%20is%20the%20testing%20ground%20of%20an%20AI%20system%22%2C%22https%3A%2F%2Fcampaigns.healthyw8.gamebus.eu%2Fapi%2Fmedia%2FHW8-immutable%2Ffebe6f8e-5025-4887-a934-9dbec31cf4d8.svg%22%2C%5B%22Date%22%2C%222024-07-01T18%3A15%3A00.000Z%22%5D%2C%5B%22Date%22%2C%222024-10-01T18%3A16%3A00.000Z%22%5D%2C%22Lorenzo%20James%22%2C%22l.j.james%40tue.nl%22%2C%5B10%5D%2C14%2C%5B%5D%5D&__superform_id=1jic8px'
+    payload = '__superform_json=%5B%7B%22abbreviation%22%3A1%2C%22name%22%3A2%2C%22description%22%3A3%2C%22logo%22%3A4%2C%22start%22%3A5%2C%22end%22%3A6%2C%22contact_person%22%3A7%2C%22contact_email%22%3A8%2C%22organizers%22%3A9%2C%22viewers%22%3A11%7D%2C%22generated-3ca73483%22%2C%22Upload%20of%20An%20AI-Planning%20Generated%20campaign%22%2C%22This%20campaign%20is%20the%20testing%20ground%20of%20an%20AI%20system%22%2C%22https%3A%2F%2Fcampaigns.healthyw8.gamebus.eu%2Fapi%2Fmedia%2FHW8-immutable%2Ffebe6f8e-5025-4887-a934-9dbec31cf4d8.svg%22%2C%5B%22Date%22%2C%222025-01-01T18%3A15%3A00.000Z%22%5D%2C%5B%22Date%22%2C%222025-07-01T18%3A16%3A00.000Z%22%5D%2C%22Lorenzo%20James%22%2C%22l.j.james%40tue.nl%22%2C%5B10%5D%2C14%2C%5B%5D%5D&__superform_id=1jic8px'
     headers = {
     'accept': 'application/json',
     'accept-language': 'nl-NL,nl;q=0.9,en-US;q=0.8,en;q=0.7',
