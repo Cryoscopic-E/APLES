@@ -19,12 +19,20 @@ sheet_data_path  = os.path.join(os.path.dirname(__file__), 'data', 'sheet1.csv')
 sheet2_data_path = os.path.join(os.path.dirname(__file__), 'data', 'sheet2.csv')
 
 # HARDCODED VIDEO URLS - VIDEOS ARE FOUND IN THE "media-for-ai" CAMPAIGN
+# video_urls = {
+#     'tutorial_video(cognitive_activity)' : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/66972617-5cd5-40e1-8432-ecd99b7dcf10.h5p',
+#     'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
+#     'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p',
+#     'tutorial_video(minigame_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/media-for-ai/08e5d4bd-a41d-425d-9fd0-c5954205076d.h5p'
+#     }
+#Localhost
 video_urls = {
-    'tutorial_video(cognitive_activity)' : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/66972617-5cd5-40e1-8432-ecd99b7dcf10.h5p',
-    'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
-    'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p',
-    'tutorial_video(minigame_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p'
+    'tutorial_video(cognitive_activity)' : 'http://localhost:5173/api/media/media-for-ai-b7b4437a/a6cf16fb-1b3c-4862-9086-307cb11c2a41.h5p',
+    'tutorial_video(physical_activity)'  : 'http://localhost:5173/api/media/media-for-ai-b7b4437a/bb7ce12e-3542-4874-b236-6f4d26bb3a4c.h5p',
+    'tutorial_video(social_activity)'    : 'http://localhost:5173/api/media/media-for-ai-b7b4437a/b7fb3d01-9712-476f-9d53-4876283c73ce.h5p',
+    'tutorial_video(minigame_activity)'    : 'http://localhost:5173/api/media/media-for-ai-b7b4437a/ba5eb809-ed8e-4688-acb0-0df598a2c57c.h5p'
     }
+
 def update_paths_exporter(exported_file, activities):
     global exported        
     global excel_data_path
@@ -151,7 +159,7 @@ def add_minigame_rules(name, challenge):
             'activityscheme_default': 'ConfusingArrowsData',
             'activityschemes_allowed': 'ConfusingArrowsData',
             'image_required': '0',
-            'conditions': '[MINIGAME_BUY_HALF_HEART, STRICTLY_GREATER, 0],[MINIGAMESTATE_ID, EQUAL, 1], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'conditions': '[MINIGAME_BUY_HALF_HEART, STRICTLY_GREATER, 0],[MINIGAMESTATE_ID, EQUAL, 1]', #, [SECRET, EQUAL, {}]'.format(random_secret()), #REMOVED SECRETS, because no standard support in GB Studio on installation
             'points': -5,
             'dataproviders': 'GameBus Studio'
         } 
@@ -167,7 +175,7 @@ def add_minigame_rules(name, challenge):
             'activityscheme_default': 'ConfusingArrowsData',
             'activityschemes_allowed': 'ConfusingArrowsData',
             'image_required': '0',
-            'conditions': '[MINIGAME_SCORE, STRICTLY_GREATER, 5],[MINIGAMESTATE_ID, EQUAL, 1], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'conditions': '[MINIGAME_SCORE, STRICTLY_GREATER, 5],[MINIGAMESTATE_ID, EQUAL, 1]', # [SECRET, EQUAL, {}]'.format(random_secret()),
             'points': 10,
             'dataproviders': 'GameBus Studio'
         }   
@@ -183,7 +191,7 @@ def add_minigame_rules(name, challenge):
             'activityscheme_default': 'WALK',
             'activityschemes_allowed': 'WALK',
             'image_required': '0',
-            'conditions': '[DISTANCE, STRICTLY_GREATER, 499], [SECRET, EQUAL, {}]'.format(random_secret()),
+            'conditions': '[DISTANCE, STRICTLY_GREATER, 499]', #, [SECRET, EQUAL, {}]'.format(random_secret()),
             'points': 20,
             'dataproviders': 'GameBus Studio'
         }   
@@ -411,18 +419,4 @@ def activate_campaign(campaign_id):
 
     print(response.text)
 
-
-def parse_video_url(url):
-    parsed_list = json.loads(url)
-    url = None
-    url_pattern = re.compile(r'http[s]?://[^\s\\]+')
-
-    for item in parsed_list:
-        if isinstance(item, str):
-            match = url_pattern.search(item)
-            if match:
-                url = match.group(0)
-                break
-    print(url)
-    return url
 

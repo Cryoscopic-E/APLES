@@ -1,5 +1,5 @@
 name,status
-social_activity,False
-physical_activity,False
-cognitive_activity,False
-minigame_activity,False
+social_activity,True
+physical_activity,True
+cognitive_activity,True
+minigame_activity,True

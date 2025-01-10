@@ -31,7 +31,7 @@ def create_level_structure(_lvl_path, csv_path):
 
     
     create_levels()
-    reset_fluents_csv()
+    # reset_fluents_csv()
     export_to_excel()
     push_to_gamebus()
 
