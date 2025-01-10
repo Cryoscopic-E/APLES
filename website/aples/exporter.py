@@ -22,7 +22,8 @@ sheet2_data_path = os.path.join(os.path.dirname(__file__), 'data', 'sheet2.csv')
 video_urls = {
     'tutorial_video(cognitive_activity)' : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/66972617-5cd5-40e1-8432-ecd99b7dcf10.h5p',
     'tutorial_video(physical_activity)'  : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/a4466cf8-adb1-4a54-9e56-075eae837a53.h5p',
-    'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p'
+    'tutorial_video(social_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p',
+    'tutorial_video(minigame_activity)'    : 'https://campaigns.healthyw8.gamebus.eu/api/media/generated-296ffd13/f0a366cc-c574-4807-8dab-5dd53dd47f70.h5p'
     }
 def update_paths_exporter(exported_file, activities):
     global exported        
@@ -87,7 +88,7 @@ def empty_sheets():
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
     df.to_csv(sheet2_data_path, index=False)
 
-def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_aggregate = ''):
+def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_aggregate = '', activity_type =''):
     df = pd.read_csv(sheet_data_path)
     rand_secret = ''.join(random.choices(string.ascii_lowercase +
                                 string.digits, k=random.randint(10,50)))
@@ -106,6 +107,12 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
     if "tutorial" in name:
         activity_scheme = 'H5P_GENERAL'
         h5p_slug = video_urls.get(name)
+
+    print("-------------------")
+    print(name + '   ' + activity_type)
+    print("-------------------")
+    if activity_type == "minigame":
+        print("DO SOME EXTERNAL LOGIC")
         
     conditions += ' [SECRET, EQUAL, {}]'.format(rand_secret)
 
@@ -225,7 +232,7 @@ def export_plan_to_sheet(index, p):
             if not math.isnan(match['StepsAggregate'].values[0]):
                 steps_aggregate = int(match['StepsAggregate'].values[0])
 
-            append_row_to_sheet(local_level, activityname, match['METScore'].values[0], 1, steps, steps_aggregate)
+            append_row_to_sheet(local_level, activityname, match['METScore'].values[0], 1, steps, steps_aggregate, match['Type'].values[0])
             tut = False
 
     return local_level + 1

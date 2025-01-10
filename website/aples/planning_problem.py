@@ -15,7 +15,7 @@ activity_type_mapping = {
     'social': ActivityType.SOCIAL,
     'cognitive': ActivityType.COGNITIVE,
     'general': ActivityType.GENERAL,
-    'minigame':ActivityType.MINIGAME
+    'minigame': ActivityType.MINIGAME
 }
 
 class PlanningProblem:
