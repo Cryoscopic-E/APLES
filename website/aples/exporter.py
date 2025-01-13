@@ -12,6 +12,8 @@ from openpyxl.styles import numbers, Alignment
 import requests
 import re
 
+from minigame import get_minigame, minigame_update_level
+
 exported         = os.path.join(os.path.dirname(__file__), 'data', 'exported1.xlsx')
 excel_data_path  = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
 csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
@@ -118,9 +120,8 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
         h5p_slug = video_urls.get(name)
 
     if activity_type == "minigame":
-        print("MINIGAME")
-        minigame_rules = add_minigame_rules(name, index)
-        df = pd.concat([df, pd.DataFrame(minigame_rules)], ignore_index=True)
+        minigame_configuration = minigame_update_level(name.lower(), index)
+        df = pd.concat([df, pd.DataFrame(minigame_configuration)], ignore_index=True)
         df.to_csv(sheet_data_path, index=False)
     else:
         conditions += ' [SECRET, EQUAL, {}]'.format(random_secret())
@@ -204,7 +205,7 @@ def add_minigame_rules(name, challenge):
 def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
     current_level_ = index
     df = pd.read_csv(sheet2_data_path)
-    if current_level_ == 1:
+    if current_level_ == 0:
         is_initial_level = 1
     else:
         is_initial_level = 0

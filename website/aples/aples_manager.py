@@ -9,6 +9,7 @@ import pandas as pd
 from planning_problem import PlanningProblem
 get_environment().credits_stream = None
 from unified_planning.io import PDDLWriter
+from minigame import create_minigames
 
 csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
 csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
@@ -17,6 +18,7 @@ levels_csv = "C:/Development/HealthInterventionPlanning/website/data/levels.csv"
 activities_csv = "C:/Development/HealthInterventionPlanning/website/data/activities.csv"
 
 def create_level_structure(_lvl_path, csv_path):
+    create_minigames()
     global csv_data_path
     global level_structure_path
     csv_data_path = csv_path
@@ -29,7 +31,6 @@ def create_level_structure(_lvl_path, csv_path):
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']), int(level['minigame']))
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
 
-    
     create_levels()
     # reset_fluents_csv()
     export_to_excel()
