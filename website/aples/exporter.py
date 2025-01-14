@@ -145,62 +145,6 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
         df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         df.to_csv(sheet_data_path, index=False)
 
-def add_minigame_rules(name, challenge):
-    if name == "Confusing_arrows":
-        rules = []
-        rule1 = {
-            'challenge': challenge,
-            'name': 'Buy half heart',
-            'description': '',
-            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
-            'video': '',
-            'h5p_slug': '',
-            'max_times_fired': '',
-            'min_days_between_fire': '7',
-            'activityscheme_default': 'ConfusingArrowsData',
-            'activityschemes_allowed': 'ConfusingArrowsData',
-            'image_required': '0',
-            'conditions': '[MINIGAME_BUY_HALF_HEART, STRICTLY_GREATER, 0],[MINIGAMESTATE_ID, EQUAL, 1]', #, [SECRET, EQUAL, {}]'.format(random_secret()), #REMOVED SECRETS, because no standard support in GB Studio on installation
-            'points': -5,
-            'dataproviders': 'GameBus Studio'
-        } 
-        rule2 = {
-            'challenge': challenge,
-            'name': 'Score 5 points',
-            'description': '',
-            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
-            'video': '',
-            'h5p_slug': '',
-            'max_times_fired': '',
-            'min_days_between_fire': '7',
-            'activityscheme_default': 'ConfusingArrowsData',
-            'activityschemes_allowed': 'ConfusingArrowsData',
-            'image_required': '0',
-            'conditions': '[MINIGAME_SCORE, STRICTLY_GREATER, 5],[MINIGAMESTATE_ID, EQUAL, 1]', # [SECRET, EQUAL, {}]'.format(random_secret()),
-            'points': 10,
-            'dataproviders': 'GameBus Studio'
-        }   
-        rule3 = {
-            'challenge': challenge,
-            'name': 'Walk 500 meters',
-            'description': '',
-            'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
-            'video': '',
-            'h5p_slug': '',
-            'max_times_fired': '',
-            'min_days_between_fire': '7',
-            'activityscheme_default': 'WALK',
-            'activityschemes_allowed': 'WALK',
-            'image_required': '0',
-            'conditions': '[DISTANCE, STRICTLY_GREATER, 499]', #, [SECRET, EQUAL, {}]'.format(random_secret()),
-            'points': 20,
-            'dataproviders': 'GameBus Studio'
-        }   
-        rules.append(rule1)
-        rules.append(rule2)
-        rules.append(rule3)
-        return rules
-
 
 def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
     current_level_ = index
