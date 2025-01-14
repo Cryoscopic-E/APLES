@@ -12,7 +12,7 @@ from openpyxl.styles import numbers, Alignment
 import requests
 import re
 
-from minigame import get_minigame, minigame_update_level
+from minigame import minigame_update_level
 
 exported         = os.path.join(os.path.dirname(__file__), 'data', 'exported1.xlsx')
 excel_data_path  = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')

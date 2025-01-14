@@ -1,7 +1,11 @@
 import json
 import os
 
-configuration_json = "C:/Development/HealthInterventionPlanning/website/aples/data/minigame_config.json"
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+website_root = os.path.abspath(os.path.join(current_dir, os.pardir))
+apples_folder = os.path.join(website_root, 'aples')
+configuration_json = os.path.join(apples_folder, 'data', 'minigame_config.json')
 
 minigames = []
 

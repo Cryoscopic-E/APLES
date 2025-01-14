@@ -1,4 +1,5 @@
 import os
+from flask import app
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import *
 from unified_planning.engines import PlanGenerationResultStatus
@@ -11,11 +12,19 @@ get_environment().credits_stream = None
 from unified_planning.io import PDDLWriter
 from minigame import create_minigames
 
-csv_data_path = os.path.join(os.path.dirname(__file__), 'data', 'exampleactivities.csv')
-csv_fluents_path = os.path.join(os.path.dirname(__file__), 'data', 'fluents.csv')
-level_structure_path = os.path.join(os.path.dirname(__file__), 'data', 'level_structure.csv')
-levels_csv = "C:/Development/HealthInterventionPlanning/website/data/levels.csv"
-activities_csv = "C:/Development/HealthInterventionPlanning/website/data/activities.csv"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+csv_data_path = os.path.join(current_dir, 'data', 'exampleactivities.csv')
+csv_fluents_path = os.path.join(current_dir, 'data', 'fluents.csv')
+level_structure_path = os.path.join(current_dir, 'data', 'level_structure.csv')
+
+website_root = os.path.abspath(os.path.join(current_dir, os.pardir)) 
+
+data_folder = os.path.join(website_root, 'data')
+apples_folder = os.path.join(website_root, 'aples')
+activities_csv = os.path.join(data_folder, 'activities.csv')
+levels_csv = os.path.join(data_folder, 'levels.csv')
+configuration_json = os.path.join(apples_folder, 'data', 'minigame_config.json')
 
 def create_level_structure(_lvl_path, csv_path):
     create_minigames()
