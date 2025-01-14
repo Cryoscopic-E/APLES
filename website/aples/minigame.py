@@ -33,7 +33,9 @@ def create_minigames():
     with open(configuration_json, 'r') as file:
         configurations = json.load(file)
     confusing_arrows = minigame("confusing_arrows", configurations["confusing_arrows_config"])
+    polygon_escape = minigame("polygon_escape", configurations["polygon_escape_config"])
     minigames.append(confusing_arrows)
+    minigames.append(polygon_escape)
 
 def minigame_update_level(name, index):
        minigame = get_minigame(name)
