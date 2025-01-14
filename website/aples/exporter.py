@@ -205,7 +205,7 @@ def add_minigame_rules(name, challenge):
 def append_level_to_sheet(index, target, success_next = -1, failure_next = -1):
     current_level_ = index
     df = pd.read_csv(sheet2_data_path)
-    if current_level_ == 0:
+    if current_level_ == 1:
         is_initial_level = 1
     else:
         is_initial_level = 0
