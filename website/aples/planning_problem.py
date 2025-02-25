@@ -7,14 +7,15 @@ from unified_planning.shortcuts import GE, Not, Equals, Plus
 from unified_planning.engines import PlanGenerationResultStatus
 
 from unified_planning.model.types import BOOL
-from .activity_action import ActivityAction, ActivityType
+from activity_action import ActivityAction, ActivityType
 
 
 activity_type_mapping = {
     'physical': ActivityType.PHYSICAL,
     'social': ActivityType.SOCIAL,
     'cognitive': ActivityType.COGNITIVE,
-    'general': ActivityType.GENERAL
+    'general': ActivityType.GENERAL,
+    'minigame': ActivityType.MINIGAME
 }
 
 class PlanningProblem:
@@ -24,7 +25,7 @@ class PlanningProblem:
     :param csv: path to the csv file containing the activities
     """
     
-    def __init__(self, csv : str, social_score=0, physical_score=0, cognitive_score=0):
+    def __init__(self, csv : str, social_score=0, physical_score=0, cognitive_score=0, minigame_score=0):
         # loaded data
         self.data = {}
         self._filter_data(csv)
@@ -49,7 +50,7 @@ class PlanningProblem:
         self.all_objects = []
         self._init_objects()
 
-        self._init_goal(p=physical_score, s=social_score,  c=cognitive_score) 
+        self._init_goal(p=physical_score, s=social_score,  c=cognitive_score, m=minigame_score) 
 
     def _filter_data(self, csv):
         df = pd.read_csv(csv)
@@ -96,7 +97,7 @@ class PlanningProblem:
         """
         Initializes the types
         """
-        activity_types = ['physical', 'general', 'social', 'cognitive']
+        activity_types = ['physical', 'general', 'social', 'cognitive', 'minigame']
         
         self.all_types['activity'] = UserType('activity')
         
@@ -107,7 +108,7 @@ class PlanningProblem:
         """
         Initializes the fluents
         """
-        counter_fluents = ['difficulty_lvl', 'difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive']
+        counter_fluents = ['difficulty_lvl', 'difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive', 'difficulty_lvl_minigame']
         for fluent in counter_fluents:
             self.all_fluents[fluent] = Fluent(fluent, IntType())
         
@@ -184,19 +185,23 @@ class PlanningProblem:
         physical_act_type = Object('physical_activity', self.all_types['physical'])
         social_act_type = Object('social_activity', self.all_types['social'])
         cognitive_act_type = Object('cognitive_activity', self.all_types['cognitive'])
+        minigame_act_type = Object('minigame_activity', self.all_types['minigame'])
 
         self.all_objects.append(physical_act_type)
         self.all_objects.append(social_act_type)
         self.all_objects.append(cognitive_act_type)
+        self.all_objects.append(minigame_act_type)
 
         self.problem.add_object(physical_act_type)
         self.problem.add_object(social_act_type)
         self.problem.add_object(cognitive_act_type)
+        self.problem.add_object(minigame_act_type)
 
-    def _init_goal(self, p=0, s=0, c=0):
+    def _init_goal(self, p=0, s=0, c=0, m=0):
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_physical'], p))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_social'], s))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_cognitive'], c))
+        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_minigame'], m))
 
     def __repr__(self) -> str:
         return str(self.problem)
