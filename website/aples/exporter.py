@@ -133,13 +133,13 @@ def append_row_to_sheet(index, name, met_score, frequency, steps = '', steps_agg
             'image': 'https://campaigns.healthyw8.gamebus.eu/api/media/HW8-immutable/5ff935d3-d0ae-4dce-bfcd-d2f71bf2ca63.jpeg',
             'video': '',
             'h5p_slug': '{}'.format(h5p_slug),
-            'max_times_fired': frequency,
+            'max_times_fired': int(float(frequency)),
             'min_days_between_fire': '7',
             'activityscheme_default': '{}'.format(activity_scheme),
             'activityschemes_allowed': '{}'.format(activity_scheme),
             'image_required': '0',
             'conditions': '{}'.format(conditions),
-            'points': met_score,
+            'points': int(float(met_score)),
             'dataproviders': 'GameBus Studio'
         }
         df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)

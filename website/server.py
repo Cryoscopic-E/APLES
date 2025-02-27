@@ -58,9 +58,9 @@ def validate_activity(data):
         if (steps and steps_aggregate) or (not steps and not steps_aggregate):
             flash('For Physical activities, either Steps or Steps Aggregate must be filled, but not both.', 'danger')
             return False
-    elif type_value in ['Cognitive', 'Social']:
+    elif type_value in ['Cognitive', 'Social','minigame']:
         if steps or steps_aggregate:
-            flash('For Cognitive or Social activities, neither Steps nor Steps Aggregate should be filled.', 'danger')
+            flash('For Cognitive or Social or minigame activities, neither Steps nor Steps Aggregate should be filled.', 'danger')
             return False
     return True
 
@@ -78,13 +78,14 @@ def csvfromwebsite(activities):
 
     with open(GRAPH_CSV_FILE_PATH, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['physical', 'social', 'cognitive'])
+        writer.writerow(['physical', 'social', 'cognitive', 'minigame'])
 
         for level in labels:
             physical = next((point['y'] for point in datasets[0] if point['x'] == level), 0)
             social = next((point['y'] for point in datasets[1] if point['x'] == level), 0)
             cognitive = next((point['y'] for point in datasets[2] if point['x'] == level), 0)
-            writer.writerow([physical, social, cognitive])
+            minigame = next((point['y'] for point in datasets[3] if point['x'] == level), 0)
+            writer.writerow([physical, social, cognitive, minigame])
     
     # planning 
     update_paths_exporter(EXPORTED_FILE,CSV_FILE)
