@@ -100,9 +100,21 @@
                 </div>
             </div>
 
+
             <div class="row mt-3">
                 <div class="col-md-12">
                     <button id="addPointBtn" class="btn btn-primary w-100">Add Point</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <input type="number" id="lvlInput" class="form-control" placeholder="Level Number" min="0" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="number" id="ratioInput" class="form-control" placeholder="Ratio" min="0" required>
+                </div>
+                <div class="col-md-4">
+                    <button id="addRatioBtn" class="btn btn-primary w-100">Add Ratio</button>
                 </div>
             </div>
         </div>
@@ -195,6 +207,12 @@
             document.getElementById('addPointBtn').addEventListener('click', function(event) {
                 event.preventDefault();
                 addPointToChart();
+            });
+
+            // Handle Ratio points
+            document.getElementById('addRatioBtn').addEventListener('click', function(event) {
+                event.preventDefault();
+                addRatioToFile();
             });
 
             // Initialize the modal with existing data
@@ -316,7 +334,11 @@
             document.getElementById('updateSteps').value = steps;
             document.getElementById('updateStepsAggregate').value = stepsaggregate;
         }
-
+        function addRatioToFile() {
+            const levelInput = parseInt(document.getElementById('lvlInput').value);
+            const ratio = parseInt(document.getElementById('ratioInput').value);
+        }
+        
         function addPointToChart() {
             const level = parseInt(document.getElementById('levelInput').value);
             const difficulty = parseInt(document.getElementById('difficultyInput').value);

@@ -264,12 +264,14 @@ def create_levels():
             if a['challenge'] == l :
                 current_target += a['points']
 
-        if (l + 1) in levels_list:
+        # if (l + 1) in levels_list:
+        if index + 1 < len(levels_list):
             success_next = levels_list[index + 1]
         else:
             success_next = -1
 
-        if (l - 1) in levels_list:
+        # if (l - 1) in levels_list:
+        if index - 1 >= 0:
             failure_next = levels_list[index - 1]
         else:
             failure_next = -1

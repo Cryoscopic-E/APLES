@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
+from unified_planning.shortcuts import Fluent, IntType, RealType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
 from unified_planning.shortcuts import GE, Not, Equals, Plus
 
 from unified_planning.engines import PlanGenerationResultStatus
@@ -25,7 +25,7 @@ class PlanningProblem:
     :param csv: path to the csv file containing the activities
     """
     
-    def __init__(self, csv : str, social_score=0, physical_score=0, cognitive_score=0, minigame_score=0):
+    def __init__(self, csv : str, social_score=0, physical_score=0, cognitive_score=0, minigame_score=0, fun_ratio=0.5):
         # loaded data
         self.data = {}
         self._filter_data(csv)
@@ -50,7 +50,7 @@ class PlanningProblem:
         self.all_objects = []
         self._init_objects()
 
-        self._init_goal(p=physical_score, s=social_score,  c=cognitive_score, m=minigame_score) 
+        self._init_goal(p=physical_score, s=social_score,  c=cognitive_score, m=minigame_score, f=fun_ratio) 
 
     def _filter_data(self, csv):
         df = pd.read_csv(csv)
@@ -75,12 +75,14 @@ class PlanningProblem:
                 frequency = row[1]['Frequency']
                 current_cost = row[1]['CurrentCost']
                 cost_increase = row[1]['CostIncrease']
+                fun_score = row[1]['FunScore']
                 self.data[activity_name] = {
                     'met_score': met_score,
                     'activity_type': activity_type,
                     'frequency': frequency,
                     'current_cost': current_cost,
-                    'cost_increase': cost_increase
+                    'cost_increase': cost_increase,
+                    'fun_score': fun_score
                 }
                 
     def _unique_name(self, name : str):
@@ -108,10 +110,13 @@ class PlanningProblem:
         """
         Initializes the fluents
         """
-        counter_fluents = ['difficulty_lvl', 'difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive', 'difficulty_lvl_minigame']
+        counter_fluents = ['difficulty_lvl', 'difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive', 'difficulty_lvl_minigame', 'fun_score', 'num_activities']
         for fluent in counter_fluents:
             self.all_fluents[fluent] = Fluent(fluent, IntType())
         
+        ratio_fluents = ['fun_ratio']
+        for fluent in ratio_fluents:
+            self.all_fluents[fluent] = Fluent(fluent, RealType())
 
         bool_fluents = ['can_do_activity_type']
         for fluent in bool_fluents:
@@ -134,6 +139,7 @@ class PlanningProblem:
             activity_frequency = activity_data['frequency']
             activity_cost = activity_data['current_cost']
             activity_cost_increase = activity_data['cost_increase']
+            activity_fun_score = activity_data['fun_score']
             
             # add a fluents for the current cost of the action
             self.all_fluents['cost_' + activity_name] = Fluent('cost_' + activity_name, IntType())
@@ -142,7 +148,7 @@ class PlanningProblem:
             self.problem.add_fluent(self.all_fluents['cost_' + activity_name], default_initial_value=activity_cost)
 
             if activity_type in activity_type_mapping:
-                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type_mapping[activity_type], self.all_fluents, self.all_types)
+                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type_mapping[activity_type], self.all_fluents, self.all_types, activity_fun_score)
             else:
                 raise ValueError('Activity type not recognized')
             
@@ -197,11 +203,12 @@ class PlanningProblem:
         self.problem.add_object(cognitive_act_type)
         self.problem.add_object(minigame_act_type)
 
-    def _init_goal(self, p=0, s=0, c=0, m=0):
+    def _init_goal(self, p=0, s=0, c=0, m=0, f=0.5):
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_physical'], p))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_social'], s))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_cognitive'], c))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_minigame'], m))
+        self.problem.add_goal(GE(self.all_fluents['fun_ratio'], f))
 
     def __repr__(self) -> str:
         return str(self.problem)
