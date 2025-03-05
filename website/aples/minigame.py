@@ -23,7 +23,7 @@ class minigame:
                 for ch in self.configuration[current_level]:
                     ch["challenge"] = index
 
-                if self.level < len(self.configuration):
+                if self.level < len(self.configuration) - 1:
                         self.level = self.level + 1
                 return self.configuration[current_level]
 

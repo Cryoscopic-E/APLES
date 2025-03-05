@@ -43,7 +43,7 @@ def create_level_structure(_lvl_path, csv_path):
     create_levels()
     reset_fluents_csv()
     export_to_excel()
-    push_to_gamebus()
+    # push_to_gamebus()
 
 def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
     # Create the planning problem
@@ -63,10 +63,10 @@ def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
             print("No plan found.")
             exit()
 
-def main():
-    create_level_structure(levels_csv, activities_csv)
+# def main():
+#     create_level_structure(levels_csv, activities_csv)
     
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

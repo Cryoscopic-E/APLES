@@ -57,9 +57,9 @@ def get_graph_values(name = "none", index = 0):
     print_to_csv(final_graph_values, name, index)
 
 def print_to_csv(values, name, index = 0):
-    with open("real_{}_{}".format(name,index), mode="w", newline="") as file:
+    with open("{}/real_{}_{}.csv".format(graphs_data_path,name,index), mode="w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["physical", "social", "cognitive", "funratio"])
+        writer.writerow(["physical", "social", "cognitive","minigame", "funratio"])
         writer.writerows(values)
     
     print("written!!")
@@ -69,10 +69,6 @@ def get_activity_type_and_points(activity_name: str, df_activities: pd.DataFrame
     for _, activity in df_activities.iterrows(): 
         if activity_name == activity["Activities"]:
             return Activity(activity["Activities"], activity["Type"], activity["METScore"], activity["FunScore"])
+        if activity["Activities"] + ":" in activity_name:
+            return Activity(activity["Activities"], activity["Type"], activity["METScore"], activity["FunScore"])
     return None  # Explicitly return None when no match is found
-
-def main():
-    get_graph_values()
-
-if __name__ == '__main__':
-    main()

@@ -1,101 +1,96 @@
+import csv
 import os
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+
+from Experiment2 import get_graph_values
+
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples'))
+from aples_manager import create_level_structure
 
 graphs_data_path  = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Graph_experiment', 'graphs')
+levels_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'levelsExperiment.csv')
+active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'exampleactivities.csv')
 
-# Data
-levels1 = [' 1', ' 2', ' 3', ' 4', ' 5', 
-          ' 6', ' 7', ' 8', ' 9', ' 10', ' 11']
-levels2 = [
-    '1', '2', '3', '4', '5', 
-    '6', '7', '8', '9', '10', 
-    '11', '12', '13', '14', '15', 
-    '16', '17', '18', '19', '20', 
-    '21'
-]
-levels3 = [
-    '1', '2', '3', '4', '5', 
-    '6', '7', '8', '9', '10', 
-    '11', '12', '13', '14', '15', 
-    '16', '17', '18', '19', '20', 
-    '21', '22', '23', '24', '25', 
-    '26', '27', '28', '29', '30', 
-    '31'
-]
 activity_types = ['Physical', 'Social', 'Cognitive', 'Minigame']
+fun1 = [0.5, 0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.4,0.5]
+fun2 = [0.8, 0.8,0.7,0.7,0.6,0.6,0.5,0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
+fun3 = [0.8, 0.8,0.7,0.7,0.6,0.6,0.5,0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
+
 flow1 = [ #FLOW
-    [1, 2, 1, 0],      # Level 1: Average = (1+2+1)/3 ≈ 1.33
-    [2, 3, 1, 0],      # Level 2: Average = (2+3+1)/3 = 2.00
-    [2, 3, 3, 0],      # Level 3: Average = (2+3+3)/3 ≈ 2.67
-    [3, 5, 2, 0],      # Level 4: Average = (3+5+2)/3 ≈ 3.33
-    [4, 4, 6, 0],      # Level 5: Average = (4+4+6)/3 ≈ 4.67
-    [5, 6, 5, 0],      # Level 6: Average = (5+6+5)/3 ≈ 5.33
-    [6, 5, 7, 0],      # Level 7: Average = (6+5+7)/3 = 6.00
-    [7, 8, 6, 0],      # Level 8: Average = (7+8+6)/3 = 7.00
-    [7, 8, 8, 0],      # Level 9: Average = (7+8+8)/3 ≈ 7.67
-    [8, 9, 8, 0],      # Level 10: Average = (8+9+8)/3 ≈ 8.33
-    [9, 10, 9, 0]      # Level 11: Average = (9+10+9)/3 ≈ 9.33
+    [1, 2, 1, 0,0.7],      # Level 1: Average = (1+2+1)/3 ≈ 1.33
+    [2, 3, 1, 0,0.7],      # Level 2: Average = (2+3+1)/3 = 2.00
+    [2, 3, 3, 0,0.7],      # Level 3: Average = (2+3+3)/3 ≈ 2.67
+    [3, 5, 2, 0,0.7],      # Level 4: Average = (3+5+2)/3 ≈ 3.33
+    [4, 4, 6, 0,0.6],      # Level 5: Average = (4+4+6)/3 ≈ 4.67
+    [5, 6, 5, 0,0.6],      # Level 6: Average = (5+6+5)/3 ≈ 5.33
+    [6, 5, 7, 0,0.5],      # Level 7: Average = (6+5+7)/3 = 6.00
+    [7, 8, 6, 0,0.5],      # Level 8: Average = (7+8+6)/3 = 7.00
+    [7, 8, 8, 0,0.5],      # Level 9: Average = (7+8+8)/3 ≈ 7.67
+    [8, 9, 8, 0,0.4],      # Level 10: Average = (8+9+8)/3 ≈ 8.33
+    [9, 10, 9, 0,0.4]      # Level 11: Average = (9+10+9)/3 ≈ 9.33
 ]
 
 flow2 = [
-    [1, 2, 2, 0],   # Level 1
-    [3, 3, 4, 0],   # Level 2
-    [5, 5, 5, 0],   # Level 3
-    [6, 6, 6, 0],   # Level 4
-    [7, 7, 7, 0],   # Level 5
-    [8, 8, 9, 0],   # Level 6
-    [9, 10, 11, 0], # Level 7
-    [11, 11, 12, 0],# Level 8
-    [12, 12, 14, 0],# Level 9
-    [13, 13, 15, 0],# Level 10
-    [14, 14, 17, 0],# Level 11
-    [15, 16, 18, 0],# Level 12
-    [17, 17, 19, 0],# Level 13
-    [19, 19, 21, 0],# Level 14
-    [20, 21, 22, 0],# Level 15
-    [21, 23, 24, 0],# Level 16
-    [22, 24, 26, 0],# Level 17
-    [24, 26, 27, 0],# Level 18
-    [25, 27, 28, 0],# Level 19
-    [26, 28, 30, 0],# Level 20
-    [27, 29, 31, 0] # Level 21
+    [1, 2, 2, 0,0.7],   # Level 1
+    [3, 3, 4, 0,0.7],   # Level 2
+    [5, 5, 5, 0,0.7],   # Level 3
+    [6, 6, 6, 0,0.7],   # Level 4
+    [7, 7, 7, 0,0.7],   # Level 5
+    [8, 8, 9, 0,0.7],   # Level 6
+    [9, 10, 11, 0,0.7], # Level 7
+    [11, 11, 12, 0,0.6],# Level 8
+    [12, 12, 14, 0,0.6],# Level 9
+    [13, 13, 15, 0,0.6],# Level 10
+    [14, 14, 17, 0,0.6],# Level 11
+    [15, 16, 18, 0,0.6],# Level 12
+    [17, 17, 19, 0,0.6],# Level 13
+    [19, 19, 21, 0,0.6],# Level 14
+    [20, 21, 22, 0,0.4],# Level 15
+    [21, 23, 24, 0,0.4],# Level 16
+    [22, 24, 26, 0,0.4],# Level 17
+    [24, 26, 27, 0,0.4],# Level 18
+    [25, 27, 28, 0,0.4],# Level 19
+    [26, 28, 30, 0,0.4],# Level 20
+    [27, 29, 31, 0,0.4] # Level 21
 ]
 
 
 
 flow3 = [
-    [1, 2, 2, 0],    
-    [3, 3, 3, 0],    
-    [5, 4, 4, 0],    
-    [6, 5, 5, 0],    
-    [8, 7, 7, 0],    
-    [9, 8, 8, 0],    
-    [11, 9, 9, 0],   
-    [13, 10, 11, 0], 
-    [15, 12, 12, 0], 
-    [16, 13, 13, 0], 
-    [17, 14, 14, 0], 
-    [19, 15, 16, 0], 
-    [20, 16, 17, 0], 
-    [22, 18, 19, 0], 
-    [24, 19, 21, 0], 
-    [25, 20, 23, 0], 
-    [27, 22, 25, 0], 
-    [29, 24, 27, 0], 
-    [31, 25, 29, 0], 
-    [33, 26, 31, 0], 
-    [34, 27, 33, 0], 
-    [35, 28, 34, 0], 
-    [36, 30, 35, 0], 
-    [38, 31, 36, 0], 
-    [39, 32, 38, 0], 
-    [41, 33, 39, 0], 
-    [43, 34, 40, 0], 
-    [44, 36, 42, 0], 
-    [46, 37, 43, 0], 
-    [48, 39, 45, 0], 
-    [50, 40, 47, 0]  
+    [1, 2, 2, 0,0.7],    
+    [3, 3, 3, 0,0.7],    
+    [5, 4, 4, 0,0.7],    
+    [6, 5, 5, 0,0.7],    
+    [8, 7, 7, 0,0.7],    
+    [9, 8, 8, 0,0.7],    
+    [11, 9, 9, 0,0.6],   
+    [13, 10, 11, 0,0.6], 
+    [15, 12, 12, 0,0.6], 
+    [16, 13, 13, 0,0.6], 
+    [17, 14, 14, 0,0.6], 
+    [19, 15, 16, 0,0.6], 
+    [20, 16, 17, 0,0.6], 
+    [22, 18, 19, 0,0.6], 
+    [24, 19, 21, 0,0.6], 
+    [25, 20, 23, 0,0.6], 
+    [27, 22, 25, 0,0.6], 
+    [29, 24, 27, 0,0.5], 
+    [31, 25, 29, 0,0.5], 
+    [33, 26, 31, 0,0.5], 
+    [34, 27, 33, 0,0.5], 
+    [35, 28, 34, 0,0.5], 
+    [36, 30, 35, 0,0.5], 
+    [38, 31, 36, 0,0.5], 
+    [39, 32, 38, 0,0.5], 
+    [41, 33, 39, 0,0.5], 
+    [43, 34, 40, 0,0.5], 
+    [44, 36, 42, 0,0.5], 
+    [46, 37, 43, 0,0.4], 
+    [48, 39, 45, 0,0.4], 
+    [50, 40, 47, 0,0.4]  
 ]
 
 skill1 = [ #Skill Acquisition and Mastery Theory
@@ -174,8 +169,8 @@ skill3 = [ #Skill Acquisition and Mastery Theory
 
 
 minigame1 = [  # With Minigames
-    [0, 0, 0, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
-    [0, 0, 0, 1],   # Level 2:  (3+2+3)/3 ≈ 2.67  
+    [0, 0, 1, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
+    [0, 0, 1, 1],   # Level 2:  (3+2+3)/3 ≈ 2.67  
     [0, 0, 1, 1],   # Level 3:  (4+3+4)/3 ≈ 3.67  
     [1, 1, 0, 1],   # Level 4:  (6+5+4)/3 ≈ 5.00  
     [1, 0, 2, 2],   # Level 5:  (8+6+7)/3 ≈ 7.00  
@@ -188,7 +183,7 @@ minigame1 = [  # With Minigames
 ]
 
 minigame2 = [  # With Minigames and Cognitive Activities
-    [0, 0, 0, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
+    [1, 0, 0, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
     [0, 0, 1, 1],   # Level 2:  (3+2+3)/3 ≈ 2.67  
     [0, 0, 2, 1],   # Level 3:  (4+3+4)/3 ≈ 3.67  
     [1, 1, 1, 1],   # Level 4:  (6+5+4)/3 ≈ 5.00  
@@ -212,7 +207,7 @@ minigame2 = [  # With Minigames and Cognitive Activities
 ]
 
 minigame3 = [  # With Minigames and Cognitive Activities
-    [0, 0, 0, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
+    [1, 0, 0, 1],   # Level 1:  (1+2+1)/3 ≈ 1.33  
     [0, 0, 1, 1],   # Level 2:  (3+2+3)/3 ≈ 2.67  
     [0, 0, 2, 1],   # Level 3:  (4+3+4)/3 ≈ 3.67  
     [1, 1, 1, 1],   # Level 4:  (6+5+4)/3 ≈ 5.00  
@@ -248,29 +243,38 @@ minigame3 = [  # With Minigames and Cognitive Activities
 flow_graph = [flow1, flow2, flow3]
 skill_graph = [skill1,skill2,skill3]
 minigame_graph = [minigame1,minigame2,minigame3]
+fun_graph = [fun1,fun2,fun3]
 
-levels = [levels1, levels2, levels3]
 
-def create_and_plot_graph(levels, activity_types, difficulty_values, index, name):
+def create_and_plot_graph(activity_types, difficulty_values, index, name, skip_newline=False):
+    levels_new = []
+    i = 0
+    if skip_newline:
+        df = pd.read_csv(difficulty_values, skiprows=1, header=None)  # Skip header
+        difficulty_values = df.values.tolist()  # Convert DataFrame to a list of lists
+
     # Calculate the average difficulty for each level,
     # considering only Physical, Social, and Cognitive (ignoring Minigame)
     average_difficulties = []
     for row in difficulty_values:
+        levels_new.append(i)
         # Only consider the first three values
-        non_zero = [d for d in row[:3] if d > 0]
+        non_zero = [d for d in row[:3] if float(d) > 0]
         avg = np.mean(non_zero) if non_zero else 0
         average_difficulties.append(avg)
+        i = i + 1
 
+    
     # Create a figure and axis
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Plot each activity type's difficulty progression
-    for i, activity in enumerate(activity_types):
-        ax.plot(levels, [row[i] for row in difficulty_values],
+    for j, activity in enumerate(activity_types):
+        ax.plot(levels_new, [row[j] for row in difficulty_values],
                 label=activity, marker='o')
 
     # Plot the average difficulty line (the flow line) as a dashed black line
-    ax.plot(levels, average_difficulties, label='Average Difficulty', 
+    ax.plot(levels_new, average_difficulties, label='Average Difficulty', 
             color='black', linestyle='--', marker='x')
 
     # Adding labels and title
@@ -286,13 +290,31 @@ def create_and_plot_graph(levels, activity_types, difficulty_values, index, name
 
 def main():
     save_graph(flow_graph, "flow")
-    save_graph(skill_graph, "skill")
-    save_graph(minigame_graph, "minigame")
+    # save_graph(skill_graph, "skill")
+    # save_graph(minigame_graph, "minigame")
+
+def create_level_csv(graph):
+    print_to_csv(graph)
+
+def print_to_csv(values):
+    with open(levels_path, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["physical", "social", "cognitive","minigame", "funratio"])
+        writer.writerows(values)
+    print("written!!")
 
 def save_graph(graphs, name):
     index = 0
     for graph in graphs:
-        create_and_plot_graph(levels[index], activity_types, graph, index, name)
+        #plot and save the graph
+        create_and_plot_graph(activity_types, graph, index, name)
+        #Add the plotted graph to the current level
+        create_level_csv(graph)
+        #Create a plan using the planner
+        create_level_structure(levels_path,active_activity_path)
+        #plot* and save the "planned" graphs
+        get_graph_values(name, index)
+        create_and_plot_graph(activity_types,"{}/real_{}_{}.csv".format(graphs_data_path,name,index),index, "actual_{}graph{}".format(name, index), True)
         index = index + 1
 
 if __name__ == '__main__':
