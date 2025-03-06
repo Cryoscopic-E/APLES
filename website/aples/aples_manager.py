@@ -56,7 +56,7 @@ def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
         plan = result.plan
 
         if plan is not None:
-            print(plan)
+            # print(plan)
             # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
             return plan
         else:

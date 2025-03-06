@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from scipy import stats
+from scipy.stats import shapiro
 from Experiment2 import get_graph_values
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples'))
@@ -288,6 +290,8 @@ def create_and_plot_graph(activity_types, difficulty_values, index, name, skip_n
     plt.savefig('{}/{}graph{}.png'.format(graphs_data_path, name, index))
     # plt.show()
 
+    return average_difficulties
+
 def create_level_csv(graph):
     print_to_csv(graph)
 
@@ -298,29 +302,36 @@ def print_to_csv(values):
         writer.writerows(values)
     print("written!!")
 
-def create_real_vs_input_fun_graph(array1,array2, index, name):
-    df = pd.read_csv(array2, skiprows=1, header=None)  # Skip header
+def clean_real_graph_data(path):
+    df = pd.read_csv(path, skiprows=1, header=None)  # Skip header
     difficulty_values = df.values.tolist()  # Convert DataFrame to a list of lists
+    return difficulty_values
+
+def create_real_vs_input_fun_graph(array1,array2, index, name, context):
     
-    array1 = get_fun_ratio_from_array(array1)
-    array2 = get_fun_ratio_from_array(difficulty_values)
+    if context == "fun":
+        array2 = clean_real_graph_data(array2)
+        array1 = get_fun_ratio_from_array(array1)
+        array2 = get_fun_ratio_from_array(array2)
 
     # Create a figure and axis
     fig, ax = plt.subplots(figsize=(10, 6))
 
     # Plot array 1 and array 2 
-    ax.plot(array1, label="Input Fun", marker="o", linestyle="-", color="b")
-    ax.plot(array2, label="Real Fun", marker="s", linestyle="--", color="r")
+    ax.plot(array1, label="Input {}".format(context), marker="o", linestyle="-", color="b")
+    ax.plot(array2, label="Real {}".format(context), marker="s", linestyle="--", color="r")
 
     # Adding labels and title
     ax.set_xlabel('Levels')
-    ax.set_ylabel('Fun level')
-    ax.set_title('Activity Difficulty by Fun')
+    ax.set_ylabel('{} level'.format(context))
+    ax.set_title('Average {} comparison graph'.format(context))
 
     # Adding a legend
     ax.legend(title='Activity Types')
     plt.tight_layout()
-    plt.savefig('{}/{}-{}-graph-{}.png'.format(graphs_data_path,name, "fun" , index))
+    plt.savefig('{}/{}-{}-comparison-graph-{}.png'.format(graphs_data_path,name, context , index))
+
+    return [array1,array2]
 
 def get_fun_ratio_from_array(array):
     funratio = []
@@ -328,25 +339,57 @@ def get_fun_ratio_from_array(array):
         funratio.append(item[4])
     return funratio
 
-def save_graph(graphs, name):
+def statistical_analysis(array1, array2, text_file, name, input):
+        text_file.write("----------------- \n")
+        text_file.write("Content: {} - {} \n".format(name, input))        
+        array1_normality = shapiro(array1).pvalue
+        text_file.write("Test of Normality array 1: {} \n".format(array1_normality))
+        array2_normality = shapiro(array2).pvalue
+        text_file.write("Test of Normality array 2: {} \n".format(array2_normality))
+
+        if array1_normality <= 0.05 and array2_normality <= 0.05:
+            text_file.write("Normal contribution is true \n")
+            text_file.write("Test significant difference between groups using independent t-tests: ")
+            result = stats.ttest_ind(a=array1, b=array2, equal_var=True).pvalue
+            text_file.write("P-value = {} \n".format(result))
+            if result > 0.05:
+                text_file.write("There is no significant difference between the two graphs using t-test \n")
+            else:
+                text_file.write("There is significant difference between the two graphs using t-tests \n")
+        else:
+            text_file.write("Normal contribution is False \n")
+            text_file.write("Test significant difference between groups using kruskal-wallis test: ")
+            result = stats.kruskal(array1,array2).pvalue
+            text_file.write("P-value = {} \n".format(result))
+            if result > 0.05:
+                text_file.write("There is no significant difference between the two graphs using kw test \n")
+            else:
+                text_file.write("There is significant difference between the two graphs using kw test \n")
+        text_file.write("----------------- \n")
+def save_graph(graphs, name, text_file):
     index = 0
+    text_file.write("\n {} \n".format(name))
     for graph in graphs:
         #plot and save the graph
-        create_and_plot_graph(activity_types, graph, index, name)
+        avg_input_difficulty = create_and_plot_graph(activity_types, graph, index, name)
         #Add the plotted graph to the current level
         create_level_csv(graph)
         #Create a plan using the planner
         create_level_structure(levels_path,active_activity_path)
         #plot* and save the "planned" graphs
         get_graph_values(name, index)
-        create_and_plot_graph(activity_types,"{}/real_{}_{}.csv".format(graphs_data_path,name,index),index, "actual_{}graph{}".format(name, index), True)
-        create_real_vs_input_fun_graph(graph,"{}/real_{}_{}.csv".format(graphs_data_path,name,index), index, name)
+        avg_real_difficulty = create_and_plot_graph(activity_types,"{}/real_{}_{}.csv".format(graphs_data_path,name,index),index, "actual_{}graph{}".format(name, index), True)
+        average_fun_arrays = create_real_vs_input_fun_graph(graph,"{}/real_{}_{}.csv".format(graphs_data_path,name,index), index, name, "fun")
+        average_difficulty_arrays = create_real_vs_input_fun_graph(avg_input_difficulty,avg_real_difficulty, index, name, "difficulty")
+        statistical_analysis(average_fun_arrays[0], average_fun_arrays[1], text_file, name + " fun ", index)
+        statistical_analysis(avg_input_difficulty, avg_real_difficulty, text_file, name + " difficulty ", index)
         index = index + 1
 
 def main():
-    save_graph(flow_graph, "flow")
-    save_graph(skill_graph, "skill")
-    save_graph(minigame_graph, "minigame")
+    with open("{}/output.txt".format(graphs_data_path), "w") as text_file:
+        save_graph(flow_graph, "flow", text_file)
+        save_graph(skill_graph, "skill", text_file)
+        save_graph(minigame_graph, "minigame", text_file)
 
 if __name__ == '__main__':
     main()
