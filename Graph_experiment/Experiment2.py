@@ -71,4 +71,6 @@ def get_activity_type_and_points(activity_name: str, df_activities: pd.DataFrame
             return Activity(activity["Activities"], activity["Type"], activity["METScore"], activity["FunScore"])
         if activity["Activities"] + ":" in activity_name:
             return Activity(activity["Activities"], activity["Type"], activity["METScore"], activity["FunScore"])
+        if "tutorial_video" in activity_name:
+            return Activity("Tutorial_level", "tutorial", 1, 1)
     return None  # Explicitly return None when no match is found
