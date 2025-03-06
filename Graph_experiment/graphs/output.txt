@@ -3,49 +3,49 @@
 ----------------- 
 Content: flow fun  - 0 
 Test of Normality array 1: 0.05015439889351976 
-Test of Normality array 2: 0.3539731301542913 
+Test of Normality array 2: 0.739708315603981 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.010892217072630689 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.00032436736379001167 
 There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: flow difficulty  - 0 
 Test of Normality array 1: 0.772665621134297 
-Test of Normality array 2: 0.5155779880809612 
+Test of Normality array 2: 0.9192290547055563 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.038378638949213846 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.021398684185296724 
 There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: flow fun  - 1 
 Test of Normality array 1: 0.0002380506568704549 
-Test of Normality array 2: 0.3931389171085332 
-Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.0002783332398122119 
-There is significant difference between the two graphs using kw test 
+Test of Normality array 2: 0.00018622797707982288 
+Normal contribution is true 
+Test significant difference between groups using independent t-tests: P-value = 0.0008617166962124285 
+There is significant difference between the two graphs using t-tests 
 ----------------- 
 ----------------- 
 Content: flow difficulty  - 1 
 Test of Normality array 1: 0.4311281706282918 
-Test of Normality array 2: 0.38356241585736345 
+Test of Normality array 2: 0.6783360562676992 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.5542688043463733 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.5211489372902287 
 There is no significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: flow fun  - 2 
 Test of Normality array 1: 0.0023512010008067026 
-Test of Normality array 2: 0.012934589370104934 
-Normal contribution is true 
-Test significant difference between groups using independent t-tests: P-value = 8.572662194742918e-08 
-There is significant difference between the two graphs using t-tests 
+Test of Normality array 2: 0.40597242112381265 
+Normal contribution is False 
+Test significant difference between groups using kruskal-wallis test: P-value = 2.3212325461016134e-07 
+There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: flow difficulty  - 2 
 Test of Normality array 1: 0.1821941078443164 
-Test of Normality array 2: 0.22223199229341023 
+Test of Normality array 2: 0.14097512048893507 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.5590102152474092 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.5975041623059136 
 There is no significant difference between the two graphs using kw test 
 ----------------- 
 
@@ -53,49 +53,49 @@ There is no significant difference between the two graphs using kw test
 ----------------- 
 Content: skill fun  - 0 
 Test of Normality array 1: 0.05015439889351976 
-Test of Normality array 2: 0.062382426599368636 
+Test of Normality array 2: 0.09617330494654446 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.00032436736379001167 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.00024819414020876065 
 There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: skill difficulty  - 0 
 Test of Normality array 1: 0.008376398526979321 
-Test of Normality array 2: 0.10391542534126502 
+Test of Normality array 2: 0.9640580368172376 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.10537362602498966 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.1444163177895919 
 There is no significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: skill fun  - 1 
 Test of Normality array 1: 0.0002380506568704549 
-Test of Normality array 2: 0.0012828118390689652 
-Normal contribution is true 
-Test significant difference between groups using independent t-tests: P-value = 9.597905355810326e-05 
-There is significant difference between the two graphs using t-tests 
+Test of Normality array 2: 0.7145328807944019 
+Normal contribution is False 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.00013777387631568953 
+There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: skill difficulty  - 1 
 Test of Normality array 1: 0.0041271819965633975 
-Test of Normality array 2: 0.014810434734734016 
+Test of Normality array 2: 0.018584876211949434 
 Normal contribution is true 
-Test significant difference between groups using independent t-tests: P-value = 0.4073073491614164 
+Test significant difference between groups using independent t-tests: P-value = 0.512959584791835 
 There is no significant difference between the two graphs using t-test 
 ----------------- 
 ----------------- 
 Content: skill fun  - 2 
 Test of Normality array 1: 0.0023512010008067026 
-Test of Normality array 2: 0.5713945455589535 
-Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 1.226805178846217e-06 
-There is significant difference between the two graphs using kw test 
+Test of Normality array 2: 7.971982071079512e-06 
+Normal contribution is true 
+Test significant difference between groups using independent t-tests: P-value = 5.811344075889169e-06 
+There is significant difference between the two graphs using t-tests 
 ----------------- 
 ----------------- 
 Content: skill difficulty  - 2 
 Test of Normality array 1: 0.00021086900181035683 
-Test of Normality array 2: 0.0011219644557325609 
+Test of Normality array 2: 0.002117021635421934 
 Normal contribution is true 
-Test significant difference between groups using independent t-tests: P-value = 0.3366529617167039 
+Test significant difference between groups using independent t-tests: P-value = 0.28341825753933536 
 There is no significant difference between the two graphs using t-test 
 ----------------- 
 
@@ -103,48 +103,48 @@ There is no significant difference between the two graphs using t-test
 ----------------- 
 Content: minigame fun  - 0 
 Test of Normality array 1: 0.05015439889351976 
-Test of Normality array 2: 0.34448051674075575 
+Test of Normality array 2: 0.167387671606963 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.015664469945210584 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.005055820539199254 
 There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: minigame difficulty  - 0 
 Test of Normality array 1: 0.02862661547849269 
-Test of Normality array 2: 0.8940615002824577 
+Test of Normality array 2: 0.4152116685684042 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.017051697400791238 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.017628038656128598 
 There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: minigame fun  - 1 
 Test of Normality array 1: 0.0002380506568704549 
-Test of Normality array 2: 0.49099155377369824 
-Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 9.411655407255058e-05 
-There is significant difference between the two graphs using kw test 
+Test of Normality array 2: 0.001054777715858548 
+Normal contribution is true 
+Test significant difference between groups using independent t-tests: P-value = 8.468982345551078e-05 
+There is significant difference between the two graphs using t-tests 
 ----------------- 
 ----------------- 
 Content: minigame difficulty  - 1 
 Test of Normality array 1: 0.010476896081922276 
-Test of Normality array 2: 0.9875476280711012 
+Test of Normality array 2: 0.5212169704916542 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.004384721402070821 
-There is significant difference between the two graphs using kw test 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.06944948469729993 
+There is no significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: minigame fun  - 2 
 Test of Normality array 1: 0.0023512010008067026 
-Test of Normality array 2: 1.638040025423081e-05 
-Normal contribution is true 
-Test significant difference between groups using independent t-tests: P-value = 0.00016945601734532576 
-There is significant difference between the two graphs using t-tests 
+Test of Normality array 2: 0.08994250817317512 
+Normal contribution is False 
+Test significant difference between groups using kruskal-wallis test: P-value = 6.605965295598021e-06 
+There is significant difference between the two graphs using kw test 
 ----------------- 
 ----------------- 
 Content: minigame difficulty  - 2 
 Test of Normality array 1: 0.10939755024051195 
-Test of Normality array 2: 0.12274747387713703 
+Test of Normality array 2: 0.919411334687619 
 Normal contribution is False 
-Test significant difference between groups using kruskal-wallis test: P-value = 0.04095157669620178 
+Test significant difference between groups using kruskal-wallis test: P-value = 0.0016372972769306909 
 There is significant difference between the two graphs using kw test 
 ----------------- 

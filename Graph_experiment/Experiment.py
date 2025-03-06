@@ -14,12 +14,12 @@ from aples_manager import create_level_structure
 
 graphs_data_path  = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Graph_experiment', 'graphs')
 levels_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'levelsExperiment.csv')
-active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'exampleactivities.csv')
+
+#TODO: If no plan is generated try to run the experiment with this activity file activated 
+# active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'exampleactivities.csv')
+active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'GeneratedActivities.csv')
 
 activity_types = ['Physical', 'Social', 'Cognitive', 'Minigame']
-fun1 = [0.5, 0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.4,0.5]
-fun2 = [0.8, 0.8,0.7,0.7,0.6,0.6,0.5,0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
-fun3 = [0.8, 0.8,0.7,0.7,0.6,0.6,0.5,0.5,0.5,0.4,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 
 flow1 = [ #FLOW
     [1, 2, 1, 0, 7],      # Level 1: Average = (1+2+1)/3 ≈ 1.33
@@ -245,7 +245,6 @@ minigame3 = [  # With Minigames and Cognitive Activities
 flow_graph = [flow1, flow2, flow3]
 skill_graph = [skill1,skill2,skill3]
 minigame_graph = [minigame1,minigame2,minigame3]
-fun_graph = [fun1,fun2,fun3]
 
 
 def create_and_plot_graph(activity_types, difficulty_values, index, name, skip_newline=False):

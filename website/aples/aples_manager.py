@@ -41,9 +41,9 @@ def create_level_structure(_lvl_path, csv_path):
         current_level_ = export_plan_to_sheet(current_level_, executed_plan)
 
     create_levels()
-    # reset_fluents_csv()
+    # reset_fluents_csv() #commented to prevent planning tutorial levels  in experiment
     export_to_excel()
-    # push_to_gamebus()
+    # push_to_gamebus() #commented to prevent pushing to gamebus during experiments
 
 def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
     # Create the planning problem
@@ -56,7 +56,7 @@ def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
         plan = result.plan
 
         if plan is not None:
-            # print(plan)
+            # print(plan)   #commented to prevent overload of prints in the terminal
             # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
             return plan
         else:
