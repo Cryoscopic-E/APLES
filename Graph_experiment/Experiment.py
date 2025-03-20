@@ -1,6 +1,7 @@
 import csv
 import os
 import sys
+import time
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -11,13 +12,17 @@ from Experiment2 import get_graph_values
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples'))
 from aples_manager import create_level_structure
+import openpyxl
+from openpyxl import Workbook
 
 graphs_data_path  = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Graph_experiment', 'graphs')
 levels_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'levelsExperiment.csv')
 
 #TODO: If no plan is generated try to run the experiment with this activity file activated 
-# active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'exampleactivities.csv')
-active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'GeneratedActivities.csv')
+active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'exampleactivities.csv')
+sheet1_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'sheet1.csv')
+
+# active_activity_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'website', 'aples', 'data', 'GeneratedActivities.csv')
 
 activity_types = ['Physical', 'Social', 'Cognitive', 'Minigame']
 
@@ -31,8 +36,8 @@ flow1 = [ #FLOW
     [6, 5, 7, 0, 5],      # Level 7: Average = (6+5+7)/3 = 6.00
     [7, 8, 6, 0, 5],      # Level 8: Average = (7+8+6)/3 = 7.00
     [7, 8, 8, 0, 5],      # Level 9: Average = (7+8+8)/3 ≈ 7.67
-    [8, 9, 8, 0, 4],      # Level 10: Average = (8+9+8)/3 ≈ 8.33
-    [9, 10, 9, 0,4]      # Level 11: Average = (9+10+9)/3 ≈ 9.33
+    [8, 9, 8, 0, 5],      # Level 10: Average = (8+9+8)/3 ≈ 8.33
+    [9, 10, 9, 0,5]      # Level 11: Average = (9+10+9)/3 ≈ 9.33
 ]
 
 flow2 = [
@@ -50,13 +55,13 @@ flow2 = [
     [15, 16, 18, 0,6],# Level 12
     [17, 17, 19, 0,6],# Level 13
     [19, 19, 21, 0,6],# Level 14
-    [20, 21, 22, 0,4],# Level 15
-    [21, 23, 24, 0,4],# Level 16
-    [22, 24, 26, 0,4],# Level 17
-    [24, 26, 27, 0,4],# Level 18
-    [25, 27, 28, 0,4],# Level 19
-    [26, 28, 30, 0,4],# Level 20
-    [27, 29, 31, 0,4] # Level 21
+    [20, 21, 22, 0,5],# Level 15
+    [21, 23, 24, 0,5],# Level 16
+    [22, 24, 26, 0,5],# Level 17
+    [24, 26, 27, 0,5],# Level 18
+    [25, 27, 28, 0,5],# Level 19
+    [26, 28, 30, 0,5],# Level 20
+    [27, 29, 31, 0,5] # Level 21
 ]
 
 
@@ -90,9 +95,9 @@ flow3 = [
     [41, 33, 39, 0,5], 
     [43, 34, 40, 0,5], 
     [44, 36, 42, 0,5], 
-    [46, 37, 43, 0,4], 
-    [48, 39, 45, 0,4], 
-    [50, 40, 47, 0,4]  
+    [46, 37, 43, 0,5], 
+    [48, 39, 45, 0,5], 
+    [50, 40, 47, 0,5]  
 ]
 
 skill1 = [ #Skill Acquisition and Mastery Theory
@@ -105,8 +110,8 @@ skill1 = [ #Skill Acquisition and Mastery Theory
     [10, 9, 10, 0,5], # Level 7:  (10+9+10)/3 ≈ 9.67  
     [10, 10, 9, 0,5], # Level 8:  (10+10+9)/3 ≈ 9.67  ← Plateau starts 
     [10, 9, 10, 0,5], # Level 9:  (10+9+10)/3 ≈ 9.67  
-    [10, 10, 9, 0,4], # Level 10: (10+10+9)/3 ≈ 9.67  
-    [9, 10, 10, 0,4], # Level 11: (9+10+10)/3 ≈ 9.67  ← Plateau continues 
+    [10, 10, 9, 0,5], # Level 10: (10+10+9)/3 ≈ 9.67  
+    [9, 10, 10, 0,5], # Level 11: (9+10+10)/3 ≈ 9.67  ← Plateau continues 
 ]
 
 skill2 = [ #Skill Acquisition and Mastery Theory
@@ -124,13 +129,13 @@ skill2 = [ #Skill Acquisition and Mastery Theory
     [17, 15, 16, 0,6],# Level 12: (17+15+16)/3 ≈ 16.00  
     [18, 16, 17, 0,6],# Level 13: (18+16+17)/3 ≈ 17.00  
     [19, 17, 18, 0,6],# Level 14: (19+17+18)/3 ≈ 18.00  
-    [19, 18, 19, 0,4],# Level 15: (19+18+19)/3 ≈ 18.67  
-    [19, 19, 19, 0,4],# Level 16: (19+19+19)/3 ≈ 19.00  
-    [19, 19, 19, 0,4],# Level 17: (19+19+19)/3 ≈ 19.00  
-    [19, 19, 19, 0,4],# Level 18: (19+19+19)/3 ≈ 19.00  
-    [19, 19, 19, 0,4],# Level 19: (19+19+19)/3 ≈ 19.00  
-    [19, 19, 19, 0,4],# Level 20: (19+19+19)/3 ≈ 19.00  
-    [19, 19, 19, 0,4],# Level 21: (19+19+19)/3 ≈ 19.00
+    [19, 18, 19, 0,5],# Level 15: (19+18+19)/3 ≈ 18.67  
+    [19, 19, 19, 0,5],# Level 16: (19+19+19)/3 ≈ 19.00  
+    [19, 19, 19, 0,5],# Level 17: (19+19+19)/3 ≈ 19.00  
+    [19, 19, 19, 0,5],# Level 18: (19+19+19)/3 ≈ 19.00  
+    [19, 19, 19, 0,5],# Level 19: (19+19+19)/3 ≈ 19.00  
+    [19, 19, 19, 0,5],# Level 20: (19+19+19)/3 ≈ 19.00  
+    [19, 19, 19, 0,5],# Level 21: (19+19+19)/3 ≈ 19.00
 ]
 
 skill3 = [ #Skill Acquisition and Mastery Theory
@@ -162,9 +167,9 @@ skill3 = [ #Skill Acquisition and Mastery Theory
     [30, 25, 26, 0,5], # Level 26: (30+25+26)/3 ≈ 27.00  
     [30, 25, 26, 0,5], # Level 27: (30+25+26)/3 ≈ 27.00  
     [30, 25, 26, 0,5], # Level 28: (30+25+26)/3 ≈ 27.00  
-    [30, 25, 26, 0,4], # Level 29: (30+25+26)/3 ≈ 27.00  
-    [30, 25, 26, 0,4], # Level 30: (30+25+26)/3 ≈ 27.00  
-    [30, 25, 26, 0,4], # Level 31: (30+25+26)/3 ≈ 27.00  
+    [30, 25, 26, 0,5], # Level 29: (30+25+26)/3 ≈ 27.00  
+    [30, 25, 26, 0,5], # Level 30: (30+25+26)/3 ≈ 27.00  
+    [30, 25, 26, 0,5], # Level 31: (30+25+26)/3 ≈ 27.00  
 ]
 
 
@@ -180,8 +185,8 @@ minigame1 = [  # With Minigames
     [3, 2, 1, 1, 5],   # Level 7:  (10+9+9)/3 ≈ 9.33  
     [4, 3, 1, 0, 5],   # Level 8:  (9+8+8)/3 ≈ 8.33  
     [5, 4, 2, 0, 5],   # Level 9:  (8+8+9)/3 ≈ 8.33  
-    [6, 5, 2, 0, 4],   # Level 10: (7+7+7)/3 ≈ 7.00  
-    [7, 6, 2, 0, 4],   # Level 11: (6+6+6)/3 ≈ 6.00  
+    [6, 5, 2, 0, 5],   # Level 10: (7+7+7)/3 ≈ 7.00  
+    [7, 6, 2, 0, 5],   # Level 11: (6+6+6)/3 ≈ 6.00  
 ]
 
 minigame2 = [  # With Minigames and Cognitive Activities
@@ -199,13 +204,13 @@ minigame2 = [  # With Minigames and Cognitive Activities
     [6, 6, 2, 0, 6],   # Level 12: (5+5+6)/3 ≈ 5.33  
     [7, 6, 2, 0, 6],   # Level 13: (5+5+6)/3 ≈ 5.33  
     [8, 7, 2, 0, 6],   # Level 14: (4+4+5)/3 ≈ 4.33  
-    [9, 7, 2, 0, 4],   # Level 15: (4+4+5)/3 ≈ 4.33  
-    [10, 8, 2, 0,4],  # Level 16: (3+3+4)/3 ≈ 3.33  
-    [10, 8, 1, 0,4],  # Level 17: (3+3+4)/3 ≈ 3.33  
-    [10, 9, 1, 0,4],  # Level 18: (2+2+3)/3 ≈ 2.33  
-    [10, 9, 1, 0,4],  # Level 19: (2+2+3)/3 ≈ 2.33  
-    [10, 9, 1, 0,4],  # Level 20: (2+2+3)/3 ≈ 2.33  
-    [10, 9, 1, 0,4]  # Level 21: (2+2+3)/3 ≈ 2.33  
+    [9, 7, 2, 0, 5],   # Level 15: (4+4+5)/3 ≈ 4.33  
+    [10, 8, 2, 0,5],  # Level 16: (3+3+4)/3 ≈ 3.33  
+    [10, 8, 1, 0,5],  # Level 17: (3+3+4)/3 ≈ 3.33  
+    [10, 9, 1, 0,5],  # Level 18: (2+2+3)/3 ≈ 2.33  
+    [10, 9, 1, 0,5],  # Level 19: (2+2+3)/3 ≈ 2.33  
+    [10, 9, 1, 0,5],  # Level 20: (2+2+3)/3 ≈ 2.33  
+    [10, 9, 1, 0,5]  # Level 21: (2+2+3)/3 ≈ 2.33  
 ]
 
 minigame3 = [  # With Minigames and Cognitive Activities
@@ -237,9 +242,9 @@ minigame3 = [  # With Minigames and Cognitive Activities
     [7, 9, 0, 0, 5],  # Level 26: (1+2+3)/3 ≈ 2.00  
     [8, 9, 0, 0, 5],  # Level 27: (1+2+3)/3 ≈ 2.00  
     [7, 9, 0, 0, 5],  # Level 28: (1+2+3)/3 ≈ 2.00  
-    [6, 12, 0, 0,4],  # Level 29: (1+2+3)/3 ≈ 2.00  
-    [8, 13, 0, 0,4],  # Level 30: (1+2+3)/3 ≈ 2.00  
-    [10, 9, 0, 0,4]  # Level 31: (1+2+3)/3 ≈ 2.00  
+    [6, 12, 0, 0,5],  # Level 29: (1+2+3)/3 ≈ 2.00  
+    [8, 13, 0, 0,5],  # Level 30: (1+2+3)/3 ≈ 2.00  
+    [10, 9, 0, 0,5]  # Level 31: (1+2+3)/3 ≈ 2.00  
 ]
 
 flow_graph = [flow1, flow2, flow3]
@@ -338,43 +343,90 @@ def get_fun_ratio_from_array(array):
         funratio.append(item[4])
     return funratio
 
+def cohen_d(x, y):
+    nx = len(x)
+    ny = len(y)
+    dof = nx + ny - 2
+    return (np.mean(x) - np.mean(y)) / np.sqrt(((nx - 1) * np.var(x) + (ny - 1) * np.var(y)) / dof)
+
+def kruskal_wallis_effect_size(array1, array2):
+    return (np.median(array1) - np.median(array2)) / np.std(array1 + array2)
+
 def statistical_analysis(array1, array2, text_file, name, input):
-        text_file.write("----------------- \n")
-        text_file.write("Content: {} - {} \n".format(name, input))        
+        # text_file.write("----------------- \n")
+        # text_file.write("Content: {} - {} \n".format(name, input))  
+
+        text_file.write("Type: {} - graph {} \n".format(name, input + 1))  
         array1_normality = shapiro(array1).pvalue
-        text_file.write("Test of Normality array 1: {} \n".format(array1_normality))
+        # text_file.write("Test of Normality array 1: {} \n".format(array1_normality))
         array2_normality = shapiro(array2).pvalue
-        text_file.write("Test of Normality array 2: {} \n".format(array2_normality))
+        # text_file.write("Test of Normality array 2: {} \n".format(array2_normality))
 
         if array1_normality <= 0.05 and array2_normality <= 0.05:
-            text_file.write("Normal contribution is true \n")
-            text_file.write("Test significant difference between groups using independent t-tests: ")
+            # text_file.write("Normal contribution is true \n")
+            # text_file.write("Test significant difference between groups using independent t-tests: ")
             result = stats.ttest_ind(a=array1, b=array2, equal_var=True).pvalue
-            text_file.write("P-value = {} \n".format(result))
+            # text_file.write("P-value = {} \n".format(result))
             if result > 0.05:
-                text_file.write("There is no significant difference between the two graphs using t-test \n")
+                # text_file.write("There is no significant difference between the two graphs using t-test \n")
+                text_file.write("No (p={}) \n".format(result))
+                text_file.write("none \n")
             else:
-                text_file.write("There is significant difference between the two graphs using t-tests \n")
+                # text_file.write("There is significant difference between the two graphs using t-tests \n")
+                text_file.write("Yes (p={}) \n".format(result))
+                effect_size = cohen_d(array1, array2)
+                if effect_size <= 0.2:  
+                    size = 'small'
+                elif effect_size <= 0.5:
+                    size = 'medium'
+                else:
+                    size = 'large'
+                text_file.write("{} = (p={}) (cohen's d)\n".format(size, effect_size))
         else:
-            text_file.write("Normal contribution is False \n")
-            text_file.write("Test significant difference between groups using kruskal-wallis test: ")
+            # text_file.write("Normal contribution is False \n")
+            # text_file.write("Test significant difference between groups using kruskal-wallis test: ")
             result = stats.kruskal(array1,array2).pvalue
-            text_file.write("P-value = {} \n".format(result))
+            # text_file.write("P-value = {} \n".format(result))
             if result > 0.05:
-                text_file.write("There is no significant difference between the two graphs using kw test \n")
+                # text_file.write("There is no significant difference between the two graphs using kw test \n")
+                text_file.write("No (p={}) \n".format(result))
+                text_file.write("none \n")
             else:
-                text_file.write("There is significant difference between the two graphs using kw test \n")
+                # text_file.write("There is significant difference between the two graphs using kw test \n")
+                text_file.write("Yes (p={}) \n".format(result))
+                effect_size = kruskal_wallis_effect_size(array1, array2)
+                size = ''
+                if effect_size < 0.06:  
+                    size = 'small'
+                elif effect_size < 0.14:
+                    size = 'medium'
+                else:
+                    size = 'large'
+                text_file.write("{} = (p={}) (kruskal_wallis)\n".format(size, effect_size))
+
         text_file.write("----------------- \n")
+
+def get_rows_sheet(file):
+    df = pd.read_csv(file)
+    return df.shape[0]
 def save_graph(graphs, name, text_file):
     index = 0
     text_file.write("\n {} \n".format(name))
-    for graph in graphs:
+    for graph in graphs: 
+        #time
+        start = time.time()
         #plot and save the graph
         avg_input_difficulty = create_and_plot_graph(activity_types, graph, index, name)
         #Add the plotted graph to the current level
         create_level_csv(graph)
         #Create a plan using the planner
         create_level_structure(levels_path,active_activity_path)
+        end = time.time()
+        total_time = end - start
+        text_file.write("\nPlanning time: {} \n".format(total_time))
+        #Get length of sheet 1
+        plan_length = get_rows_sheet(sheet1_path)
+        text_file.write("\nPlan length: {} \n".format(plan_length))
         #plot* and save the "planned" graphs
         get_graph_values(name, index)
         avg_real_difficulty = create_and_plot_graph(activity_types,"{}/real_{}_{}.csv".format(graphs_data_path,name,index),index, "actual_{}graph{}".format(name, index), True)
@@ -384,11 +436,24 @@ def save_graph(graphs, name, text_file):
         statistical_analysis(avg_input_difficulty, avg_real_difficulty, text_file, name + " difficulty ", index)
         index = index + 1
 
+def reset_fun_ratio(graph):
+    for j in range(len(graph)):
+        for i in range(len(graph[j])):
+            graph[j][i][-1] = 0
+
+def reset_fun_ratio_graphs():
+    reset_fun_ratio(flow_graph)
+    reset_fun_ratio(skill_graph)
+    reset_fun_ratio(minigame_graph)
+
 def main():
-    with open("{}/output.txt".format(graphs_data_path), "w") as text_file:
-        save_graph(flow_graph, "flow", text_file)
-        save_graph(skill_graph, "skill", text_file)
-        save_graph(minigame_graph, "minigame", text_file)
+    reset_fun_ratio_graphs()
+    for i in range(10):
+        with open("{}/table/output{}.txt".format(graphs_data_path, i), "w") as text_file:
+            save_graph(flow_graph, "flow", text_file)
+            save_graph(skill_graph, "skill", text_file)
+            save_graph(minigame_graph, "minigame", text_file)
+
 
 if __name__ == '__main__':
     main()

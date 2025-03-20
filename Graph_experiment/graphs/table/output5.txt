@@ -1,0 +1,114 @@
+
+ flow 
+
+Planning time: 1.3210372924804688 
+
+Plan length: 87 
+Type: flow fun  - graph 1 
+Yes (p=2.184497549460949e-05) 
+small = (p=-1.8492432572274964) (kruskal_wallis)
+----------------- 
+Type: flow difficulty  - graph 1 
+No (p=0.1483324700360089) 
+none 
+----------------- 
+
+Planning time: 3.220644235610962 
+
+Plan length: 308 
+Type: flow fun  - graph 2 
+Yes (p=3.045967110658017e-09) 
+small = (p=-1.7519952502476237) (kruskal_wallis)
+----------------- 
+Type: flow difficulty  - graph 2 
+No (p=0.08476976140722793) 
+none 
+----------------- 
+
+Planning time: 5.603922605514526 
+
+Plan length: 692 
+Type: flow fun  - graph 3 
+Yes (p=4.779567921726051e-13) 
+small = (p=-1.9559039645469807) (kruskal_wallis)
+----------------- 
+Type: flow difficulty  - graph 3 
+No (p=0.231367158807401) 
+none 
+----------------- 
+
+ skill 
+
+Planning time: 1.491659164428711 
+
+Plan length: 132 
+Type: skill fun  - graph 1 
+Yes (p=2.184497549460949e-05) 
+small = (p=-1.9294836846563195) (kruskal_wallis)
+----------------- 
+Type: skill difficulty  - graph 1 
+Yes (p=0.03663603322456068) 
+small = (p=-0.42017493336328876) (kruskal_wallis)
+----------------- 
+
+Planning time: 3.0356497764587402 
+
+Plan length: 331 
+Type: skill fun  - graph 2 
+Yes (p=3.045967110658017e-09) 
+small = (p=-1.7029517865512471) (kruskal_wallis)
+----------------- 
+Type: skill difficulty  - graph 2 
+Yes (p=0.02426257159860233) 
+small = (p=-0.7405142838442023) (cohen's d)
+----------------- 
+
+Planning time: 5.133332014083862 
+
+Plan length: 522 
+Type: skill fun  - graph 3 
+Yes (p=4.779567921726051e-13) 
+small = (p=-1.7679842291013657) (kruskal_wallis)
+----------------- 
+Type: skill difficulty  - graph 3 
+Yes (p=0.01189477899490596) 
+small = (p=-0.5009927634296889) (kruskal_wallis)
+----------------- 
+
+ minigame 
+
+Planning time: 1.2824864387512207 
+
+Plan length: 70 
+Type: minigame fun  - graph 1 
+Yes (p=2.1711970191832948e-05) 
+small = (p=-1.5284983081336392) (kruskal_wallis)
+----------------- 
+Type: minigame difficulty  - graph 1 
+No (p=0.054084174639231854) 
+none 
+----------------- 
+
+Planning time: 2.4717071056365967 
+
+Plan length: 168 
+Type: minigame fun  - graph 2 
+Yes (p=3.045967110658017e-09) 
+small = (p=-1.2645252980364756) (kruskal_wallis)
+----------------- 
+Type: minigame difficulty  - graph 2 
+Yes (p=0.004032976571260097) 
+small = (p=-0.7682765440330089) (kruskal_wallis)
+----------------- 
+
+Planning time: 3.70631742477417 
+
+Plan length: 270 
+Type: minigame fun  - graph 3 
+Yes (p=4.757639501340612e-13) 
+small = (p=-1.3426610148847176) (kruskal_wallis)
+----------------- 
+Type: minigame difficulty  - graph 3 
+Yes (p=9.21245764415972e-05) 
+small = (p=-0.6969546063935317) (kruskal_wallis)
+----------------- 

@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 from unified_planning.shortcuts import Fluent, IntType, RealType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
-from unified_planning.shortcuts import GE, Not, Equals, Plus
+from unified_planning.shortcuts import GE,LE, Not, Equals, Plus
 
 from unified_planning.engines import PlanGenerationResultStatus
 
