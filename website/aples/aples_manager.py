@@ -56,7 +56,7 @@ def execute_planner(physical, social, cognitive, minigame, funratio=0.5):
 
 
     # exit()
-    with OneshotPlanner(name='lpg', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
         result = planner.solve(p.problem) # type: ignore
         plan = result.plan
 

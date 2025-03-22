@@ -20,7 +20,9 @@ def get_graph_values(name = "none", index = 0):
 
     challenge_dict = df.groupby("challenge")["name"].apply(list).to_dict()
     challenge_status = {key: [0, 0, 0, 0, 0] for key in challenge_dict}
-
+    num_activities = 0
+    fun_score = 0
+    fun_ratio = 0
     for key, value in challenge_dict.items():
         activity_objects = []
         Physical = 0
@@ -43,12 +45,13 @@ def get_graph_values(name = "none", index = 0):
                 Cognitive += activity.score
             elif activity.type == "minigame":
                 Minigame += activity.score
-            Funscore += activity.funscore
+            # Funscore += activity.funscore
+            fun_score += activity.funscore
+            num_activities += 1
+            fun_ratio = (fun_score + 1) / (num_activities + 1)
 
-        # Avoid division by zero
-        avg_funscore = Funscore / len(activity_objects) if activity_objects else 0
 
-        challenge_status[key] = [Physical, Social, Cognitive, Minigame, avg_funscore]
+        challenge_status[key] = [Physical, Social, Cognitive, Minigame, fun_ratio]
 
     final_graph_values = []
     for key, value in challenge_status.items():

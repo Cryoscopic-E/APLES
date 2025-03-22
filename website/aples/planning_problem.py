@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 from unified_planning.shortcuts import Fluent, IntType, RealType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
-from unified_planning.shortcuts import GE,LE, Not, Equals, Plus
+from unified_planning.shortcuts import GE,LE, Not, Equals, Plus, And, GT, Div
 
 from unified_planning.engines import PlanGenerationResultStatus
 
@@ -45,6 +45,7 @@ class PlanningProblem:
         self.all_activity_actions_cost_expressions = {}
         self._create_tutorial_action()
         self._init_activity_actions()
+        # self._create_fun_ratio_action()
         self._set_metrics()
 
         self.all_objects = []
@@ -186,6 +187,23 @@ class PlanningProblem:
         
         # add action to the problem
         self.problem.add_action(tutorial_action)
+
+
+    def _create_fun_ratio_action(self):
+        tutorial_action = InstantaneousAction('fun_ratio_calc', activity_type=self.all_types['activity'])
+
+
+        # preconditions
+        tutorial_action.add_precondition(GT(self.all_fluents['fun_score'],0))
+        tutorial_action.add_precondition(GT(self.all_fluents['num_activities'],0))
+
+        # effects
+        tutorial_action.add_effect(self.all_fluents['fun_ratio'], Div(self.all_fluents['fun_score'], self.all_fluents['num_activities']))
+
+        self.all_activity_actions_cost_expressions[tutorial_action] = 0
+        
+        # add action to the problem
+        self.problem.add_action(tutorial_action)
     
     def _init_objects(self):
         physical_act_type = Object('physical_activity', self.all_types['physical'])
@@ -204,11 +222,32 @@ class PlanningProblem:
         self.problem.add_object(minigame_act_type)
 
     def _init_goal(self, p=0, s=0, c=0, m=0, f=0.5):
-        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_physical'], p))
-        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_social'], s))
-        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_cognitive'], c))
-        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_minigame'], m))
-        self.problem.add_goal(GE(self.all_fluents['fun_ratio'], f))
+        # self.problem.add_goal(And(
+        #     GE(self.all_fluents['difficulty_lvl_physical'], p - 2),   # Physical activity within range
+        #     LE(self.all_fluents['difficulty_lvl_physical'], p + 2)
+        # ))
+
+        # self.problem.add_goal(And(
+        #     GE(self.all_fluents['difficulty_lvl_social'], s - 2),     # Social activity within range
+        #     LE(self.all_fluents['difficulty_lvl_social'], s + 2)
+        # ))
+
+        # self.problem.add_goal(And(
+        #     GE(self.all_fluents['difficulty_lvl_cognitive'], c - 2),  # Cognitive activity within range
+        #     LE(self.all_fluents['difficulty_lvl_cognitive'], c + 2)
+        # ))
+
+        # self.problem.add_goal(And(
+        #     GE(self.all_fluents['difficulty_lvl_minigame'], m - 2),   # Minigame activity within range
+        #     LE(self.all_fluents['difficulty_lvl_minigame'], m + 2)
+        # ))
+
+
+        #This should reflect fun_ratio > f - 2 and fun_ratio < f + 2
+        self.problem.add_goal(And(
+            GE(self.all_fluents['fun_ratio'], f - 2.0),  
+            LE(self.all_fluents['fun_ratio'], f + 2.0)
+        ))
 
     def __repr__(self) -> str:
         return str(self.problem)

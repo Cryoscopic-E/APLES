@@ -439,7 +439,7 @@ def save_graph(graphs, name, text_file):
 def reset_fun_ratio(graph):
     for j in range(len(graph)):
         for i in range(len(graph[j])):
-            graph[j][i][-1] = 0
+            graph[j][i][-1] = 5
 
 def reset_fun_ratio_graphs():
     reset_fun_ratio(flow_graph)
@@ -448,11 +448,11 @@ def reset_fun_ratio_graphs():
 
 def main():
     reset_fun_ratio_graphs()
-    for i in range(10):
+    for i in range(1):
         with open("{}/table/output{}.txt".format(graphs_data_path, i), "w") as text_file:
             save_graph(flow_graph, "flow", text_file)
-            save_graph(skill_graph, "skill", text_file)
-            save_graph(minigame_graph, "minigame", text_file)
+            # save_graph(skill_graph, "skill", text_file)
+            # save_graph(minigame_graph, "minigame", text_file)
 
 
 if __name__ == '__main__':

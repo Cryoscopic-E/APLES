@@ -1,5 +1,5 @@
 import csv
-from unified_planning.shortcuts import InstantaneousAction
+from unified_planning.shortcuts import InstantaneousAction, Div
 
 
 from enum import Enum, auto
@@ -33,6 +33,9 @@ class ActivityAction(InstantaneousAction):
             atype, fluent = activity_mappings[self.activity_type]
             super().__init__(self.name, atype=types[atype])
             self.add_increase_effect(fluents[fluent], self.score)
+            self.add_increase_effect(fluents['num_activities'], 1)
+            self.add_increase_effect(fluents['fun_score'], self.fun_score)
+            self.add_effect(fluents['fun_ratio'], Div(fluents['fun_score'] +1, fluents['num_activities'] + 1))  
         else:
             raise ValueError('Activity type not recognized when creating action effects')
 
@@ -42,6 +45,6 @@ class ActivityAction(InstantaneousAction):
         self.add_precondition(fluents['can_do_activity_type'](atype))
         # current cost effect
         self.add_increase_effect(fluents['cost_' + self.name], self.cost_increase)
-        self.add_increase_effect(fluents['num_activities'], 1)
-        self.add_increase_effect(fluents['fun_score'], self.fun_score)
-        self.add_effect(fluents['fun_ratio'], (fluents['fun_score'] / fluents['num_activities']))
+
+
+        # self.add_effect(fluents['fun_ratio'], (fluents['fun_score'] / fluents['num_activities']))
