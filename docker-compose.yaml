@@ -1,0 +1,10 @@
+services:
+  aples:
+    container_name: aples_container
+    build:
+      context: ./docker
+    volumes:
+      - ./src:/app
+      - ./data:/app/data
+    command: tail -f /dev/null
+    restart: on-failure
