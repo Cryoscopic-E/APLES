@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker
     volumes:
-      - ./src:/app
-      - ./data:/app/data
+      - ./src:/aples
+      - ./data:/aples/data
     command: tail -f /dev/null
     restart: on-failure
