@@ -9,7 +9,6 @@ class ActivityType(Enum):
     SOCIAL = auto()
     COGNITIVE = auto()
     GENERAL = auto()
-    MINIGAME = auto()
 
 
 activity_mappings = {
@@ -17,7 +16,6 @@ activity_mappings = {
     ActivityType.SOCIAL: ('social', 'difficulty_lvl_social'),
     ActivityType.COGNITIVE: ('cognitive', 'difficulty_lvl_cognitive'),
     ActivityType.GENERAL: ('general', 'difficulty_lvl'),
-    ActivityType.MINIGAME: ('minigame', 'difficulty_lvl_minigame')
 }
 
 

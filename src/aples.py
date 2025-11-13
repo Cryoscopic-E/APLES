@@ -1,16 +1,13 @@
 import os
-from flask import app
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import *
 from unified_planning.engines import PlanGenerationResultStatus
-from exporter import create_levels, empty_sheets, export_plan_to_sheet, export_to_excel, push_to_gamebus, reset_fluents_csv
 from unified_planning.shortcuts import OneshotPlanner
 import pandas as pd
 
 from planning_problem import PlanningProblem
 get_environment().credits_stream = None
 from unified_planning.io import PDDLWriter
-from minigame import create_minigames
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -27,23 +24,15 @@ levels_csv = os.path.join(data_folder, 'levels.csv')
 configuration_json = os.path.join(apples_folder, 'data', 'minigame_config.json')
 
 def create_level_structure(_lvl_path, csv_path):
-    create_minigames()
     global csv_data_path
     global level_structure_path
     csv_data_path = csv_path
     level_structure_path = _lvl_path
     levels = pd.read_csv(level_structure_path)
-    empty_sheets()
 
     current_level_ = 0
     for index, level in levels.iterrows():
         executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']), int(level['minigame']))
-        current_level_ = export_plan_to_sheet(current_level_, executed_plan)
-
-    create_levels()
-    reset_fluents_csv()
-    export_to_excel()
-    push_to_gamebus()
 
 def execute_planner(physical, social, cognitive, minigame):
     # Create the planning problem

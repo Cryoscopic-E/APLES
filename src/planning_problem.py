@@ -7,7 +7,7 @@ from unified_planning.shortcuts import GE, Not, Equals, Plus
 from unified_planning.engines import PlanGenerationResultStatus
 
 from unified_planning.model.types import BOOL
-from src.activity_action import ActivityAction, ActivityType
+from activity_action import ActivityAction, ActivityType
 
 
 activity_type_mapping = {
@@ -15,7 +15,6 @@ activity_type_mapping = {
     'social': ActivityType.SOCIAL,
     'cognitive': ActivityType.COGNITIVE,
     'general': ActivityType.GENERAL,
-    'minigame': ActivityType.MINIGAME
 }
 
 class PlanningProblem:

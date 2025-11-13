@@ -1,0 +1,59 @@
+physical:
+
+  - Walk_5k:
+      cost_increase: 3
+      initial_cost: 0
+      MET_score: 4
+      value: 5000
+
+  - Walk_10k:
+      cost_increase: 5
+      initial_cost: 2
+      MET_score: 8
+      value: 5000
+
+  - Walk_25min:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+cognitive:
+
+  - Learn_a_new_phrase:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+  - Watch_a_documentary:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+  - Practice_a_brain_game:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+social:
+
+  - Call_a_friend:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+  - Go_to_a_social_event:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
+
+  - Talk_to_a_family_member:
+      cost_increase: 4
+      initial_cost: 3
+      MET_score: 10
+      value: null
