@@ -64,7 +64,7 @@ class PlanningProblem:
 
         :format: activity_name : MET_score, type, frequency, current_cost, cost_increase
         """
-        activities = []
+        
         with open(csv, 'r') as f:
             reader = pd.read_csv(f)
             for row in reader.iterrows():
