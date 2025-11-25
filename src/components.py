@@ -1,30 +1,30 @@
 from unified_planning.model import UserType, Fluent, InstantaneousAction, Object
+from enum import Enum, auto
 
-class Types:
-    
-    def __init__(self, types_path):
-        self.types = {}
-        self._init_types(types_path)
-    
-    def _init_types(self, types_path):
-        activity_types = ['physical', 'general', 'social', 'cognitive', 'minigame']
-        
-        self._add_type('activity', UserType('activity'))
-        
-        for activity_type in activity_types:
-            self.all_types[activity_type] = UserType(activity_type, self.all_types['activity'])
+class ActivityType(Enum):
+    PHYSICAL = auto()
+    SOCIAL = auto()
+    COGNITIVE = auto()
+    GENERAL = auto()
 
-    def _add_type(self, name, type_obj):
-        self.types[name] = type_obj
-    
-    @property
-    def all_types(self):
-        return self.types
 
+activity_mappings = {
+    ActivityType.PHYSICAL: ('physical', 'difficulty_lvl_physical'),
+    ActivityType.SOCIAL: ('social', 'difficulty_lvl_social'),
+    ActivityType.COGNITIVE: ('cognitive', 'difficulty_lvl_cognitive'),
+    ActivityType.GENERAL: ('general', 'difficulty_lvl'),
+}
+
+activity_type_mapping = {
+    'physical': ActivityType.PHYSICAL,
+    'social': ActivityType.SOCIAL,
+    'cognitive': ActivityType.COGNITIVE,
+    'general': ActivityType.GENERAL,
+}
 
 class Fluents:
 
-    def __init__(self, fluents_path, types):
+    def __init__(self, fluents : set, types : set):
         self.types = types
         self.fluents = {}
         self._init_fluents(fluents_path)
@@ -49,4 +49,25 @@ class Fluents:
     def all_fluents(self):
         return self.fluents
 
+class ActivityAction(InstantaneousAction):
+    def __init__(self, name, score, cost_increase, activity_type : ActivityType, fluents, types):
+        self.name = name
+        self.score = score
+        self.activity_type = activity_type
+        self.cost_increase = cost_increase
+
+        if self.activity_type in activity_mappings:
+            atype, fluent = activity_mappings[self.activity_type]
+            super().__init__(self.name, atype=types[atype])
+            self.add_increase_effect(fluents[fluent], self.score)
+        else:
+            raise ValueError('Activity type not recognized when creating action effects')
+
+        # parameters
+        atype = self.parameter('atype')
+        # preconditions
+        self.add_precondition(fluents['can_do_activity_type'](atype))
+        # current cost effect
+        self.add_increase_effect(fluents['cost_' + self.name], self.cost_increase)
+        
 
