@@ -20,7 +20,9 @@ class PlanningProblem:
 
 
         # up problem
-        self.problem = Problem('health-intervention')
+        self.problem_phy = Problem('health-intervention-phy')
+        self.problem_soc = Problem('health-intervention-soc')
+        self.problem_cog = Problem('health-intervention-cog')
 
         self.all_types = {}
         self._init_types()
