@@ -4,7 +4,7 @@ from unified_planning.engines import PlanGenerationResultStatus
 from unified_planning.model.types import BOOL
 
 from components import *
-
+import yaml
 
 class PlanningProblem:
     """
@@ -13,9 +13,11 @@ class PlanningProblem:
     :param csv: path to the csv file containing the activities
     """
     
-    def __init__(self, csv : str, social_score=0, physical_score=0, cognitive_score=0, minigame_score=0):
+    def __init__(self, activities_config : str, level_flow_config : str):
         # loaded data
         self.data = {}
+        self._read_data(activities_config, level_flow_config)
+
 
         # up problem
         self.problem = Problem('health-intervention')
@@ -36,59 +38,71 @@ class PlanningProblem:
         self.all_objects = []
         self._init_objects()
 
-        self._init_goal(p=physical_score, s=social_score,  c=cognitive_score, m=minigame_score) 
+
+        self.level_index = 4
+        self._init_goal(p=self.data['physical_flow'][self.level_index], s=self.data['social_flow'][self.level_index],  c=self.data['cognitive_flow'][self.level_index]) 
 
 
-    def _read_data(self, csv : str):
+    def _read_data(self, activities_config : str, level_flow_config : str):
         """
-        Generator that loads the data from the csv file
+        Loads the domain config from the yaml file
+        """
+        with open(activities_config, 'r') as f:
+            activities_data = yaml.safe_load(f)
+            activities_types = list(activities_data.keys())
+            self.data['activities_types'] = activities_types
+            
+            activities_types = list(activities_data.keys())
+            
+            self.data['activities'] = {}
 
-        :format: activity_name : MET_score, type, frequency, current_cost, cost_increase
-        """
-        
-        with open(csv, 'r') as f:
-            reader = pd.read_csv(f)
-            for row in reader.iterrows():
-                activity_name = self._unique_name(row[1]['Activities'])
-                met_score = row[1]['METScore']
-                activity_type = row[1]['Type']
-                frequency = row[1]['Frequency']
-                current_cost = row[1]['CurrentCost']
-                cost_increase = row[1]['CostIncrease']
-                self.data[activity_name] = {
-                    'met_score': met_score,
-                    'activity_type': activity_type,
-                    'frequency': frequency,
-                    'current_cost': current_cost,
-                    'cost_increase': cost_increase
-                }
-                
-    def _unique_name(self, name : str):
-        """
-        Ensures that the name is unique
-        """
-        # replace spaces with underscores
-        name = name.replace(' ', '_')
-        # remove all non-alphanumeric characters
-        name = ''.join(e for e in name if e.isalnum() or e =='_' or e=='-' or e=='/')
-        return name
+            for activity_type in activities_types:
+                activity_list = activities_data[activity_type]
+                for activity in activity_list:
+                    for key, value in activity.items():
+                        self.data['activities'][key] = {
+                            'activity_type': activity_type,
+                            'met_score': value.get('MET_score', 0),
+                            'cost_increase': value.get('cost_increase', 0),
+                            'current_cost': value.get('initial_cost', 0),
+                            'value': value.get('value', None)
+                        }
+
+        with open(level_flow_config, 'r') as f:
+            level_flows = yaml.safe_load(f)
+            activities_types = level_flows.keys()
+            for activity_type in activities_types:
+                flow_list = level_flows[activity_type]
+                self.data[activity_type + '_flow'] = flow_list
+
+
+    # def _unique_name(self, name : str):
+    #     """
+    #     Ensures that the name is unique
+    #     """
+    #     # replace spaces with underscores
+    #     name = name.replace(' ', '_')
+    #     # remove all non-alphanumeric characters
+    #     name = ''.join(e for e in name if e.isalnum() or e =='_' or e=='-' or e=='/')
+    #     return name
 
     def _init_types(self):
         """
         Initializes the types
         """
-        activity_types = ['physical', 'general', 'social', 'cognitive']
         
         self.all_types['activity'] = UserType('activity')
-        
-        for activity_type in activity_types:
+        self.all_types['general'] = UserType('general', self.all_types['activity'])
+
+
+        for activity_type in self.data['activities_types']:
             self.all_types[activity_type] = UserType(activity_type, self.all_types['activity'])
 
     def _init_fluents(self):
         """
         Initializes the fluents
         """
-        counter_fluents = ['difficulty_lvl', 'difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive']
+        counter_fluents = ['difficulty_lvl','difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive']
         for fluent in counter_fluents:
             self.all_fluents[fluent] = Fluent(fluent, IntType())
         
@@ -108,8 +122,8 @@ class PlanningProblem:
         """
         Initializes the actions
         """
-        for activity_name, activity_data in self.data.items():
-            activity_type = activity_data['activity_type']
+        for activity_name, activity_data in self.data['activities'].items():
+            activity_type = activity_type_mapping[activity_data['activity_type']]
             activity_score = activity_data['met_score']
             activity_cost = activity_data['current_cost']
             activity_cost_increase = activity_data['cost_increase']
@@ -120,10 +134,10 @@ class PlanningProblem:
             # add the fluents for the action cost to the problem
             self.problem.add_fluent(self.all_fluents['cost_' + activity_name], default_initial_value=activity_cost)
 
-            if activity_type in activity_type_mapping:
-                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type_mapping[activity_type], self.all_fluents, self.all_types)
-            else:
-                raise ValueError('Activity type not recognized')
+            try:
+                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type, self.all_fluents, self.all_types)
+            except ValueError as e:
+                print(f"Error creating action for activity '{activity_name}': {e}")
             
             # add action to dictionary
             # if the activity is already in the dictionary, it will fail and raise an error
@@ -132,8 +146,8 @@ class PlanningProblem:
             self.all_activity_actions[activity_name] = action
 
             # add the cost expression for the action
-            self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_cost_increase)
-
+            # self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_cost_increase)
+            self.all_activity_actions_cost_expressions[action] = self.all_fluents['cost_' + activity_name]
             # add action to the problem
             self.problem.add_action(action)
     
@@ -164,34 +178,29 @@ class PlanningProblem:
         physical_act_type = Object('physical_activity', self.all_types['physical'])
         social_act_type = Object('social_activity', self.all_types['social'])
         cognitive_act_type = Object('cognitive_activity', self.all_types['cognitive'])
-        minigame_act_type = Object('minigame_activity', self.all_types['minigame'])
-
         self.all_objects.append(physical_act_type)
         self.all_objects.append(social_act_type)
         self.all_objects.append(cognitive_act_type)
-        self.all_objects.append(minigame_act_type)
 
         self.problem.add_object(physical_act_type)
         self.problem.add_object(social_act_type)
         self.problem.add_object(cognitive_act_type)
-        self.problem.add_object(minigame_act_type)
 
     def _init_goal(self, p=0, s=0, c=0, m=0):
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_physical'], p))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_social'], s))
         self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_cognitive'], c))
-        self.problem.add_goal(GE(self.all_fluents['difficulty_lvl_minigame'], m))
 
     def __repr__(self) -> str:
         return str(self.problem)
             
-    def update_fluents_init(self, csv_fluents_path):
-        df = pd.read_csv(csv_fluents_path)
-        for index, row in df.iterrows():
-            object_type_name = row['name']
-            object_type_status = row['status']
-            for f in self.problem.fluents:
-                if f.name == 'can_do_activity_type':
-                    for o in self.all_objects:
-                        if o.name == object_type_name:
-                            self.problem.set_initial_value(f(o), object_type_status)
+    # def update_fluents_init(self, csv_fluents_path):
+    #     df = pd.read_csv(csv_fluents_path)
+    #     for index, row in df.iterrows():
+    #         object_type_name = row['name']
+    #         object_type_status = row['status']
+    #         for f in self.problem.fluents:
+    #             if f.name == 'can_do_activity_type':
+    #                 for o in self.all_objects:
+    #                     if o.name == object_type_name:
+    #                         self.problem.set_initial_value(f(o), object_type_status)

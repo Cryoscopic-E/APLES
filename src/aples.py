@@ -3,11 +3,10 @@ from unified_planning.shortcuts import *
 from unified_planning.model.metrics import *
 from unified_planning.engines import PlanGenerationResultStatus
 from unified_planning.shortcuts import OneshotPlanner
-import pandas as pd
 
 from planning_problem import PlanningProblem
 
-from unified_planning.io import PDDLWriter
+from unified_planning.io import PDDLWriter, PDDLReader
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 data_folder = os.path.join(current_dir, 'data')
@@ -44,8 +43,24 @@ def execute_planner(physical, social, cognitive, minigame):
             exit()
 
 def main():
-    create_level_structure(levels_csv, activities_csv)
-    
+    #create_level_structure(levels_csv, activities_csv)
+    p = PlanningProblem(activities_config=activities_csv, level_flow_config=levels_csv)
+
+    PDDLWriter(p.problem).write_problem('health_intervention_problem.pddl')
+    PDDLWriter(p.problem).write_domain('health_intervention_domain.pddl')
+
+    get_environment().credits_stream = None
+    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY)  as planner:
+        result = planner.solve(p.problem) # type: ignore
+        plan = result.plan
+
+        if plan is not None:
+            print(plan)
+            # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
+            return plan
+        else:
+            print("No plan found.")
+            exit()
 
 
 if __name__ == '__main__':

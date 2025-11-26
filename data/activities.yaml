@@ -1,22 +1,25 @@
 physical:
 
   - Walk_5k:
-      cost_increase: 3
+      cost_increase: 1
       initial_cost: 0
       MET_score: 4
       value: 5000
+      requires_tutorial: false
 
   - Walk_10k:
       cost_increase: 5
       initial_cost: 2
       MET_score: 8
       value: 5000
+      requires_tutorial: false
 
   - Walk_25min:
       cost_increase: 4
       initial_cost: 3
       MET_score: 10
       value: null
+      requires_tutorial: false
 
 cognitive:
 
@@ -25,18 +28,24 @@ cognitive:
       initial_cost: 3
       MET_score: 10
       value: null
+      requires_tutorial: true
+      robot_goals:
+        - at(human):True
+        - has_new_material(human): new_phrase
 
   - Watch_a_documentary:
       cost_increase: 4
       initial_cost: 3
       MET_score: 10
       value: null
+      requires_tutorial: false
 
   - Practice_a_brain_game:
       cost_increase: 4
       initial_cost: 3
       MET_score: 10
       value: null
+      requires_tutorial: true
 
 social:
 
@@ -45,15 +54,18 @@ social:
       initial_cost: 3
       MET_score: 10
       value: null
-
+      requires_tutorial: false
+      
   - Go_to_a_social_event:
-      cost_increase: 4
-      initial_cost: 3
-      MET_score: 10
+      cost_increase: 40
+      initial_cost: 30
+      MET_score: 12
       value: null
+      requires_tutorial: false
 
   - Talk_to_a_family_member:
       cost_increase: 4
       initial_cost: 3
       MET_score: 10
       value: null
+      requires_tutorial: false
