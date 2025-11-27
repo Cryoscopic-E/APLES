@@ -25,7 +25,7 @@ activity_type_mapping = {
 }
 
 class ActivityAction(InstantaneousAction):
-    def __init__(self, name, score, cost_increase, activity_type : ActivityType, fluents, types):
+    def __init__(self, name, score, cost_increase, activity_type : ActivityType, fluents, types, requires_tutorial=False):
         self.name = name
         self.score = score
         self.activity_type = activity_type
@@ -42,8 +42,10 @@ class ActivityAction(InstantaneousAction):
         atype = self.parameter('atype')
         # preconditions
         #self.add_precondition(fluents['can_do_activity_type'](atype) &  LE(fluents['cost_' + self.name], fluents[fluent]))
-        self.add_precondition(fluents['can_do_activity_type'](atype))
+        
+        self.add_precondition(fluents['can_do_' + self.name])
+        
         # current cost effect
-        self.add_increase_effect(fluents['cost_' + self.name], self.cost_increase)
+        #self.add_increase_effect(fluents['cost_' + self.name], self.cost_increase)
         
 

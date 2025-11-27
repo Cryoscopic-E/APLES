@@ -1,6 +1,5 @@
-from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object, OneshotPlanner
+from unified_planning.shortcuts import Fluent, IntType, Problem, UserType, InstantaneousAction, MinimizeActionCosts, Object
 from unified_planning.shortcuts import GE, Not, Plus
-from unified_planning.engines import PlanGenerationResultStatus
 from unified_planning.model.types import BOOL
 
 from components import *
@@ -16,13 +15,14 @@ class PlanningProblem:
     def __init__(self, activities_config : str, level_flow_config : str):
         # loaded data
         self.data = {}
+        self.all_activity_actions = {}
+        self.all_activity_actions_cost_expressions = {}
+        self.all_objects = []
         self._read_data(activities_config, level_flow_config)
-
+        self.level_index = 2
 
         # up problem
-        self.problem_phy = Problem('health-intervention-phy')
-        self.problem_soc = Problem('health-intervention-soc')
-        self.problem_cog = Problem('health-intervention-cog')
+        self.problem = Problem('health-intervention')
 
         self.all_types = {}
         self._init_types()
@@ -31,17 +31,16 @@ class PlanningProblem:
         self._init_fluents()
         
 
-        self.all_activity_actions = {}
-        self.all_activity_actions_cost_expressions = {}
-        self._create_tutorial_action()
+        
+        #self._create_tutorial_action()
         self._init_activity_actions()
         self._set_metrics()
 
-        self.all_objects = []
+        
         self._init_objects()
 
 
-        self.level_index = 4
+        
         self._init_goal(p=self.data['physical_flow'][self.level_index], s=self.data['social_flow'][self.level_index],  c=self.data['cognitive_flow'][self.level_index]) 
 
 
@@ -67,7 +66,8 @@ class PlanningProblem:
                             'met_score': value.get('MET_score', 0),
                             'cost_increase': value.get('cost_increase', 0),
                             'current_cost': value.get('initial_cost', 0),
-                            'value': value.get('value', None)
+                            'value': value.get('value', None),
+                            'requires_tutorial': value.get('requires_tutorial', False)
                         }
 
         with open(level_flow_config, 'r') as f:
@@ -78,47 +78,60 @@ class PlanningProblem:
                 self.data[activity_type + '_flow'] = flow_list
 
 
-    # def _unique_name(self, name : str):
-    #     """
-    #     Ensures that the name is unique
-    #     """
-    #     # replace spaces with underscores
-    #     name = name.replace(' ', '_')
-    #     # remove all non-alphanumeric characters
-    #     name = ''.join(e for e in name if e.isalnum() or e =='_' or e=='-' or e=='/')
-    #     return name
 
     def _init_types(self):
         """
-        Initializes the types
+        Initializes all types
         """
         
         self.all_types['activity'] = UserType('activity')
         self.all_types['general'] = UserType('general', self.all_types['activity'])
-
 
         for activity_type in self.data['activities_types']:
             self.all_types[activity_type] = UserType(activity_type, self.all_types['activity'])
 
     def _init_fluents(self):
         """
-        Initializes the fluents
+        Initializes all fluents
         """
+        ## Counter fluents for activity levels difficulties
         counter_fluents = ['difficulty_lvl','difficulty_lvl_social', 'difficulty_lvl_physical', 'difficulty_lvl_cognitive']
         for fluent in counter_fluents:
             self.all_fluents[fluent] = Fluent(fluent, IntType())
         
-
-        bool_fluents = ['can_do_activity_type']
-        for fluent in bool_fluents:
-            self.all_fluents[fluent] = Fluent(fluent, BOOL, activityType=self.all_types['activity'])
-
         # add fluents to the problem
         for fluent in self.all_fluents.values():
             if fluent.type == BOOL:
                 self.problem.add_fluent(fluent, default_initial_value=False)
             else:
                 self.problem.add_fluent(fluent, default_initial_value=0)
+
+
+        ## Boolean fluents for tutorial actions ## THIS IS UPDATED (Only certain activities might have tutorial actions)
+        for k,v in self.data['activities'].items():
+        
+            fluent_name = f'can_do_{k}'
+            tutorial_fluent = Fluent(fluent_name, BOOL)
+            self.all_fluents[fluent_name] = tutorial_fluent
+
+        
+            if v['requires_tutorial']:
+                self.problem.add_fluent(tutorial_fluent, default_initial_value=False)
+                # Create tutorial action for this activity
+                tutorial_action = InstantaneousAction(f'tutorial_{k}')
+                
+                # preconditions
+                tutorial_action.add_precondition(Not(tutorial_fluent))
+                # effects
+                tutorial_action.add_effect(tutorial_fluent, True)
+
+                self.problem.add_action(tutorial_action)
+                self.all_activity_actions_cost_expressions[tutorial_action] = 0
+            else:
+                self.problem.add_fluent(tutorial_fluent, default_initial_value=True)
+
+
+        
     
     def _init_activity_actions(self):
         """
@@ -137,7 +150,8 @@ class PlanningProblem:
             self.problem.add_fluent(self.all_fluents['cost_' + activity_name], default_initial_value=activity_cost)
 
             try:
-                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type, self.all_fluents, self.all_types)
+                action = ActivityAction(activity_name, activity_score, activity_cost_increase, activity_type, self.all_fluents, self.all_types, requires_tutorial=activity_data['requires_tutorial'])
+                
             except ValueError as e:
                 print(f"Error creating action for activity '{activity_name}': {e}")
             
@@ -148,8 +162,10 @@ class PlanningProblem:
             self.all_activity_actions[activity_name] = action
 
             # add the cost expression for the action
-            # self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_cost_increase)
-            self.all_activity_actions_cost_expressions[action] = self.all_fluents['cost_' + activity_name]
+            #self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_cost_increase)
+            self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_score)
+
+            #self.all_activity_actions_cost_expressions[action] = self.all_fluents['cost_' + activity_name]
             # add action to the problem
             self.problem.add_action(action)
     
@@ -157,6 +173,7 @@ class PlanningProblem:
         """
         Sets the metrics for the problem
         """
+        self.problem.quality_metrics.clear()
         self.problem.add_quality_metric(MinimizeActionCosts(self.all_activity_actions_cost_expressions))
 
     def _create_tutorial_action(self):
