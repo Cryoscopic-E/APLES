@@ -1,0 +1,3853 @@
+[
+  {
+    "domain_size": 3,
+    "level": 0,
+    "activity_plan": "SequentialPlan:\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 1,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 2,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 3,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 4,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 5,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 6,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 7,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 8,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 9,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 10,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 11,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 12,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 13,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 14,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 15,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 16,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 17,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 18,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 19,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 20,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 21,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 22,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 23,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 24,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 25,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 26,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 27,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 28,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 29,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 30,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 31,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 32,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 33,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 34,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 35,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 36,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 37,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 38,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 39,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 40,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 41,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 42,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 43,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 44,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 45,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 46,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 47,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 48,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Walk_5k(physical_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 3,
+    "level": 49,
+    "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    Talk_Family(social_activity)\n    tutorial_Watch_Doc\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 6,
+    "level": 0,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 6,
+    "level": 1,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Talk_Family(social_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 6,
+    "level": 2,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 3,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 4,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 5,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 6,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 7,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 8,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 9,
+    "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 10,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 11,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 12,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 13,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 14,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 15,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 16,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 17,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 18,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 19,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 20,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 21,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 22,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Stretching(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 23,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Stretching(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 24,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 25,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 26,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 27,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 28,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 29,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 30,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 31,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 32,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 33,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 34,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 35,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 36,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 37,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 38,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 39,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 40,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 41,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 42,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 43,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)\n    Brain_Game(cognitive_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 44,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 45,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 46,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Walk_Marathon(physical_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 47,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 48,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 6,
+    "level": 49,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Video_Call(social_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Walk_Marathon(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Video_Call(social_activity)\n    Stretching(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Walk_Marathon",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 9,
+    "level": 0,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 1,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 2,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 3,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 4,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 5,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 6,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 7,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 8,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 9,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 10,
+    "activity_plan": "SequentialPlan:\n    Call_Friend(social_activity)\n    Read_Book(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 11,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 12,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 13,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 14,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 15,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 16,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 17,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 18,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 19,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 20,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 21,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 22,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 23,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 24,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 25,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 26,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Learn_Instrument(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 27,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 28,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 29,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 30,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 31,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 32,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 33,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 34,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Read_Book(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 35,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 36,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 37,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 38,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 39,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 40,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 41,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 42,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 43,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 44,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Paint(cognitive_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 45,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 46,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 47,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 48,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 9,
+    "level": 49,
+    "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Call_Friend(social_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Learn_Instrument(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 12,
+    "level": 0,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 1,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 2,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 3,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 4,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 5,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 6,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 7,
+    "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 8,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 9,
+    "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Learn_Phrase(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 10,
+    "activity_plan": "SequentialPlan:\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 11,
+    "activity_plan": "SequentialPlan:\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 12,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 13,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 14,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 15,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 16,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 17,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 18,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 19,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 20,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Learn_Phrase(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 21,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 22,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 23,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 24,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 25,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 26,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 27,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 28,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 29,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 30,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 31,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 32,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 33,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 34,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 35,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 36,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 37,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 38,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 39,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 40,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 41,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 42,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 43,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 44,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 45,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Video_Call(social_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 46,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 47,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Video_Call(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Video_Call",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 48,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Write_Letter(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Write_Letter",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    move(human, living_room, kitchen)\n    pickup(human, water_bottle, kitchen)\n    move(human, kitchen, living_room)\n    drop_down(human, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 12,
+    "level": 49,
+    "activity_plan": "SequentialPlan:\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Coffee_Chat(social_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Yoga_Session(physical_activity)\n    Chess(cognitive_activity)\n    Cycling_Indoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Yoga_Session",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 0,
+    "activity_plan": "SequentialPlan:\n    Gardening(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": []
+  },
+  {
+    "domain_size": 15,
+    "level": 1,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 2,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 3,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 4,
+    "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 5,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 6,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 7,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Write_Letter(social_activity)\n    Chess(cognitive_activity)\n    Gardening(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 8,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Board_Game_Night(social_activity)\n    Chess(cognitive_activity)\n    Gardening(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 9,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Board_Game_Night(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Gardening(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 10,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Gardening(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 11,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Gardening(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 12,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Gardening(physical_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 13,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 14,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 15,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Cycling_Outdoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 16,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Cycling_Outdoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 17,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)\n    Cycling_Outdoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 18,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Cycling_Outdoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 19,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Cycling_Outdoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 20,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Board_Game_Night(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Cycling_Outdoor(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 21,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 22,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 23,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 24,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 25,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 26,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 27,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 28,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 29,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 30,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Group_Class(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Group_Class",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 31,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Group_Class(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Group_Class",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 32,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Board_Game_Night(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 33,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 34,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 35,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Outdoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 36,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 37,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 38,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Walk_5k(physical_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 39,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 40,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Cycling_Indoor(physical_activity)\n    Join_Club(social_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 41,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Cycling_Indoor(physical_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 42,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Group_Class(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Group_Class",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 43,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Board_Game_Night(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 44,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Cycling_Indoor(physical_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 45,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 46,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Chess(cognitive_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 47,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 48,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Join_Club(social_activity)\n    Walk_5k(physical_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  },
+  {
+    "domain_size": 15,
+    "level": 49,
+    "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Host_Dinner(social_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Listen_Podcast(cognitive_activity)\n    Walk_5k(physical_activity)\n    Join_Club(social_activity)",
+    "robot_plans": [
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Cycling_Outdoor",
+        "robot_plan": "SequentialPlan:"
+      },
+      {
+        "activity": "Join_Club",
+        "robot_plan": "SequentialPlan:\n    prompt_text(robot, human, living_room, phone_number)"
+      }
+    ]
+  }
+]

@@ -1,68 +1,328 @@
 physical:
 - Walk_5k:
+    initial_cost: 23
+    cost_increase: 4
+    MET_score: 6
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Walk_10k:
+    initial_cost: 16
     cost_increase: 1
-    initial_cost: 6
+    MET_score: 14
+    value: null
+    requires_tutorial: true
+    robot_goals:
+    - at_item(water_bottle): living_room
+- Walk_Marathon:
+    initial_cost: 25
+    cost_increase: 4
+    MET_score: 8
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Yoga_Session:
+    initial_cost: 23
+    cost_increase: 2
+    MET_score: 8
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Stretching:
+    initial_cost: 8
+    cost_increase: 4
     MET_score: 4
-    value: 5000
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Lift_Weights:
+    initial_cost: 25
+    cost_increase: 1
+    MET_score: 12
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Swim_Laps:
+    initial_cost: 24
+    cost_increase: 5
+    MET_score: 8
+    value: null
     requires_tutorial: false
     robot_goals:
     - at_item(water_bottle): living_room
-- Walk_10k:
-    cost_increase: 5
+- Cycling_Indoor:
+    initial_cost: 19
+    cost_increase: 1
+    MET_score: 13
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Cycling_Outdoor:
+    initial_cost: 13
+    cost_increase: 4
+    MET_score: 15
+    value: null
+    requires_tutorial: false
+    robot_goals:
+    - at_item(water_bottle): living_room
+- Hiking:
     initial_cost: 12
+    cost_increase: 2
     MET_score: 8
-    value: 5000
-    requires_tutorial: false
-    robot_goals:
-    - at_item(energy_drink): living_room
-- Walk_25min:
-    cost_increase: 4
-    initial_cost: 11
-    MET_score: 10
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Jump_Rope:
+    initial_cost: 12
+    cost_increase: 2
+    MET_score: 12
     value: null
     requires_tutorial: false
+    robot_goals:
+    - at_item(water_bottle): living_room
+- Pilates:
+    initial_cost: 12
+    cost_increase: 3
+    MET_score: 4
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Tai_Chi:
+    initial_cost: 20
+    cost_increase: 4
+    MET_score: 15
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Gardening:
+    initial_cost: 17
+    cost_increase: 3
+    MET_score: 8
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Dancing:
+    initial_cost: 17
+    cost_increase: 1
+    MET_score: 11
+    value: null
+    requires_tutorial: true
+    robot_goals: null
 cognitive:
-- Learn_a_new_phrase:
+- Learn_Phrase:
+    initial_cost: 7
     cost_increase: 4
-    initial_cost: 3
-    MET_score: 10
-    value: null
-    requires_tutorial: true
-    robot_goals:
-    - at(human): true
-    - has_new_material(human): new_phrase
-- Watch_a_documentary:
-    cost_increase: 4
-    initial_cost: 3
-    MET_score: 10
+    MET_score: 3
     value: null
     requires_tutorial: false
-- Practice_a_brain_game:
-    cost_increase: 4
-    initial_cost: 3
-    MET_score: 10
+    robot_goals:
+    - has_new_material(human): puzzle
+- Watch_Doc:
+    initial_cost: 18
+    cost_increase: 5
+    MET_score: 12
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Brain_Game:
+    initial_cost: 5
+    cost_increase: 2
+    MET_score: 14
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Read_Book:
+    initial_cost: 20
+    cost_increase: 3
+    MET_score: 12
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Sudoku:
+    initial_cost: 20
+    cost_increase: 3
+    MET_score: 9
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Crossword:
+    initial_cost: 11
+    cost_increase: 5
+    MET_score: 3
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Chess:
+    initial_cost: 7
+    cost_increase: 3
+    MET_score: 9
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Learn_Instrument:
+    initial_cost: 15
+    cost_increase: 2
+    MET_score: 12
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Paint:
+    initial_cost: 13
+    cost_increase: 3
+    MET_score: 8
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Write_Journal:
+    initial_cost: 10
+    cost_increase: 2
+    MET_score: 6
     value: null
     requires_tutorial: true
     robot_goals:
-    - has_new_material(human): brain_teaser_puzzle
-social:
-- Call_a_friend:
+    - has_new_material(human): puzzle
+- Listen_Podcast:
+    initial_cost: 5
     cost_increase: 4
-    initial_cost: 23
-    MET_score: 10
+    MET_score: 12
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Solve_Puzzle:
+    initial_cost: 10
+    cost_increase: 5
+    MET_score: 15
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Memory_Game:
+    initial_cost: 13
+    cost_increase: 5
+    MET_score: 9
+    value: null
+    requires_tutorial: true
+    robot_goals:
+    - has_new_material(human): puzzle
+- Math_Practice:
+    initial_cost: 11
+    cost_increase: 3
+    MET_score: 14
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- History_Quiz:
+    initial_cost: 10
+    cost_increase: 4
+    MET_score: 3
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+social:
+- Call_Friend:
+    initial_cost: 19
+    cost_increase: 3
+    MET_score: 3
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Social_Event:
+    initial_cost: 20
+    cost_increase: 1
+    MET_score: 8
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Talk_Family:
+    initial_cost: 9
+    cost_increase: 5
+    MET_score: 4
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Write_Letter:
+    initial_cost: 20
+    cost_increase: 5
+    MET_score: 13
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Video_Call:
+    initial_cost: 9
+    cost_increase: 5
+    MET_score: 4
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Host_Dinner:
+    initial_cost: 22
+    cost_increase: 3
+    MET_score: 14
+    value: null
+    requires_tutorial: false
+    robot_goals: null
+- Join_Club:
+    initial_cost: 7
+    cost_increase: 2
+    MET_score: 8
     value: null
     requires_tutorial: false
     robot_goals:
     - has_new_material(human): phone_number
-- Go_to_a_social_event:
-    cost_increase: 40
-    initial_cost: 30
-    MET_score: 12
+- Volunteer:
+    initial_cost: 21
+    cost_increase: 5
+    MET_score: 4
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Park_Meetup:
+    initial_cost: 24
+    cost_increase: 1
+    MET_score: 7
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Board_Game_Night:
+    initial_cost: 20
+    cost_increase: 1
+    MET_score: 11
     value: null
     requires_tutorial: false
-- Talk_to_a_family_member:
-    cost_increase: 4
-    initial_cost: 23
-    MET_score: 10
+    robot_goals: null
+- Coffee_Chat:
+    initial_cost: 18
+    cost_increase: 2
+    MET_score: 9
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Group_Class:
+    initial_cost: 22
+    cost_increase: 1
+    MET_score: 9
     value: null
     requires_tutorial: false
+    robot_goals:
+    - has_new_material(human): phone_number
+- Visit_Neighbor:
+    initial_cost: 8
+    cost_increase: 2
+    MET_score: 8
+    value: null
+    requires_tutorial: true
+    robot_goals: null
+- Send_Gift:
+    initial_cost: 8
+    cost_increase: 1
+    MET_score: 4
+    value: null
+    requires_tutorial: false
+    robot_goals:
+    - has_new_material(human): phone_number
+- Attend_Lecture:
+    initial_cost: 25
+    cost_increase: 2
+    MET_score: 9
+    value: null
+    requires_tutorial: false
+    robot_goals: null

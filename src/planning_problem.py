@@ -12,14 +12,14 @@ class PlanningProblem:
     :param csv: path to the csv file containing the activities
     """
     
-    def __init__(self, activities_config : str, level_flow_config : str):
+    def __init__(self, activities_config : str, level_flow_config : str, level_index : int = 0):
         # loaded data
         self.data = {}
         self.all_activity_actions = {}
         self.all_activity_actions_cost_expressions = {}
         self.all_objects = []
         self._read_data(activities_config, level_flow_config)
-        self.level_index = 2
+        self.level_index = level_index
 
         # up problem
         self.problem = Problem('health-intervention')
