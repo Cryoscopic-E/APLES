@@ -67,7 +67,8 @@ class PlanningProblem:
                             'cost_increase': value.get('cost_increase', 0),
                             'current_cost': value.get('initial_cost', 0),
                             'value': value.get('value', None),
-                            'requires_tutorial': value.get('requires_tutorial', False)
+                            'requires_tutorial': value.get('requires_tutorial', False),
+                            'robot_goals': value.get('robot_goals', None)
                         }
 
         with open(level_flow_config, 'r') as f:
@@ -107,7 +108,7 @@ class PlanningProblem:
                 self.problem.add_fluent(fluent, default_initial_value=0)
 
 
-        ## Boolean fluents for tutorial actions ## THIS IS UPDATED (Only certain activities might have tutorial actions)
+        ## Boolean fluents for tutorial actions (Only certain activities might have tutorial actions)
         for k,v in self.data['activities'].items():
         
             fluent_name = f'can_do_{k}'
@@ -126,7 +127,7 @@ class PlanningProblem:
                 tutorial_action.add_effect(tutorial_fluent, True)
 
                 self.problem.add_action(tutorial_action)
-                self.all_activity_actions_cost_expressions[tutorial_action] = 0
+                self.all_activity_actions_cost_expressions[tutorial_action] = 1
             else:
                 self.problem.add_fluent(tutorial_fluent, default_initial_value=True)
 
@@ -162,10 +163,8 @@ class PlanningProblem:
             self.all_activity_actions[activity_name] = action
 
             # add the cost expression for the action
-            #self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_cost_increase)
             self.all_activity_actions_cost_expressions[action] = Plus(self.all_fluents['cost_' + activity_name], activity_score)
 
-            #self.all_activity_actions_cost_expressions[action] = self.all_fluents['cost_' + activity_name]
             # add action to the problem
             self.problem.add_action(action)
     
@@ -212,14 +211,4 @@ class PlanningProblem:
 
     def __repr__(self) -> str:
         return str(self.problem)
-            
-    # def update_fluents_init(self, csv_fluents_path):
-    #     df = pd.read_csv(csv_fluents_path)
-    #     for index, row in df.iterrows():
-    #         object_type_name = row['name']
-    #         object_type_status = row['status']
-    #         for f in self.problem.fluents:
-    #             if f.name == 'can_do_activity_type':
-    #                 for o in self.all_objects:
-    #                     if o.name == object_type_name:
-    #                         self.problem.set_initial_value(f(o), object_type_status)
+

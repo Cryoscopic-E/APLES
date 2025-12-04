@@ -1,10 +1,13 @@
 import os
+import yaml
 from unified_planning.shortcuts import *
 from unified_planning.model.metrics import *
 from unified_planning.engines import PlanGenerationResultStatus
 from unified_planning.shortcuts import OneshotPlanner
 
 from planning_problem import PlanningProblem
+from robot_problem import RobotProblem
+from plan_publisher import PlanPublisher
 
 from unified_planning.io import PDDLWriter, PDDLReader
 
@@ -13,34 +16,54 @@ data_folder = os.path.join(current_dir, 'data')
 activities_csv = os.path.join(data_folder, 'activities.yaml')
 levels_csv = os.path.join(data_folder, 'level_flow.yaml')
 
+def update_activities_yaml(plan, yaml_path):
+    with open(yaml_path, 'r') as f:
+        data = yaml.safe_load(f)
+    
+    executed_actions = set()
+    if hasattr(plan, 'actions'):
+        for action_instance in plan.actions:
+            executed_actions.add(action_instance.action.name)
+            
+    updated = False
+    if data:
+        for category, activities in data.items():
+            if activities:
+                for activity_dict in activities:
+                    for activity_name, activity_data in activity_dict.items():
+                        if activity_name in executed_actions:
+                            cost_increase = activity_data.get('cost_increase', 0)
+                            initial_cost = activity_data.get('initial_cost', 0)
+                            activity_data['initial_cost'] = initial_cost + cost_increase
+                            updated = True
 
-def create_level_structure(_lvl_path, csv_path):
-    global csv_data_path
-    global level_structure_path
-    csv_data_path = csv_path
-    level_structure_path = _lvl_path
-    levels = pd.read_csv(level_structure_path)
+    if updated:
+        with open(yaml_path, 'w') as f:
+            yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
-    for index, level in levels.iterrows():
-        executed_plan = execute_planner(int(level['physical']), int(level['social']), int(level['cognitive']), int(level['minigame']))
+def execute_monitor(plan, activities_data, robot_problem, publisher=None):
+    """
+    Monitors the execution of the plan and triggers robot planning if needed.
+    """
+    print("--- Starting Execution Monitor ---")
+    if not hasattr(plan, 'actions'):
+        return
 
-def execute_planner(physical, social, cognitive, minigame):
-    # Create the planning problem
-    p = PlanningProblem(csv=csv_data_path, social_score=social, physical_score=physical, cognitive_score=cognitive, minigame_score=minigame)
-    #p.update_fluents_init(csv_fluents_path)
-    # print(p.problem)
-    with OneshotPlanner(name='enhsp', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
-        get_environment().credits_stream = None
-        result = planner.solve(p.problem) # type: ignore
-        plan = result.plan
-
-        if plan is not None:
-            print(plan)
-            # assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
-            return plan
-        else:
-            print("No plan found.")
-            exit()
+    for action_instance in plan.actions:
+        act_name = action_instance.action.name
+        print(f"Executing activity: {act_name}")
+        
+        if act_name in activities_data:
+             activity_info = activities_data[act_name]
+             robot_goals = activity_info.get('robot_goals')
+             
+             if robot_goals:
+                 print(f"  Activity {act_name} has robot goals: {robot_goals}")
+                 robot_plan = robot_problem.solve(robot_goals)
+                 if robot_plan and publisher:
+                     publisher.publish(robot_problem.problem, robot_plan)
+             else:
+                 print(f"  No robot goals for {act_name}")
 
 def main():
     #create_level_structure(levels_csv, activities_csv)
@@ -57,6 +80,14 @@ def main():
         if plan is not None:
             print(plan)
             assert result.status == PlanGenerationResultStatus.SOLVED_OPTIMALLY
+            update_activities_yaml(plan, activities_csv)
+            
+            robot_problem = RobotProblem()
+            publisher = PlanPublisher()
+            try:
+                execute_monitor(plan, p.data['activities'], robot_problem, publisher)
+            finally:
+                publisher.close()
             return plan
         else:
             print("No plan found.")
