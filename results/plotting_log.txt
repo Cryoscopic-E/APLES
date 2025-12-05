@@ -1,9 +1,10 @@
---- Plotting and Analysis Log (2025-12-05 11:46:14) ---
+
+--- Plotting and Analysis Log (2025-12-05 11:54:28) ---
 Loading data from: experiment_scalability_results.csv
 Plot saved: results/time_vs_level_by_category.png
 Plot saved: results/length_vs_level_by_category.png
-Status values found: ['SOLVED_OPTIMALLY']
-Plot saved: results/success_rate_by_category.png
+Plot saved: results/time_distribution_boxplot.png
+Plot saved: results/cost_vs_level_by_category.png
 All plots saved to results/ directory.
 
 === Extended Statistical Analysis ===
@@ -11,23 +12,30 @@ All plots saved to results/ directory.
 Category: Physical
   Total Runs: 30
   Successful Runs: 30 (100.0%)
-  Avg Generation Time: 0.2875 s
-  Avg Plan Length: 2.83 actions
-  Correlation (Level vs Time): 0.2480
-  Correlation (Level vs Length): 0.9079
+  Avg Generation Time: 0.2785 s
+  Avg Plan Length: 3.00 actions
+  Avg Plan Cost: 215.03
+  Correlation (Level vs Time): 0.3740
+  Correlation (Level vs Length): 0.8867
+  Correlation (Level vs Cost): 0.9963
 
 Category: Social
   Total Runs: 30
   Successful Runs: 30 (100.0%)
-  Avg Generation Time: 0.2844 s
-  Avg Plan Length: 1.73 actions
-  Correlation (Level vs Time): 0.6902
-  Correlation (Level vs Length): 0.8074
+  Avg Generation Time: 0.2766 s
+  Avg Plan Length: 1.60 actions
+  Avg Plan Cost: 70.67
+  Correlation (Level vs Time): 0.6266
+  Correlation (Level vs Length): 0.8332
+  Correlation (Level vs Cost): 0.9787
 
 Category: Cognitive
   Total Runs: 30
   Successful Runs: 30 (100.0%)
-  Avg Generation Time: 0.2758 s
-  Avg Plan Length: 2.07 actions
-  Correlation (Level vs Time): 0.5268
-  Correlation (Level vs Length): 0.9207
+  Avg Generation Time: 0.2767 s
+  Avg Plan Length: 2.10 actions
+  Avg Plan Cost: 81.40
+  Correlation (Level vs Time): 0.2948
+  Correlation (Level vs Length): 0.8687
+  Correlation (Level vs Cost): 0.9899
+  No successful runs to analyze.

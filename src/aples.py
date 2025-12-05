@@ -71,7 +71,7 @@ def main():
         master_activities_data = yaml.safe_load(f)
 
     with open(experiment_file, 'w', newline='') as csvfile:
-        fieldnames = ['domain_size', 'level', 'category', 'plan_length', 'generation_time', 'status']
+        fieldnames = ['domain_size', 'level', 'category', 'plan_length', 'plan_cost', 'generation_time', 'status']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
@@ -103,6 +103,7 @@ def main():
                     status = "UNKNOWN"
                     generation_time = 0
                     plan_length = 0
+                    plan_cost = 0
 
                     try:
                         # switched to 'enhsp' (satisficing) for scalability experiment
@@ -113,7 +114,23 @@ def main():
                             
                             plan = result.plan
                             status = result.status.name
-                            plan_length = len(plan.actions) if plan and hasattr(plan, 'actions') else 0
+                            if plan and hasattr(plan, 'actions'):
+                                plan_length = len(plan.actions)
+                                # Calculate Plan Cost manually
+                                for action_instance in plan.actions:
+                                    act_name = action_instance.action.name
+                                    # Tutorial actions have cost 1 (hardcoded in PlanningProblem)
+                                    if act_name.startswith('tutorial_'):
+                                        plan_cost += 1
+                                    # Activity actions cost depends on current cost in data
+                                    # Note: p.data['activities'] holds the cost at the time of planning
+                                    # act_name might be like "Walk_5k"
+                                    elif act_name in p.data['activities']:
+                                        plan_cost += p.data['activities'][act_name]['current_cost']
+                                    else:
+                                        # Fallback if name doesn't match exactly (e.g. if parameterized differently)
+                                        # But in this domain actions are unparameterized mostly or name matches key
+                                        pass
                             
                             if plan:
                                  try:
@@ -135,6 +152,7 @@ def main():
                         'level': lvl_idx,
                         'category': category,
                         'plan_length': plan_length,
+                        'plan_cost': plan_cost,
                         'generation_time': generation_time,
                         'status': status
                     })

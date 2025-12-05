@@ -4,29 +4,13 @@
     "level": 0,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Yoga_Session(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 1,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Lift_Weights(physical_activity)\n    Walk_5k(physical_activity)",
-        "robot_plans": [],
+        "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)",
+        "robot_plans": [
+          {
+            "activity": "Walk_10k",
+            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+          }
+        ],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
@@ -48,36 +32,52 @@
   },
   {
     "domain_size": 15,
-    "level": 2,
+    "level": 1,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Hiking(physical_activity)\n    Walk_10k(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Walk_10k",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Tai_Chi(physical_activity)\n    Yoga_Session(physical_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Video_Call(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Write_Letter(social_activity)",
         "robot_plans": [
           {
-            "activity": "Video_Call",
+            "activity": "Write_Letter",
             "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
           }
         ],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Read_Book(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Listen_Podcast(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 2,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Swim_Laps(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Visit_Neighbor(social_activity)",
         "robot_plans": [
           {
-            "activity": "Read_Book",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+            "activity": "Visit_Neighbor",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
           }
         ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Listen_Podcast(cognitive_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       }
     }
@@ -87,34 +87,13 @@
     "level": 3,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Walk_Marathon(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Board_Game_Night(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Sudoku(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)",
         "robot_plans": [
           {
-            "activity": "Sudoku",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+            "activity": "Cycling_Outdoor",
+            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
           }
         ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 4,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)",
-        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
@@ -136,10 +115,36 @@
   },
   {
     "domain_size": 15,
+    "level": 4,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Walk_5k(physical_activity)\n    Stretching(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Visit_Neighbor(social_activity)",
+        "robot_plans": [
+          {
+            "activity": "Visit_Neighbor",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Memory_Game(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
     "level": 5,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Pilates(physical_activity)\n    Pilates(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Lift_Weights(physical_activity)\n    Pilates(physical_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
@@ -165,33 +170,18 @@
     "level": 6,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Yoga_Session(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Outdoor",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Hiking(physical_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Write_Letter(social_activity)",
-        "robot_plans": [
-          {
-            "activity": "Write_Letter",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Social_Event(social_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Chess(cognitive_activity)",
-        "robot_plans": [
-          {
-            "activity": "Chess",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       }
     }
@@ -201,7 +191,28 @@
     "level": 7,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Lift_Weights(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Dancing(physical_activity)\n    Tai_Chi(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Park_Meetup(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 8,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Swim_Laps(physical_activity)\n    Pilates(physical_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
@@ -219,20 +230,45 @@
   },
   {
     "domain_size": 15,
-    "level": 8,
+    "level": 9,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Walk_10k(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Walk_10k",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Dancing(physical_activity)\n    Yoga_Session(physical_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
         "activity_plan": "SequentialPlan:\n    Send_Gift(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Sudoku(cognitive_activity)\n    Sudoku(cognitive_activity)",
+        "robot_plans": [
+          {
+            "activity": "Sudoku",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          },
+          {
+            "activity": "Sudoku",
+            "robot_plan": "SequentialPlan:"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 10,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Walk_Marathon(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Group_Class(social_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
@@ -245,61 +281,10 @@
   },
   {
     "domain_size": 15,
-    "level": 9,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Swim_Laps(physical_activity)\n    Swim_Laps(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Group_Class(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 10,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Cycling_Outdoor(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Indoor",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          },
-          {
-            "activity": "Cycling_Outdoor",
-            "robot_plan": "SequentialPlan:"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Send_Gift(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Memory_Game(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
     "level": 11,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Stretching(physical_activity)\n    Cycling_Indoor(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Gardening(physical_activity)\n    Cycling_Indoor(physical_activity)",
         "robot_plans": [
           {
             "activity": "Cycling_Indoor",
@@ -309,21 +294,12 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Visit_Neighbor(social_activity)\n    Visit_Neighbor(social_activity)",
-        "robot_plans": [
-          {
-            "activity": "Visit_Neighbor",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
-          },
-          {
-            "activity": "Visit_Neighbor",
-            "robot_plan": "SequentialPlan:"
-          }
-        ],
+        "activity_plan": "SequentialPlan:\n    Volunteer(social_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Brain_Game(cognitive_activity)\n    Brain_Game(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Math_Practice(cognitive_activity)\n    Math_Practice(cognitive_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       }
@@ -339,210 +315,7 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Social_Event(social_activity)\n    Social_Event(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 13,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Dancing(physical_activity)\n    Swim_Laps(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Talk_Family(social_activity)\n    Social_Event(social_activity)",
-        "robot_plans": [
-          {
-            "activity": "Talk_Family",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)\n    Math_Practice(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 14,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Stretching(physical_activity)\n    Yoga_Session(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Sudoku(cognitive_activity)",
-        "robot_plans": [
-          {
-            "activity": "Sudoku",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 15,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Walk_5k(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Outdoor",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 16,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Dancing(physical_activity)\n    tutorial_Tai_Chi\n    Tai_Chi(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Volunteer(social_activity)\n    Coffee_Chat(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Math_Practice(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 17,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Hiking(physical_activity)\n    Dancing(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Chess(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
-        "robot_plans": [
-          {
-            "activity": "Chess",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 18,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Pilates(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Social_Event(social_activity)\n    Group_Class(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 19,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Stretching(physical_activity)\n    Jump_Rope(physical_activity)\n    Cycling_Outdoor(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Outdoor",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Park_Meetup(social_activity)\n    Join_Club(social_activity)\n    Video_Call(social_activity)",
-        "robot_plans": [
-          {
-            "activity": "Video_Call",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Memory_Game(cognitive_activity)\n    Crossword(cognitive_activity)",
-        "robot_plans": [
-          {
-            "activity": "Crossword",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 20,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Gardening(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Join_Club(social_activity)\n    Call_Friend(social_activity)\n    Visit_Neighbor(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Call_Friend(social_activity)\n    Visit_Neighbor(social_activity)",
         "robot_plans": [
           {
             "activity": "Visit_Neighbor",
@@ -552,7 +325,38 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Solve_Puzzle(cognitive_activity)\n    Learn_Instrument(cognitive_activity)\n    Chess(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Paint(cognitive_activity)",
+        "robot_plans": [
+          {
+            "activity": "Paint",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 13,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Tai_Chi(physical_activity)\n    Cycling_Outdoor(physical_activity)",
+        "robot_plans": [
+          {
+            "activity": "Cycling_Outdoor",
+            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Solve_Puzzle(cognitive_activity)\n    Chess(cognitive_activity)",
         "robot_plans": [
           {
             "activity": "Solve_Puzzle",
@@ -569,13 +373,123 @@
   },
   {
     "domain_size": 15,
-    "level": 21,
+    "level": 14,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Stretching(physical_activity)\n    Lift_Weights(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Write_Journal(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 15,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Dancing(physical_activity)\n    Swim_Laps(physical_activity)\n    Yoga_Session(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)\n    Memory_Game(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 16,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Stretching(physical_activity)\n    Stretching(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Social_Event(social_activity)\n    Send_Gift(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 17,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Pilates(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Memory_Game(cognitive_activity)\n    Paint(cognitive_activity)",
         "robot_plans": [
           {
-            "activity": "Cycling_Indoor",
+            "activity": "Paint",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 18,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Gardening(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Social_Event(social_activity)\n    Send_Gift(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 19,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Cycling_Indoor(physical_activity)\n    Cycling_Indoor(physical_activity)",
+        "robot_plans": [
+          {
+            "activity": "Cycling_Outdoor",
             "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
           },
           {
@@ -590,23 +504,74 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Visit_Neighbor(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Join_Club(social_activity)\n    Volunteer(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Crossword(cognitive_activity)\n    Sudoku(cognitive_activity)",
         "robot_plans": [
           {
-            "activity": "Visit_Neighbor",
+            "activity": "Crossword",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          },
+          {
+            "activity": "Sudoku",
+            "robot_plan": "SequentialPlan:"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 20,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Dancing(physical_activity)\n    Swim_Laps(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Video_Call(social_activity)",
+        "robot_plans": [
+          {
+            "activity": "Video_Call",
             "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
           }
         ],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Paint(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Learn_Phrase(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 21,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Cycling_Outdoor(physical_activity)",
         "robot_plans": [
           {
-            "activity": "Paint",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+            "activity": "Cycling_Outdoor",
+            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
           }
         ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)\n    Coffee_Chat(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Memory_Game(cognitive_activity)",
+        "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       }
     }
@@ -616,78 +581,10 @@
     "level": 22,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Dancing(physical_activity)\n    Pilates(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)\n    Board_Game_Night(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Sudoku(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Walk_10k(physical_activity)\n    Walk_10k(physical_activity)\n    Dancing(physical_activity)\n    Jump_Rope(physical_activity)",
         "robot_plans": [
           {
-            "activity": "Sudoku",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 23,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Walk_Marathon(physical_activity)\n    Yoga_Session(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Join_Club(social_activity)\n    Call_Friend(social_activity)\n    Social_Event(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    History_Quiz(cognitive_activity)\n    History_Quiz(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 24,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Dancing(physical_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Join_Club(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Memory_Game(cognitive_activity)\n    Learn_Instrument(cognitive_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 25,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Swim_Laps(physical_activity)\n    Swim_Laps(physical_activity)\n    Cycling_Outdoor(physical_activity)\n    Walk_10k(physical_activity)\n    Lift_Weights(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Outdoor",
+            "activity": "Walk_10k",
             "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
           },
           {
@@ -698,12 +595,17 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Park_Meetup(social_activity)\n    Social_Event(social_activity)\n    Send_Gift(social_activity)",
-        "robot_plans": [],
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Write_Letter(social_activity)",
+        "robot_plans": [
+          {
+            "activity": "Write_Letter",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+          }
+        ],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Write_Journal(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)\n    History_Quiz(cognitive_activity)\n    Memory_Game(cognitive_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       }
@@ -711,50 +613,15 @@
   },
   {
     "domain_size": 15,
-    "level": 26,
+    "level": 23,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Gardening(physical_activity)\n    Gardening(physical_activity)\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Walk_5k(physical_activity)\n    Walk_5k(physical_activity)\n    Jump_Rope(physical_activity)\n    Swim_Laps(physical_activity)\n    Walk_5k(physical_activity)\n    Swim_Laps(physical_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Send_Gift(social_activity)",
-        "robot_plans": [],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Chess(cognitive_activity)\n    Chess(cognitive_activity)",
-        "robot_plans": [
-          {
-            "activity": "Chess",
-            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          },
-          {
-            "activity": "Chess",
-            "robot_plan": "SequentialPlan:"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      }
-    }
-  },
-  {
-    "domain_size": 15,
-    "level": 27,
-    "plans": {
-      "physical": {
-        "activity_plan": "SequentialPlan:\n    Pilates(physical_activity)\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Cycling_Outdoor(physical_activity)",
-        "robot_plans": [
-          {
-            "activity": "Cycling_Outdoor",
-            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
-          }
-        ],
-        "status": "SOLVED_OPTIMALLY"
-      },
-      "social": {
-        "activity_plan": "SequentialPlan:\n    Call_Friend(social_activity)\n    Talk_Family(social_activity)\n    Volunteer(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Join_Club(social_activity)\n    Join_Club(social_activity)\n    Talk_Family(social_activity)",
         "robot_plans": [
           {
             "activity": "Talk_Family",
@@ -764,15 +631,11 @@
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Paint(cognitive_activity)\n    Memory_Game(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Sudoku(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Paint(cognitive_activity)",
         "robot_plans": [
           {
             "activity": "Paint",
             "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
-          },
-          {
-            "activity": "Sudoku",
-            "robot_plan": "SequentialPlan:"
           }
         ],
         "status": "SOLVED_OPTIMALLY"
@@ -781,16 +644,94 @@
   },
   {
     "domain_size": 15,
-    "level": 28,
+    "level": 24,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Dancing(physical_activity)\n    Yoga_Session(physical_activity)\n    Hiking(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Jump_Rope(physical_activity)\n    Cycling_Outdoor(physical_activity)",
+        "robot_plans": [
+          {
+            "activity": "Cycling_Outdoor",
+            "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Park_Meetup(social_activity)\n    Host_Dinner(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Learn_Instrument(cognitive_activity)\n    Write_Journal(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 25,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Tai_Chi(physical_activity)\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Dancing(physical_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)\n    Group_Class(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Join_Club(social_activity)",
         "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Chess(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Brain_Game(cognitive_activity)",
+        "robot_plans": [
+          {
+            "activity": "Chess",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 26,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Gardening(physical_activity)\n    Walk_Marathon(physical_activity)\n    Pilates(physical_activity)\n    Gardening(physical_activity)\n    Pilates(physical_activity)\n    Tai_Chi(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Call_Friend(social_activity)\n    Social_Event(social_activity)\n    Group_Class(social_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Math_Practice(cognitive_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 27,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Lift_Weights(physical_activity)\n    Lift_Weights(physical_activity)\n    Yoga_Session(physical_activity)\n    Lift_Weights(physical_activity)",
+        "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Board_Game_Night(social_activity)\n    Visit_Neighbor(social_activity)",
+        "robot_plans": [
+          {
+            "activity": "Visit_Neighbor",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+          }
+        ],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
@@ -802,26 +743,74 @@
   },
   {
     "domain_size": 15,
-    "level": 29,
+    "level": 28,
     "plans": {
       "physical": {
-        "activity_plan": "SequentialPlan:\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Pilates(physical_activity)\n    Pilates(physical_activity)\n    Cycling_Outdoor(physical_activity)",
+        "activity_plan": "SequentialPlan:\n    Cycling_Outdoor(physical_activity)\n    Jump_Rope(physical_activity)\n    Jump_Rope(physical_activity)\n    Cycling_Indoor(physical_activity)",
         "robot_plans": [
           {
             "activity": "Cycling_Outdoor",
             "robot_plan": "SequentialPlan:\n    pickup(robot, water_bottle, kitchen)\n    move(robot, kitchen, living_room)\n    drop_down(robot, water_bottle, living_room)"
+          },
+          {
+            "activity": "Cycling_Indoor",
+            "robot_plan": "SequentialPlan:"
           }
         ],
         "status": "SOLVED_OPTIMALLY"
       },
       "social": {
-        "activity_plan": "SequentialPlan:\n    Join_Club(social_activity)\n    Join_Club(social_activity)\n    Social_Event(social_activity)\n    Social_Event(social_activity)",
+        "activity_plan": "SequentialPlan:\n    Attend_Lecture(social_activity)\n    Volunteer(social_activity)",
         "robot_plans": [],
         "status": "SOLVED_OPTIMALLY"
       },
       "cognitive": {
-        "activity_plan": "SequentialPlan:\n    Memory_Game(cognitive_activity)\n    Memory_Game(cognitive_activity)\n    Learn_Phrase(cognitive_activity)\n    Learn_Instrument(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
+        "activity_plan": "SequentialPlan:\n    Learn_Instrument(cognitive_activity)\n    Sudoku(cognitive_activity)\n    Sudoku(cognitive_activity)\n    Memory_Game(cognitive_activity)\n    Learn_Phrase(cognitive_activity)",
+        "robot_plans": [
+          {
+            "activity": "Sudoku",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          },
+          {
+            "activity": "Sudoku",
+            "robot_plan": "SequentialPlan:"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      }
+    }
+  },
+  {
+    "domain_size": 15,
+    "level": 29,
+    "plans": {
+      "physical": {
+        "activity_plan": "SequentialPlan:\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Stretching(physical_activity)\n    Tai_Chi(physical_activity)\n    Dancing(physical_activity)\n    Yoga_Session(physical_activity)",
         "robot_plans": [],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "social": {
+        "activity_plan": "SequentialPlan:\n    Host_Dinner(social_activity)\n    Visit_Neighbor(social_activity)\n    Visit_Neighbor(social_activity)",
+        "robot_plans": [
+          {
+            "activity": "Visit_Neighbor",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, phone_number)"
+          },
+          {
+            "activity": "Visit_Neighbor",
+            "robot_plan": "SequentialPlan:"
+          }
+        ],
+        "status": "SOLVED_OPTIMALLY"
+      },
+      "cognitive": {
+        "activity_plan": "SequentialPlan:\n    Chess(cognitive_activity)\n    Watch_Doc(cognitive_activity)\n    Watch_Doc(cognitive_activity)",
+        "robot_plans": [
+          {
+            "activity": "Chess",
+            "robot_plan": "SequentialPlan:\n    move(robot, kitchen, living_room)\n    prompt_text(robot, human, living_room, puzzle)"
+          }
+        ],
         "status": "SOLVED_OPTIMALLY"
       }
     }
