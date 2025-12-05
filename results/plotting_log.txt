@@ -1,0 +1,33 @@
+--- Plotting and Analysis Log (2025-12-05 11:46:14) ---
+Loading data from: experiment_scalability_results.csv
+Plot saved: results/time_vs_level_by_category.png
+Plot saved: results/length_vs_level_by_category.png
+Status values found: ['SOLVED_OPTIMALLY']
+Plot saved: results/success_rate_by_category.png
+All plots saved to results/ directory.
+
+=== Extended Statistical Analysis ===
+
+Category: Physical
+  Total Runs: 30
+  Successful Runs: 30 (100.0%)
+  Avg Generation Time: 0.2875 s
+  Avg Plan Length: 2.83 actions
+  Correlation (Level vs Time): 0.2480
+  Correlation (Level vs Length): 0.9079
+
+Category: Social
+  Total Runs: 30
+  Successful Runs: 30 (100.0%)
+  Avg Generation Time: 0.2844 s
+  Avg Plan Length: 1.73 actions
+  Correlation (Level vs Time): 0.6902
+  Correlation (Level vs Length): 0.8074
+
+Category: Cognitive
+  Total Runs: 30
+  Successful Runs: 30 (100.0%)
+  Avg Generation Time: 0.2758 s
+  Avg Plan Length: 2.07 actions
+  Correlation (Level vs Time): 0.5268
+  Correlation (Level vs Length): 0.9207

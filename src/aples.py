@@ -63,6 +63,9 @@ def main():
     save_pddl = True
     saved_categories = set()
     
+    pddl_output_dir = "pddl"
+    os.makedirs(pddl_output_dir, exist_ok=True)
+    
     # Load initial activities state once
     with open(activities_csv, 'r') as f:
         master_activities_data = yaml.safe_load(f)
@@ -87,10 +90,10 @@ def main():
                     
                     if save_pddl and category not in saved_categories:
                         pddl_writer = PDDLWriter(p.problem)
-                        pddl_writer.write_domain(f"domain_{category}.pddl")
-                        pddl_writer.write_problem(f"problem_{category}.pddl")
+                        pddl_writer.write_domain(os.path.join(pddl_output_dir, f"domain_{category}.pddl"))
+                        pddl_writer.write_problem(os.path.join(pddl_output_dir, f"problem_{category}.pddl"))
                         saved_categories.add(category)
-                        print(f" [PDDL saved for {category}]", end='', flush=True)
+                        print(f" [PDDL saved for {category} in {pddl_output_dir}/]", end='', flush=True)
                     
                     get_environment().credits_stream = None
                     
@@ -166,16 +169,28 @@ def main():
     # Statistical Evaluation
     print("\n=== Statistical Evaluation ===")
     if len(results) > 0:
-        times = [r['time'] for r in results]
-        sizes = [r['domain_size'] for r in results]
-        levels = [r['level'] for r in results]
-        
-        # Simple aggregation for correlation check (summing times per level might be better but this is rough)
-        corr_size_time = np.corrcoef(sizes, times)[0, 1] if len(set(sizes)) > 1 else 0
-        corr_lvl_time = np.corrcoef(levels, times)[0, 1] if len(set(levels)) > 1 else 0
-        
-        print(f"Correlation (Domain Size vs Time): {corr_size_time:.4f}")
-        print(f"Correlation (Difficulty Level vs Time): {corr_lvl_time:.4f}")
+        for category in categories:
+            cat_results = [r for r in results if r['category'] == category]
+            if not cat_results:
+                continue
+                
+            times = [r['time'] for r in cat_results]
+            levels = [r['level'] for r in cat_results]
+            
+            # Avoid runtime warnings if variance is zero
+            if len(set(levels)) > 1 and np.std(times) > 0:
+                corr_lvl_time = np.corrcoef(levels, times)[0, 1]
+                print(f"Category: {category.capitalize()}")
+                print(f"  Correlation (Level vs Time): {corr_lvl_time:.4f}")
+            else:
+                print(f"Category: {category.capitalize()} - Insufficient variance for correlation.")
+                
+        # Global stats
+        all_times = [r['time'] for r in results]
+        all_levels = [r['level'] for r in results]
+        if len(set(all_levels)) > 1 and np.std(all_times) > 0:
+             glob_corr = np.corrcoef(all_levels, all_times)[0, 1]
+             print(f"Global Correlation (Level vs Time): {glob_corr:.4f}")
 
 if __name__ == '__main__':
     main()
