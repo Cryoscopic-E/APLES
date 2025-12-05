@@ -98,7 +98,7 @@ class RobotProblem:
         self.problem.set_initial_value(self.hand_empty(robot), True)
         self.problem.set_initial_value(self.is_robot(robot), True)
 
-    def solve(self, goals):
+    def solve(self, goals, planner_name='enhsp-opt'):
         self.problem.clear_goals()
         
         # Process Goals and Dynamic Objects
@@ -148,7 +148,7 @@ class RobotProblem:
                      pass
 
         # Solve
-        with OneshotPlanner(name='enhsp-opt', optimality_guarantee=PlanGenerationResultStatus.SOLVED_OPTIMALLY) as planner:
+        with OneshotPlanner(name=planner_name) as planner:
             result = planner.solve(self.problem)
             if result.plan:
                 print(f"Robot Plan found: {result.plan}")

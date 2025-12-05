@@ -1,5 +1,5 @@
 from unified_planning.model import Fluent, InstantaneousAction, Object
-from unified_planning.shortcuts import LE, Real, Int
+from unified_planning.shortcuts import LE, Real, Int, Equals, Not
 from enum import Enum, auto
 import yaml
 
@@ -25,27 +25,35 @@ activity_type_mapping = {
 }
 
 class ActivityAction(InstantaneousAction):
-    def __init__(self, name, score, cost_increase, activity_type : ActivityType, fluents, types, requires_tutorial=False):
-        self.name = name
+    def __init__(self, name, score, cost_increase, activity_type : ActivityType, fluents, types, type_id, max_repetitions=None, requires_tutorial=False):
+        super().__init__(name, atype=types[activity_mappings[activity_type][0]])
+        self.original_name = name
         self.score = score
         self.activity_type = activity_type
         self.cost_increase = cost_increase
 
         if self.activity_type in activity_mappings:
             atype, fluent = activity_mappings[self.activity_type]
-            super().__init__(self.name, atype=types[atype])
             self.add_increase_effect(fluents[fluent], self.score)
         else:
             raise ValueError('Activity type not recognized when creating action effects')
 
         # parameters
-        atype = self.parameter('atype')
-        # preconditions
-        #self.add_precondition(fluents['can_do_activity_type'](atype) &  LE(fluents['cost_' + self.name], fluents[fluent]))
+        # atype = self.parameter('atype') # This seems unused or redundant if not careful, but keeping super init clean.
+        # Note: In the original code `super().__init__(action_name, atype=types[atype])` used `types[atype]`.
+        # Here I moved super call up.
         
-        self.add_precondition(fluents['can_do_' + self.name])
+        self.add_precondition(fluents['can_do_' + self.original_name])
         
-        # current cost effect
-        #self.add_increase_effect(fluents['cost_' + self.name], self.cost_increase)
+        # Max repetitions logic
+        if max_repetitions is not None:
+            count_fluent = fluents['count_' + self.original_name]
+            self.add_precondition(LE(count_fluent, max_repetitions - 1))
+            self.add_increase_effect(count_fluent, 1)
+        
+        # current cost effect (always update the base cost fluent)
+        self.add_increase_effect(fluents['cost_' + self.original_name], self.cost_increase)
+
+
         
 
