@@ -1,275 +1,247 @@
 physical:
 - Walk_5k:
-    initial_cost: 10
-    cost_increase: 5
-    MET_score: 4
+    initial_cost: 10       # Putting on shoes/light prep
+    cost_increase: 5       # Moderate fatigue
+    MET_score: 4           # Brisk walking
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.5
 - Walk_10k:
-    initial_cost: 15
-    cost_increase: 8
-    MET_score: 5
+    initial_cost: 15       # Needs more time/prep
+    cost_increase: 8       # Fatigue sets in
+    MET_score: 5           # Sustained effort
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
     - at_item(water_bottle): living_room
-    recovery_rate: 0.5
 - Walk_Marathon:
-    initial_cost: 50
-    cost_increase: 40
-    MET_score: 12
+    initial_cost: 50       # Huge mental barrier
+    cost_increase: 40      # "The Wall" - extreme fatigue
+    MET_score: 12          # Massive caloric burn
     value: null
     requires_tutorial: false
-    max_repetitions: 1
+    max_repetitions: 1     # Impossible to repeat
     robot_goals: null
-    recovery_rate: 0.01
 - Yoga_Session:
-    initial_cost: 12
-    cost_increase: 4
-    MET_score: 3
+    initial_cost: 12       # Rolling out mat/changing
+    cost_increase: 4       # Holding poses
+    MET_score: 3           # Light/Moderate
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
 - Stretching:
-    initial_cost: 5
-    cost_increase: 2
-    MET_score: 2
+    initial_cost: 5        # Very easy to start
+    cost_increase: 2       # Low fatigue
+    MET_score: 2           # Very light
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.5
 - Lift_Weights:
-    initial_cost: 30
-    cost_increase: 15
-    MET_score: 6
+    initial_cost: 30       # Driving to gym/warmup
+    cost_increase: 15      # Muscles fail quickly
+    MET_score: 6           # Resistance training
     value: null
     requires_tutorial: true
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
 - Swim_Laps:
-    initial_cost: 40
-    cost_increase: 12
-    MET_score: 8
+    initial_cost: 40       # Changing/Wet/Cold/Shower
+    cost_increase: 12      # Full body exhaustion
+    MET_score: 8           # High cardio
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
 - Cycling_Indoor:
-    initial_cost: 20
-    cost_increase: 8
-    MET_score: 7
+    initial_cost: 20       # Hop on bike
+    cost_increase: 8       # Legs burn
+    MET_score: 7           # Moderate-High cardio
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals:
     - at_item(water_bottle): living_room
-    recovery_rate: 0.5
 - Cycling_Outdoor:
-    initial_cost: 35
-    cost_increase: 10
+    initial_cost: 35       # Gear/Helmet/Traffic safety
+    cost_increase: 10      # Hills/Wind
     MET_score: 8
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals:
     - at_item(water_bottle): living_room
-    recovery_rate: 0.5
 - Hiking:
-    initial_cost: 45
-    cost_increase: 10
+    initial_cost: 45       # Travel to trail/Boots
+    cost_increase: 10      # Long duration effort
     MET_score: 6
     value: null
     requires_tutorial: true
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 0.5
 - Jump_Rope:
-    initial_cost: 15
-    cost_increase: 25
-    MET_score: 11
+    initial_cost: 15       # Easy to start
+    cost_increase: 25      # Extremely tiring very fast
+    MET_score: 11          # High intensity
     value: null
     requires_tutorial: false
-    max_repetitions: 3
+    max_repetitions: 3     # Short bursts
     robot_goals: null
-    recovery_rate: 0.5
 - Pilates:
-    initial_cost: 20
-    cost_increase: 6
+    initial_cost: 20       # Setup
+    cost_increase: 6       # Core fatigue
     MET_score: 4
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
 - Tai_Chi:
-    initial_cost: 15
-    cost_increase: 3
+    initial_cost: 15       # Focus prep
+    cost_increase: 3       # Gentle movement
     MET_score: 3
     value: null
     requires_tutorial: true
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
 - Gardening:
-    initial_cost: 25
-    cost_increase: 5
+    initial_cost: 25       # Tools/Dirt
+    cost_increase: 5       # Back ache, but flow state
     MET_score: 4
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.5
 - Dancing:
-    initial_cost: 20
-    cost_increase: 10
+    initial_cost: 20       # Music setup
+    cost_increase: 10      # High energy output
     MET_score: 7
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.5
+
 cognitive:
 - Learn_Phrase:
-    initial_cost: 15
-    cost_increase: 10
-    MET_score: 5
+    initial_cost: 15       # Mental friction
+    cost_increase: 10      # Rote memorization is boring
+    MET_score: 5           # High neuroplasticity
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.8
 - Watch_Doc:
-    initial_cost: 5
-    cost_increase: 1
-    MET_score: 2
+    initial_cost: 5        # Turn on TV
+    cost_increase: 1       # Easy to binge
+    MET_score: 2           # Passive learning
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.8
 - Brain_Game:
-    initial_cost: 10
-    cost_increase: 8
+    initial_cost: 10       # App launch
+    cost_increase: 8       # Screen fatigue
     MET_score: 4
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.8
 - Read_Book:
-    initial_cost: 10
-    cost_increase: 3
-    MET_score: 3
+    initial_cost: 10       # Finding focus
+    cost_increase: 3       # "Flow state" possible
+    MET_score: 3           # Deep focus
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals:
-    - has_new_material(human): puzzle
-    recovery_rate: 0.8
+    - has_new_material(human): puzzle # Assuming book
 - Sudoku:
-    initial_cost: 5
-    cost_increase: 4
+    initial_cost: 5        # Pen and paper
+    cost_increase: 4       # Mental strain
     MET_score: 3
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals:
     - has_new_material(human): puzzle
-    recovery_rate: 0.8
 - Crossword:
     initial_cost: 5
-    cost_increase: 6
+    cost_increase: 6       # Harder than sudoku often
     MET_score: 3
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
     - has_new_material(human): puzzle
-    recovery_rate: 0.8
 - Chess:
-    initial_cost: 15
-    cost_increase: 12
-    MET_score: 6
+    initial_cost: 15       # Setup board
+    cost_increase: 12      # High concentration fatigue
+    MET_score: 6           # Strategic thinking
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
     - has_new_material(human): puzzle
-    recovery_rate: 0.8
 - Learn_Instrument:
-    initial_cost: 25
-    cost_increase: 15
-    MET_score: 8
+    initial_cost: 25       # Setup/Tuning
+    cost_increase: 15      # Frustration/Finger pain
+    MET_score: 8           # High brain connectivity
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 0.8
 - Paint:
-    initial_cost: 30
-    cost_increase: 5
-    MET_score: 5
+    initial_cost: 30       # Canvas/Paint setup
+    cost_increase: 5       # Flow state (time passes fast)
+    MET_score: 5           # Creative
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
-    - has_new_material(human): puzzle
-    recovery_rate: 0.8
+    - has_new_material(human): puzzle # Art supplies
 - Write_Journal:
-    initial_cost: 10
-    cost_increase: 5
-    MET_score: 4
+    initial_cost: 10       # Emotional barrier
+    cost_increase: 5       # Hand cramp/running out of words
+    MET_score: 4           # Emotional regulation
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.8
 - Listen_Podcast:
-    initial_cost: 2
-    cost_increase: 1
+    initial_cost: 2        # Earbuds in
+    cost_increase: 1       # Very passive
     MET_score: 2
     value: null
     requires_tutorial: false
     max_repetitions: 4
     robot_goals: null
-    recovery_rate: 0.8
 - Solve_Puzzle:
-    initial_cost: 15
-    cost_increase: 4
+    initial_cost: 15       # Sorting pieces
+    cost_increase: 4       # Low fatigue
     MET_score: 3
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
     - has_new_material(human): puzzle
-    recovery_rate: 0.8
 - Memory_Game:
     initial_cost: 8
-    cost_increase: 6
+    cost_increase: 6       # Repetitive
     MET_score: 4
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.8
 - Math_Practice:
-    initial_cost: 20
-    cost_increase: 15
+    initial_cost: 20       # High "Ugh" factor
+    cost_increase: 15      # Brain drain
     MET_score: 6
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 0.8
 - History_Quiz:
     initial_cost: 10
     cost_increase: 5
@@ -278,28 +250,26 @@ cognitive:
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 0.8
+
 social:
 - Call_Friend:
-    initial_cost: 8
-    cost_increase: 2
-    MET_score: 5
+    initial_cost: 8        # Pickup phone
+    cost_increase: 2       # Easy conversation
+    MET_score: 5           # Connection
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 1.0
 - Social_Event:
-    initial_cost: 35
-    cost_increase: 10
+    initial_cost: 35       # Dress up/Travel
+    cost_increase: 10      # Social battery drain
     MET_score: 8
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 1.0
 - Talk_Family:
-    initial_cost: 5
+    initial_cost: 5        # Often already present
     cost_increase: 3
     MET_score: 6
     value: null
@@ -307,92 +277,82 @@ social:
     max_repetitions: 3
     robot_goals:
     - has_new_material(human): phone_number
-    recovery_rate: 1.0
 - Write_Letter:
-    initial_cost: 15
-    cost_increase: 5
+    initial_cost: 15       # Finding stationery
+    cost_increase: 5       # Hand writing effort
     MET_score: 4
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
-    - has_new_material(human): phone_number
-    recovery_rate: 1.0
+    - has_new_material(human): phone_number # Address
 - Video_Call:
-    initial_cost: 15
-    cost_increase: 8
+    initial_cost: 15       # Checking appearance/connection
+    cost_increase: 8       # "Zoom fatigue"
     MET_score: 6
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals:
     - has_new_material(human): phone_number
-    recovery_rate: 1.0
 - Host_Dinner:
-    initial_cost: 60
-    cost_increase: 15
-    MET_score: 10
+    initial_cost: 60       # Cooking/cleaning/prep
+    cost_increase: 15      # Managing guests
+    MET_score: 10          # High reward
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 0.1
 - Join_Club:
-    initial_cost: 40
+    initial_cost: 40       # Anxiety/Travel/New people
     cost_increase: 8
-    MET_score: 9
+    MET_score: 9           # Long term benefit
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 1.0
 - Volunteer:
-    initial_cost: 30
-    cost_increase: 10
-    MET_score: 9
+    initial_cost: 30       # Travel/Commitment
+    cost_increase: 10      # Work-like effort
+    MET_score: 9           # Fulfillment
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 0.2
 - Park_Meetup:
-    initial_cost: 20
+    initial_cost: 20       # Travel
     cost_increase: 5
     MET_score: 7
     value: null
     requires_tutorial: true
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 1.0
 - Board_Game_Night:
-    initial_cost: 25
-    cost_increase: 5
+    initial_cost: 25       # Setup/Rules explanation
+    cost_increase: 5       # Fun/Flow
     MET_score: 8
     value: null
     requires_tutorial: false
     max_repetitions: 1
     robot_goals: null
-    recovery_rate: 1.0
 - Coffee_Chat:
-    initial_cost: 15
+    initial_cost: 15       # Travel/Ordering
     cost_increase: 3
     MET_score: 6
     value: null
     requires_tutorial: false
     max_repetitions: 3
     robot_goals: null
-    recovery_rate: 1.0
 - Group_Class:
-    initial_cost: 30
+    initial_cost: 30       # Schedule constraint/Travel
     cost_increase: 8
     MET_score: 8
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 1.0
 - Visit_Neighbor:
-    initial_cost: 15
+    initial_cost: 15       # Putting on shoes/walking over
     cost_increase: 4
     MET_score: 5
     value: null
@@ -400,22 +360,19 @@ social:
     max_repetitions: 3
     robot_goals:
     - has_new_material(human): phone_number
-    recovery_rate: 1.0
 - Send_Gift:
-    initial_cost: 25
+    initial_cost: 25       # Shopping/Wrapping
     cost_increase: 5
     MET_score: 5
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 1.0
 - Attend_Lecture:
-    initial_cost: 30
-    cost_increase: 5
+    initial_cost: 30       # Travel/Sitting still
+    cost_increase: 5       # Passive listening
     MET_score: 7
     value: null
     requires_tutorial: false
     max_repetitions: 2
     robot_goals: null
-    recovery_rate: 1.0

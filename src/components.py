@@ -38,17 +38,15 @@ class ActivityAction(InstantaneousAction):
         else:
             raise ValueError('Activity type not recognized when creating action effects')
 
-        # parameters
-        # atype = self.parameter('atype') # This seems unused or redundant if not careful, but keeping super init clean.
-        # Note: In the original code `super().__init__(action_name, atype=types[atype])` used `types[atype]`.
-        # Here I moved super call up.
         
         self.add_precondition(fluents['can_do_' + self.original_name])
         
         # Max repetitions logic
         if max_repetitions is not None:
             count_fluent = fluents['count_' + self.original_name]
-            self.add_precondition(LE(count_fluent, max_repetitions - 1))
+            # Ensure max_repetitions is treated as an integer (floor) for PDDL logic
+            limit_val = int(max_repetitions)
+            self.add_precondition(LE(count_fluent, limit_val - 1))
             self.add_increase_effect(count_fluent, 1)
         
         # current cost effect (always update the base cost fluent)

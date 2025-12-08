@@ -1,6 +1,8 @@
+import os
 from unified_planning.shortcuts import *
 from unified_planning.engines import PlanGenerationResultStatus
 from unified_planning.shortcuts import SequentialSimulator
+from unified_planning.io import PDDLWriter
 
 class RobotProblem:
     
@@ -8,6 +10,12 @@ class RobotProblem:
         self.problem = Problem('robot-assistant')
         self._init_domain()
         self._init_state()
+        self._save_domain_pddl()
+
+    def _save_domain_pddl(self, folder='pddl'):
+        writer = PDDLWriter(self.problem)
+        writer.write_domain(os.path.join(folder, f"domain_robot.pddl"))
+        writer.write_problem(os.path.join(folder, f"problem_robot.pddl"))
 
     def _init_domain(self):
         # Types

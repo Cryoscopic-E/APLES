@@ -46,10 +46,8 @@ try:
     print(f"--- Plotting and Analysis Log ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}) ---")
     print(f"Loading data from: {csv_file}")
 
-    # Set style
     sns.set(style="whitegrid", context="paper", font_scale=1.2)
 
-    # 1. Planning Time vs Difficulty Level (Grouped by Category)
     plt.figure(figsize=(12, 7))
     sns.lineplot(data=df, x='level', y='generation_time', hue='category', style='category', markers=True, dashes=False, linewidth=2.5)
     plt.title('Planning Time vs Difficulty Level', fontsize=16)
@@ -61,7 +59,6 @@ try:
     plt.close()
     print(f"Plot saved: {os.path.join(output_dir, 'time_vs_level_by_category.png')}")
 
-    # 2. Plan Length vs Difficulty Level (Grouped by Category)
     plt.figure(figsize=(12, 7))
     sns.lineplot(data=df, x='level', y='plan_length', hue='category', style='category', markers=True, dashes=False, linewidth=2.5)
     plt.title('Plan Length vs Difficulty Level', fontsize=16)
@@ -84,7 +81,6 @@ try:
     plt.close()
     print(f"Plot saved: {os.path.join(output_dir, 'time_distribution_boxplot.png')}")
 
-    # 4. Plan Cost vs Level (NEW)
     if 'plan_cost' in df.columns:
         plt.figure(figsize=(12, 7))
         sns.lineplot(data=df, x='level', y='plan_cost', hue='category', style='category', markers=True, dashes=False, linewidth=2.5)
@@ -105,7 +101,6 @@ try:
 
     print(f"All plots saved to {output_dir}/ directory.")
 
-    # --- Statistical Analysis Report ---
     print("\n=== Extended Statistical Analysis ===")
     categories = df['category'].unique()
 
@@ -142,7 +137,6 @@ try:
         print("  No successful runs to analyze.")
 
 finally:
-    # Restore original stdout and close the log file
     sys.stdout = original_stdout
     log_file.close()
     print(f"Plotting log saved to {log_filepath}")
