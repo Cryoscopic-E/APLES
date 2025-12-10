@@ -4,20 +4,25 @@
 
 ### Instructions
 
-- clone this repo and cd
+- clone this repo and cd under APLES folder
 - `docker compose up -d`
 
 You can attach vscode to the running container or run
 
-`docker exec -it aples_container bash`
+`docker exec -it <<aples_container>> bash`
 
-to execute the manager + planners.
+To execute the experiments:
 
+```
+
+python aples.py
+
+python plot_scalability.py
+
+python calculate_heterogeneity.py
+
+```
 When you finished:
 
-- `docker compose down`
+`docker compose down`
 
-### TODO
-Automated Experiments
-
-Dockerized frontend

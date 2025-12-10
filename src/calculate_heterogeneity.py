@@ -34,7 +34,7 @@ def parse_activity_plan(plan_str):
 
 def main():
     # File paths
-    activities_yaml_path = 'src/data/activities.yaml'
+    activities_yaml_path = 'data/activities.yaml'
     experiment_json_path = 'experiment_plans.json'
     output_txt_path = 'heterogeneity_metrics.txt'
 

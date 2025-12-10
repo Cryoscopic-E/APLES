@@ -1,5 +1,5 @@
 services:
-  aples:  
+  aples:
     container_name: aples_container
     build:
       context: ./docker
